@@ -1,0 +1,203 @@
+
+// -----------------------------------------
+// # UIkit-styled quiz theme
+// -----------------------------------------
+
+
+// -----------------------------------------
+// ## word wrap/break
+.wq_resultDesc,
+.wq_QuestionExplanationText {
+  white-space: pre-wrap;
+}
+
+// -----------------------------------------
+// ## question title
+.wq_questionTextCtr {
+  background: $color-white !important;
+  background-color: $color-white !important;
+  padding-left: 0 !important;
+}
+
+
+// -----------------------------------------
+// ## question "trivia" answers list
+.wq_quizCtr .wq_singleAnswerCtr {
+  border: 1px solid $color-uikit-gray-lighter;
+  color: $button-default-color !important;
+  background: $color-white !important;
+  padding: 7px 7px 8px;
+  margin: 0 0 16px 0;
+  transition: 300ms ease-in-out;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:hover, &:focus {
+    background: inherit;
+    border-color: $button-default-color-hover;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+    color: $button-default-color-hover !important;
+  }
+}
+
+
+// -----------------------------------------
+// ## question "trivia" answers text
+.wq_answerTxtCtr {
+  // ### answer checkbox image
+  background-image: url(/wp-content/themes/millerAgency/assets/images/quiz/theme-ui-checkbox-no.svg);
+  background-repeat: no-repeat;
+
+  // ### answer font styles
+  font-size: 1rem;
+  font-weight: normal;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 19px;
+  height: auto;
+  padding-left: 31px;
+  cursor: pointer;
+}
+
+
+// -----------------------------------------
+// ## question "trivia" answers CHOSEN textbox
+.chosen .wq_answerTxtCtr {
+  // ### answer checkbox image
+  background-image: url(/wp-content/themes/millerAgency/assets/images/quiz/theme-ui-checkbox-wrong.svg);
+}
+
+
+// -----------------------------------------
+// ## questions ANSWERED list
+.wq_questionAnswered .wq_singleAnswerCtr {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+// -----------------------------------------
+// ## question CHOSEN answer
+.wq_questionAnswered .wq_singleAnswerCtr.chosen {
+  opacity: 1;
+}
+
+
+// -----------------------------------------
+// ## WRONG answer
+.wq_quizCtr .wq_singleAnswerCtr.wq_incorrectAnswer {
+  background: #636363 !important;
+  border-color: #636363 !important;
+  &.chosen {
+    color: $color-white-off !important;
+    opacity: .35;
+  }
+}
+
+
+// -----------------------------------------
+// ## CORRECT ANSWER - not chosen
+.wq_quizCtr .wq_singleAnswerCtr.wq_correctAnswer {
+  background: $color-alert-warning !important;
+  border-color: $color-alert-warning !important;
+  color: $color-black-light !important;
+  opacity: 1;
+  & .wq_answerTxtCtr {
+    background-image: url(/wp-content/themes/millerAgency/assets/images/quiz/theme-ui-checkbox-oops.svg);
+  }
+  &.chosen .wq_answerTxtCtr {
+    // ### answer checkbox image
+    background-image: url(/wp-content/themes/millerAgency/assets/images/quiz/theme-ui-checkbox-correct.svg);
+  }
+  &.chosen {
+    background: $color-alert-success !important;
+    border-color: $color-alert-success !important;
+    color: $color-white-off !important;
+    opacity: 1;
+  }
+}
+
+
+// -----------------------------------------
+// ## answer explained — CORRECT
+.wq_correctExplanationHead {
+  color: $color-alert-success;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+
+// -----------------------------------------
+// ## answer explained — WRONG
+.wq_wrongExplanationHead {
+  color: $color-alert-error;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+
+// -----------------------------------------
+// ## answer explained — BOX
+.wq_quizForceActionCtr {
+  background: #f9f9f9;
+  padding: 30px 20px;
+  border: 1px solid #dddddd;
+  text-align: center;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 30px;
+  border-radius: 0;
+}
+
+
+// -----------------------------------------
+// ## MEDIA BREAKS
+@media screen and (max-width: 480px) {
+  .wq_singleAnswerCtr .wq_answerTxtCtr, .wq_wrongExplanationHead {
+    font-size: 15px ;
+  }
+  .wq_singleAnswerCtr.wq_hasImage .wq_answerTxtCtr {
+    font-size: 10px ;
+    line-height: 10px;
+  }
+}
+
+
+// -----------------------------------------
+// ## QUIZ RESULTS
+// results box
+.wq_singleResultWrapper.wq_IsTrivia {
+  padding: 10px 20px 20px 20px;
+  margin-top: 20px;
+  border-radius: 3px;
+  font-size: 1rem;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  background: $color-white-off;
+  border: 1px solid $color-uikit-gray-lighter;
+  border-radius: 0;
+  box-shadow: $z-depth-2;
+}
+
+// results quiz title
+.wq_singleResultWrapper .wq_quizTitle {
+  display: none;
+}
+
+// results statement title
+.wq_singleResultWrapper .wq_resultTitle {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+// results numbers
+.wq_singleResultWrapper .wq_resultScoreCtr {
+  font-size: 14px;
+  font-weight: normal;
+  opacity: .6;
+}

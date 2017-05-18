@@ -1,0 +1,35 @@
+
+@import "forms/forms";
+@import "date_picker/default";
+@import "date_picker/default.date";
+@import "date_picker/default.time";
+
+// fix dropdown elements
+.elementor-field-textual.elementor-size-xs,
+.elementor-field-textual.elementor-size-sm,
+.elementor-field-textual.elementor-size-md,
+.elementor-field-textual.elementor-size-lg,
+.elementor-field-textual.elementor-size-xl {
+  font-size: inherit;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+// fix dropdown ul
+.dropdown-content {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  & li {
+    margin: 0 !important;
+  }
+}
+
+// remove carrot
+.elementor-field-group .elementor-select-wrapper:before { display: none; }
+
+// checkbox and radio inline spacing fix
+.elementor-field-subgroup.elementor-subgroup-inline .elementor-field-option {
+  padding-right: 40px;
+}

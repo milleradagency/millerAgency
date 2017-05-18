@@ -1,0 +1,90 @@
+
+// -----------------------------------------
+// ## mobile nav bar
+.uk-offcanvas-bar {
+  color: $color-black-light;
+  background: $color-white-off;
+  padding: 0;
+
+  & a {
+    color: $color-primary;
+    transition: 300ms ease-in-out;
+    &:hover,
+    &:focus {
+      color: $color-black-light;
+    }
+  } // end a
+
+  & .uk-nav {
+    padding: 20px;
+  }
+
+  & .uk-close {
+    padding: 10px;
+  }
+} // end mobile nav bar
+
+// -----------------------------------------
+// ## MEDIA, WEB, BRANDING sidebar image styles
+.maa-offcanvas-media-header,
+.maa-offcanvas-web-header,
+.maa-offcanvas-branding-header {
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 225px;
+
+  & .uk-overlay {
+    padding: 20px;
+  }
+} // end media
+
+// -----------------------------------------
+// ## background fade overlay
+.uk-offcanvas-overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.5);
+  opacity: 0;
+  transition: opacity .15s linear;
+}
+
+// -----------------------------------------
+// ## off canvas menu styles
+#menu-mobile-menu {
+  & .current-menu-item a {
+    color: $color-primary !important;
+    transition: 300ms ease-in-out;
+    &:hover,
+    &:focus {
+      color: $color-black-light !important;
+    }
+  }
+
+  & .menu-item {
+    padding: .5rem 0;
+    // margin: .5rem 0;
+    border-bottom: 1px solid $color-gray-lightest;
+      &:last-child { border: 0; }
+
+    & .sub-menu .menu-item {
+      margin-left: 1rem;
+      border-bottom: 0;
+      &:before {
+        content: "·";
+        float: left;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  // & .menu-item-has-children a:first-child {
+  //   @extend .uk-nav-header;
+  // }
+}

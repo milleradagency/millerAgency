@@ -1,0 +1,28 @@
+
+// -----------------------------------------
+// ## pagination
+// example: <- Previous 1 2 3 -> Next
+.elementor-pagination {
+  & a.page-numbers {
+    position: relative;
+    // -----------------------------------------
+    // ## link underline
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+      border-bottom: 1px solid $color-black-light !important;
+      transition: right .3s ease-out;
+    }
+
+    &:hover, &:focus {
+      color: $color-bodyColor !important;
+
+      &:before {
+        right: 0;
+      }
+    } // end hover
+  } // end page numbers
+} // end pagination

@@ -1,0 +1,8 @@
+.calendar_wrap {
+	& tr:nth-child(even) {
+		background: rgba(0,0,0,.05);
+	}
+	& td {
+		text-align: center;
+	}
+}

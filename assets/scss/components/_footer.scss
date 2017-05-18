@@ -1,0 +1,56 @@
+// adjust bottom margin for mobile navbar
+#footer {
+  margin-bottom: 60px;
+  @media (min-width:960px) {
+    margin-bottom: 0;
+  }
+}
+
+.maa-footer {
+  background-color: mix(white,$color-uikit-gray-lighter,50%);
+  padding: 40px 0 52px;
+  margin: 0 auto;
+
+  & .maa-footer-links {
+    height: initial;
+    flex-wrap: wrap;
+    & a {
+      line-height: 1.2;
+    }
+
+    & li {
+      padding: 15px;
+    }
+  }
+
+  & .uk-navbar {
+    flex-wrap: wrap;
+    @media (min-width: 1024px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  & .uk-navbar-left,
+  & .uk-navbar-right {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    & .uk-navbar-left {
+      padding-left: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
+    & .uk-navbar-right {
+      padding-right: 10px;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+}

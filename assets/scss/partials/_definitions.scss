@@ -1,0 +1,392 @@
+// main: ../main.scss
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # IMPORTS
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i|Roboto:100,400|Domine:400,700|Playfair+Display:400,700,900|Pinyon+Script|Montserrat:400,700');
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # TYPE
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$font-headings:               Open Sans, "Arial", sans-serif; // headings
+$font-bodyCopy:               Open Sans, "Arial", sans-serif; // body copy
+$display:                     inherit; // display type
+$ui:                          "Verdana", sans-serif; // ui type
+$fancy:                       Playfair Display, Georgia, "Times New Roman", serif;
+$script:                      Pinyon Script, cursive;
+
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # COLORS
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$color-primary:               #0053a0;
+$color-primary-light:         mix(white, $color-primary, 15%);
+$color-primary-lightest:      mix(white, $color-primary, 35%);
+$color-primary-dark:          mix(black, $color-primary, 15%);
+$color-primary-darkest:       mix(black, $color-primary, 35%);
+
+$color-accent:                #f49200;
+$color-accent-light:          mix(white, $color-accent, 15%);
+$color-accent-lightest:       mix(white, $color-accent, 35%);
+$color-accent-dark:           mix(black, $color-accent, 15%);
+$color-accent-darkest:        mix(black, $color-accent, 35%);
+
+$color-black:                 #000;    // black-100%
+$color-black-light:           #303030; // off-black
+$color-black-lightest:        #4c4c4c; // light-black
+
+$color-white:                 #fff;    // white-100%
+$color-white-off:             #fdfdfd; // off-white
+
+$color-gray:                  #959595; // primary-gray
+$color-gray-light:            mix(white, $color-gray, 15%);
+$color-gray-lightest:         mix(white, $color-gray, 35%);
+
+$color-uikit-gray-light:      #666;
+$color-uikit-gray-lighter:    #e5e5e5;
+
+$color-headingsColor:         #303030; // off-black
+$color-bodyColor:             #595959; // light-black #4c4c4c
+
+$color-alert-info:            #5bc0de;
+$color-alert-success:         #449d44;
+$color-alert-warning:         #f0ad4e;
+$color-alert-danger:          #d9534f;
+$color-alert-error:           #b71c1c;
+
+$color-code-scss:             #c6538c; // http://sass-lang.com/
+$color-code-html:             #e74c18;
+$color-code-js:               #fac552;
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # MATERIALIZE VARIABLES
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+// Gutters
+$gutter-width: 1.5rem !default;
+$element-top-margin: $gutter-width/3 !default;
+$element-bottom-margin: ($gutter-width*2)/3 !default;
+
+// Dropdowns
+$dropdown-bg-color: #fff !default;
+$dropdown-hover-bg-color: #eee !default;
+$dropdown-color: $color-primary !default;
+$dropdown-item-height: 50px !default;
+
+// No Select
+.no-select,input[type=range],input[type=range]+.thumb {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # Z-DEPTH / MATERIAL SHADOWS
+// # https://codepen.io/sdthornton/pen/wBZdXq
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$z-depth-0:   none !important;
+$z-depth-1:   0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$z-depth-2:   0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$z-depth-3:   0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$z-depth-4:   0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$z-depth-5:   0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+.z-depth-0 { box-shadow: $z-depth-0; }
+.z-depth-1 { box-shadow: $z-depth-1; }
+.z-depth-2 { box-shadow: $z-depth-2; }
+.z-depth-3 { box-shadow: $z-depth-3; }
+.z-depth-4 { box-shadow: $z-depth-4; }
+.z-depth-5 { box-shadow: $z-depth-5; }
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # Z-DEPTH / UIkit
+// # https://getuikit.com/docs/utility#box-shadow
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$z-depth-uikit-1:   0 2px 8px rgba(0,0,0,0.08);
+$z-depth-uikit-2:   0 5px 15px rgba(0,0,0,0.08);
+$z-depth-uikit-3:   0 14px 25px rgba(0,0,0,0.16);
+$z-depth-uikit-4:   0 28px 50px rgba(0,0,0,0.16);
+
+.z-depth-uikit-1 { box-shadow: $z-depth-uikit-1; }
+.z-depth-uikit-2 { box-shadow: $z-depth-uikit-2; }
+.z-depth-uikit-3 { box-shadow: $z-depth-uikit-3; }
+.z-depth-uikit-4 { box-shadow: $z-depth-uikit-4; }
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # TEXT SHADOWS
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$text-shadow-0:   none !important;
+$text-shadow-1:   1px 1px 1px rgba(0,0,0,.25);
+$text-shadow-2:   1px 1px 1px rgba(0,0,0,.65);
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # FX
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$vingette-large:  inset 0 0 15rem rgba(0,0,0,.35);
+$vingette-card:   inset 0 0 5rem rgba(0,0,0,.5);
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # BUTTONS-MATERIAL
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// Shared styles
+$button-border:                   none !default;
+$button-font-size:                .85rem !default;
+$button-height:                   36px !default;
+$button-padding:                  0 2rem !default;
+$button-radius:                   2px !default;
+
+// -----------------------------------------
+// Disabled styles
+$button-disabled-color:           $color-black-light !default;
+$button-disabled-background:      $color-gray-light !default;
+
+// -----------------------------------------
+// Default buttons (ghost button style)
+$button-default-color:            $color-gray !default;
+$button-default-color-hover:      mix(black, $button-default-color, 90%) !default;
+$button-default-background:       $color-white !default;
+$button-default-background-hover: $color-white !default;
+$button-default-border:           $color-gray !default;
+$button-default-border-hover:     mix(black, $button-default-border, 90%) !default;
+
+// -----------------------------------------
+// Flat buttons
+$button-flat-color:               $color-black !default;
+$button-flat-disabled-color:      mix(white, $button-flat-color, 50%) !default;
+
+// -----------------------------------------
+// Floating buttons
+$button-floating-color:           $color-white !default;
+$button-floating-background:      $color-accent !default;
+$button-floating-background-hover:mix(black, $button-floating-background, 30%) !default;
+$button-floating-size:            40px !default;
+$button-floating-large-size:      56px !default;
+$button-floating-radius:          50% !default;
+
+// -----------------------------------------
+// Submit buttons
+$button-submit-color:             $color-white !default;
+$button-submit-color-hover:       $button-submit-color !default;
+$button-submit-background:        $color-primary !default;
+$button-submit-background-hover:  mix(black, $button-submit-background, 50%) !default;
+$button-submit-border:            transparent !default;
+$button-submit-border-hover:      transparent !default;
+
+// -----------------------------------------
+// Info buttons
+$button-info-color:               $color-white !default;
+$button-info-background:          $color-alert-info !default;
+$button-info-background-hover:    mix(black, $button-info-background, 30%) !default;
+
+// -----------------------------------------
+// Success buttons
+$button-success-color:            $color-white !default;
+$button-success-background:       $color-alert-success !default;
+$button-success-background-hover: mix(black, $button-success-background, 30%) !default;
+
+// -----------------------------------------
+// Warning buttons
+$button-warning-color:            $color-white !default;
+$button-warning-background:       $color-alert-warning !default;
+$button-warning-background-hover: mix(black, $button-warning-background, 30%) !default;
+
+// -----------------------------------------
+// Danger buttons
+$button-danger-color:             $color-white !default;
+$button-danger-background:        $color-alert-danger !default;
+$button-danger-background-hover:  mix(black, $button-danger-background, 30%) !default;
+
+// -----------------------------------------
+// Button focus
+$button-background-focus:         mix(black, $button-default-background, 15%) !default;
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # CARDS
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$card-bg-color:                   $color-white-off;
+$card-border:                     1px solid rgba(160,160,160,.2);
+$card-border-radius:              4px;
+$card-link-color:                 $color-primary !default;
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # ANIMATIONS
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$transition-ease-fast:            300ms ease-in-out;
+$transition-ease-slow:            600ms ease-in-out;
+$transition-linear-fast:          300ms linear;
+$transition-linear-slow:          600ms linear;
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # FORMS
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// Text Inputs + Textarea
+$input-height: 3rem !default;
+$input-border-color: $color-gray-lightest !default;
+$input-border: 1px solid $input-border-color !default;
+$input-background: #fff !default;
+$input-error-color: $color-alert-error !default;
+$input-success-color: $color-alert-success !default;
+$input-focus-color: $color-primary-lightest !default;
+$input-font-size: 1rem !default;
+$input-margin-bottom: 20px;
+$input-margin: 0 0 $input-margin-bottom 0 !default;
+$input-padding: 0 !default;
+$input-transition: all .3s !default;
+$label-font-size: .8rem !default;
+$input-disabled-color: rgba(0,0,0, .26) !default;
+$input-disabled-solid-color: #BDBDBD !default;
+$input-disabled-border: 1px dotted $input-disabled-color !default;
+$input-invalid-border: 1px solid $input-error-color !default;
+$placeholder-text-color: lighten($input-border-color, 20%) !default;
+
+// -----------------------------------------
+// Radio Buttons
+$radio-fill-color: $color-primary !default;
+$radio-empty-color: #5a5a5a !default;
+$radio-border: 2px solid $radio-fill-color !default;
+
+// -----------------------------------------
+// Range
+$range-height: 14px !default;
+$range-width: 14px !default;
+$track-height: 3px !default;
+
+// -----------------------------------------
+// Select
+$select-border: 1px solid #f2f2f2 !default;
+$select-background: rgba(255, 255, 255, 0.90) !default;
+$select-focus: 1px solid lighten($color-primary, 47%) !default;
+$select-padding: 5px !default;
+$select-radius: 2px !default;
+$select-disabled-color: rgba(0,0,0,.3) !default;
+
+// -----------------------------------------
+// Switches
+$switch-bg-color: $color-primary !default;
+$switch-checked-lever-bg: desaturate(lighten($color-primary, 25%), 25%) !default;
+$switch-unchecked-bg: #F1F1F1 !default;
+$switch-unchecked-lever-bg: #818181 !default;
+$switch-radius: 15px !default;
+
+// -----------------------------------------
+// Date Picker
+$datepicker-weekday-bg: darken($color-primary, 7%) !default;
+$datepicker-date-bg: $color-primary !default;
+$datepicker-year: rgba(255, 255, 255, .4) !default;
+$datepicker-focus: rgba(0,0,0, .05) !default;
+$datepicker-selected: $color-primary !default;
+$datepicker-selected-outfocus: desaturate(lighten($color-primary, 35%), 15%) !default;
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//
+// # TABS
+//
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$tabs-underline-color: $color-primary-lightest !default;
+$tabs-text-color: $color-primary !default;
+$tabs-bg-color: #fff !default;

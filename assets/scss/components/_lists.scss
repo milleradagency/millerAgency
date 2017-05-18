@@ -1,0 +1,53 @@
+.uk-list {
+  & ul {
+    padding: 0;
+  }
+
+  & li {
+    margin-bottom: .5rem;
+  }
+}
+
+.uk-list-large {
+  & li {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.uk-list-divider {
+  & li {
+    border-bottom: 1px solid #e5e5e5;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.uk-list-striped {
+  & ul {
+    @extend .uk-list-striped;
+  }
+  & li {
+    padding: 10px 10px;
+    margin: 0;
+  }
+
+  &.uk-list-large {
+    @extend .uk-list-large;
+    & li {
+      margin: 0;
+      padding: 1rem;
+    }
+  }
+}
+
+.list-inline {
+  & li {
+    display: inline-block;
+  }
+}

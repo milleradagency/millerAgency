@@ -1,0 +1,185 @@
+// standard button
+.elementor-button-link.elementor-button,
+input#submit.uk-button.uk-button-default {
+	color: $button-default-color;
+	background-color: $button-default-background;
+	margin: 0;
+  border-width: 1px;
+	border-style: solid;
+	border-color: $button-default-border;
+	border-radius: 0;
+  overflow: visible;
+  font: inherit;
+  text-transform: none;
+  display: inline-block;
+  box-sizing: border-box;
+  // padding: 0 30px;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  // transition: .1s ease-in-out;
+  transition-property: color,background-color,border-color;
+	transition: 300ms ease-in-out;
+	&:hover, &:focus {
+		color: $button-default-color-hover;
+		background-color: $button-default-background-hover;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $button-default-border-hover;
+		text-decoration: none;
+	}
+}
+
+// Remove the inner border and padding in Firefox.
+.elementor-button-link.elementor-button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input#submit.uk-button.uk-button-default {
+	padding: 15px 30px;
+}
+
+// submit button
+.elementor-field-group.elementor-field-type-submit > button {
+	color: $button-submit-color;
+	background-color: $button-submit-background;
+	margin: 0;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $button-submit-border;
+	border-radius: 0;
+	overflow: visible;
+	font: inherit;
+	text-transform: none;
+	display: inline-block;
+	box-sizing: border-box;
+	// padding: 0 30px;
+	vertical-align: middle;
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	// transition: .1s ease-in-out;
+	transition-property: color,background-color,border-color;
+	transition: 300ms ease-in-out;
+	&:hover, &:focus {
+		color: $button-submit-color-hover;
+		background-color: $button-submit-background-hover;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $button-submit-border-hover;
+		text-decoration: none;
+	}
+}
+
+// info
+.elementor-element.elementor-button-info .elementor-button {
+	color: $button-info-color;
+	background-color: $button-info-background;
+	border-color: transparent;
+	&:hover, &:focus {
+		background-color: $button-info-background-hover;
+		border-color: transparent;
+	}
+}
+
+// success
+.elementor-element.elementor-button-success .elementor-button {
+	color: $button-success-color;
+	background-color: $button-success-background;
+	border-color: transparent;
+	&:hover, &:focus {
+		background-color: $button-success-background-hover;
+		border-color: transparent;
+	}
+}
+
+// warning
+.elementor-element.elementor-button-warning .elementor-button {
+	color: $button-warning-color;
+	background-color: $button-warning-background;
+	border-color: transparent;
+	&:hover, &:focus {
+		background-color: $button-warning-background-hover;
+		border-color: transparent;
+	}
+}
+
+// danger
+.elementor-element.elementor-button-danger .elementor-button {
+	color: $button-danger-color;
+	background-color: $button-danger-background;
+	border-color: transparent;
+	&:hover, &:focus {
+		background-color: $button-danger-background-hover;
+		border-color: transparent;
+	}
+}
+
+// extra small
+.elementor-button.elementor-size-xs {
+	font-size: inherit;
+	padding: inherit;
+	border-radius: inherit;
+
+	&:hover, &:focus {
+
+	}
+}
+
+// small
+.elementor-button-link.elementor-button.elementor-size-sm {
+	// font-size: inherit;
+	// padding: inherit;
+	// border-radius: inherit;
+
+	&:hover, &:focus {
+
+	}
+}
+
+// medium
+.elementor-button.elementor-size-md {
+	// font-size: inherit;
+	// padding: inherit;
+	border-radius: inherit;
+
+	&:hover, &:focus {
+
+	}
+}
+
+// large
+.elementor-button.elementor-size-lg {
+	font-size: inherit;
+	padding: inherit;
+	border-radius: inherit;
+
+	&:hover, &:focus {
+
+	}
+}
+
+// extra large
+.elementor-button.elementor-size-xl {
+	font-size: inherit;
+	padding: 20px 75px;
+	border-radius: inherit;
+
+	&:hover, &:focus {
+
+	}
+}
+
+// remove underline on all
+.elementor-button:focus,
+.elementor-button:hover,
+.elementor-button:visited {
+	text-decoration: none;
+}

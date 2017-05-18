@@ -1,0 +1,17 @@
+// dropdowns
+
+// dropdown background
+.dropdown-content li {
+
+}
+
+// dropdown color
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: $dropdown-color;
+}
+
+.elementor-54785 .elementor-field-group .elementor-select-wrapper select {
+  border: 1px solid $color-gray-lightest;
+  padding: 0 10px;
+}

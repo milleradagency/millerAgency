@@ -1,0 +1,181 @@
+// -----------------------------------------
+// # flipboxes
+.elementor-widget-flip-box {
+
+
+	// -----------------------------------------
+	// ## button transition states
+	& .elementor-flip-box {
+		& .elementor-flip-box__button.elementor-button {
+			transform: translateY(-100px);
+		  opacity: 0;
+		  visibility: hidden;
+			transition: 300ms ease-in-out;
+		}
+
+		&:hover, &:focus {
+
+			& .elementor-flip-box__button.elementor-button {
+				transform: translateY(0);
+	      opacity: 1;
+	      visibility: visible;
+	      cursor: pointer;
+			}
+		}
+	} // end .elementor-flip-box
+
+	// -----------------------------------------
+	// ## button global style
+	& .elementor-flip-box__button.elementor-button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 16px;
+		border-width: 1px;
+		border-radius: 0;
+		&:hover, &:focus {
+			color: $color-black-light;
+			border-width: 1px;
+			background-color: $color-white;
+		}
+	}
+
+	// -----------------------------------------
+	// ## default
+	&.default {
+		& .elementor-flip-box__front {
+			background-color: $button-default-background;
+			border: 2px solid $button-default-border;
+
+			& .elementor-flip-box__layer__description, & .elementor-flip-box__layer__title, & .fa {
+				color: $button-default-color;
+			}
+		}
+
+		& .elementor-flip-box__back {
+			background-color: $button-default-background-hover;
+			border: 2px solid $button-default-border-hover;
+
+			& .elementor-flip-box__layer__description, & .elementor-flip-box__layer__title, & .fa {
+				color: $button-default-color-hover;
+			}
+
+			& .elementor-flip-box__button.elementor-button {
+				color: $button-default-color;
+				background-color: $button-default-background;
+				border: 1px solid $button-default-border;
+				border-radius: 0;
+				&:hover, &:focus {
+					color: $button-default-color-hover;
+					background-color: $button-default-background-hover;
+					border: 1px solid $button-default-border-hover;
+				}
+			}
+		}
+	} // end default
+
+
+	// -----------------------------------------
+	// ## primary
+	&.primary {
+		& .elementor-flip-box__front {
+			background-color: $button-submit-background;
+
+			& .elementor-flip-box__layer__description, & .elementor-flip-box__layer__title, & .fa {
+				color: $button-submit-color;
+			}
+		}
+
+		& .elementor-flip-box__back {
+			background-color: $button-submit-background-hover;
+
+			& .elementor-flip-box__layer__description, & .elementor-flip-box__layer__title, & .fa {
+				color: $button-submit-color-hover;
+			}
+
+			& .elementor-flip-box__button.elementor-button {
+				color: $button-submit-color;
+				background-color: transparent;
+				border: 1px solid $button-submit-color;
+				border-radius: 0;
+				&:hover, &:focus {
+					color: $button-submit-background-hover;
+					background-color: $button-submit-color;
+				}
+			}
+		}
+	} // end primary
+
+	// -----------------------------------------
+	// ## accent
+	&.accent {
+		& .elementor-flip-box__front {
+			background-color: $color-accent;
+
+			& .elementor-flip-box__layer__description, & .elementor-flip-box__layer__title, & .fa {
+				color: $color-white;
+			}
+		}
+
+		& .elementor-flip-box__back {
+			background-color: $color-accent-darkest;
+
+			& .elementor-flip-box__layer__description, & .elementor-flip-box__layer__title, & .fa {
+				color: $color-white;
+			}
+
+			& .elementor-flip-box__button.elementor-button {
+				color: $color-white;
+				background-color: transparent;
+				border: 1px solid $color-white;
+				border-radius: 0;
+				&:hover, &:focus {
+					color: $color-accent-darkest;
+					background-color: $button-submit-color;
+				}
+			}
+		}
+	} // end accent
+
+	// -----------------------------------------
+	// ## info
+	&.info {
+		& .elementor-flip-box__front {
+			background-color: $button-info-background;
+
+			& .elementor-flip-box__layer__description, & .elementor-flip-box__layer__title, & .fa {
+				color: $button-info-color;
+			}
+		}
+
+		& .elementor-flip-box__back {
+			background-color: $button-info-background-hover;
+
+			& .elementor-flip-box__layer__description, & .elementor-flip-box__layer__title, & .fa {
+				color: $button-info-color;
+			}
+
+			& .elementor-flip-box__button.elementor-button {
+				color: $button-info-color;
+				background-color: transparent;
+				border: 1px solid $button-info-color;
+				border-radius: 0;
+				&:hover, &:focus {
+					color: $button-info-background-hover;
+					background-color: $button-info-color;
+				}
+			}
+		}
+	} // end info
+}
+
+// -----------------------------------------
+// ## add "text-shadow" class to add a slight drop shadow on
+// the front of text before hover
+.text-shadow {
+	& .elementor-flip-box__layer.elementor-flip-box__front {
+		& h2, & h3, & h4, & h5, & h6, & p {
+			text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+		}
+	}
+}

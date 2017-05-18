@@ -1,0 +1,57 @@
+// headings
+.elementor-widget-heading .elementor-heading-title {
+	// line-height: inherit;
+}
+
+h4.elementor-heading-title.elementor-size-default {
+	margin-bottom: .5rem;
+}
+
+// lists
+// .elementor-inner {
+//
+// 	& ul {
+// 		margin: 1em 0;
+// 		padding: 0 0 0 40px;
+// 		list-style-type: disc;
+//
+// 		& li {
+// 			list-style-type: disc;
+// 		}
+// 	}
+//
+// 	& li {
+// 		margin: 0 0 .75rem;
+// 		padding: 0;
+// 	}
+//
+// 	& .elementor-icon-list-item {
+// 		margin: 0 0 .75rem;
+// 	}
+// }
+
+// blockquotes
+blockquote {
+	margin-left: 5%;
+  border-left: 5px solid $color-primary;
+  padding-left: 2%;
+}
+
+.heading-hero {
+	& .elementor-heading-title {
+		@extend .uk-heading-hero;
+		font-weight: bold;
+		line-height: 1;
+		letter-spacing: -2px;
+	}
+}
+
+.heading-hero-secondary {
+	& .elementor-heading-title {
+		@extend .uk-heading-primary;
+		opacity: .65;
+		line-height: 1;
+		font-weight: lighter;
+		letter-spacing: -2px;
+	}
+}

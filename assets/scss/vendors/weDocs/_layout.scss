@@ -1,0 +1,123 @@
+.docs-template #container,
+.single-docs #container {
+  & header[role="banner"] { display: none; }
+}
+
+#primary {
+  // max-width: 1170px;
+  margin: 0 auto;
+
+  & .descriptor {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    & .elementor-column {
+      margin-bottom: 0;
+      // padding-bottom: 0;
+
+      & h1,h2,h3,h4,h5,h6,p {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  & .wedocs-single-wrap .wedocs-single-content {
+    width: 100%;
+    border-left: 0;
+    margin-top: 15px;
+    padding: 0;
+  } // end .wedocs-single-wrap .wedocs-single-content
+
+  & .wedocs-breadcrumb,
+  & .entry-header,
+  & .wedocs-entry-footer {
+    margin: 0 auto;
+    padding: 0 15px;
+      @media (min-width:1225px) { padding: 0; }
+    max-width: 900px; // 1140px
+  }
+
+  & .wedocs-entry-footer {
+    margin-top: 120px;
+    padding-top: 100px;
+    position: relative;
+    &:before {
+      content: "";
+      width: 100%;
+      max-width: none;
+      position: absolute;
+      top: -15px;
+      right: 0;
+      left: 0;
+      height: 1px;
+      background: $color-gray-lightest;
+    }
+  }
+
+  & .wedocs-icon-print {
+    padding-right: 15px;
+  }
+
+  & .wedocs-doc-nav {
+    height: auto;
+    line-height: normal;
+    box-shadow: none;
+    border: 0;
+    padding: 0 15px;
+    background: none;
+    & a {
+      color: $color-primary;
+      &:hover, &:focus {
+        color: $color-primary-light;
+      }
+    }
+  }
+
+  & .wedocs-feedback-wrap {
+    background: #eee;
+    text-align: center;
+    margin: 30px 0;
+    padding: 90px 0;
+
+    & a.positive,
+    & a.negative {
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      cursor: pointer;
+      border: 0;
+      border-bottom: 1px solid rgba(0,0,0,.25);
+      padding: 12px 24px;
+      border-radius: 3px;
+      width: 15%;
+      font-size: 15px;
+      text-shadow: $text-shadow-1;
+      box-shadow: $z-depth-1;
+      &:hover, &:focus {
+        text-shadow: $text-shadow-2;
+        box-shadow: $z-depth-2;
+      }
+    }
+  } // end .wedocs-feedback-wrap
+
+} // end #primary
+
+// #container > footer {
+//   max-width: 1170px;
+//   margin: 0 auto;
+//   padding: 2rem 15px 3rem;
+// }
+
+@media (min-width: 992px) {
+  .docs-template #container,
+  .single-docs #container {
+    margin-left: 300px;
+
+    & .elementor {
+      margin-left: auto;
+    }
+  }
+}

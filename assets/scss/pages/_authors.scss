@@ -1,0 +1,117 @@
+
+// -----------------------------------------
+// ## author pages (e.g. — /team/eradle)
+@media (min-width:1024px) {
+	#main > section:first-of-type {
+		text-align: center;
+	}
+}
+// .maa-author-image {
+// 	width: 100vw;
+// 	height: 400px;
+// 	@media (min-width:768px) {
+// 		height: 700px;
+// 	}
+// 	@media (min-width:1024px) {
+// 		max-width: 470px;
+// 		height: 450px;
+// 		box-shadow: $z-depth-uikit-1;
+// 	}
+// 	background-size: cover;
+// 	background-repeat: no-repeat;
+// }
+
+// -----------------------------------------
+// ## profile cover photo
+.maa-profile-cover-photo {
+	color: $color-primary;
+	background: $color-primary;
+	position: absolute;
+	// top: 0;
+	right: 0;
+	left: 0;
+	z-index: 0;
+}
+
+// -----------------------------------------
+// ## profile photo
+.maa-profile-image {
+	position: relative;
+	z-index: 1;
+
+	& img {
+    max-width: 250px;
+		margin-top: 300px;
+		box-shadow: $z-depth-uikit-1;
+	}
+}
+
+// -----------------------------------------
+// ## social icon hover
+.maa-social-icon {
+	transition: 100ms ease-in-out !important;
+	&:hover, &:focus {
+		transform: translateY(-4px);
+	}
+}
+
+// -----------------------------------------
+// ## author bio
+.maa-author-bio {
+	white-space: pre-line;
+}
+
+// -----------------------------------------
+// ## author articles
+.uk-article:last-of-type {
+	border-bottom: 0;
+}
+
+// -----------------------------------------
+// ## author blog list
+.maa-author-blogs {
+	// adds bottom border and adjusts item spacing
+	& .uk-article {
+		border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+		&:last-of-type {
+			border-bottom: 0 !important;
+		}
+	}
+
+	& a, & a:visited {
+		padding: 0;
+	  background: none;
+	  position: relative;
+	  margin: 0;
+	  border: none;
+	  overflow: visible;
+	  font: inherit;
+	  display: inline-block;
+	  box-sizing: border-box;
+	  padding: 0;
+	  text-decoration: none;
+	  transition: .1s ease-in-out;
+	  transition-property: color,background-color,border-color;
+
+	  // -----------------------------------------
+	  // ## link underline
+	  &:before {
+	    content: "";
+	    position: absolute;
+	    bottom: 4px;
+	    left: 0;
+	    right: 100%;
+	    border-bottom: 1px solid $color-primary-lightest;
+	    transition: right .3s ease-out;
+	  }
+
+	  &:hover, &:focus {
+	    &:before {
+	      right: 0;
+	    }
+	  }
+	} // end text link
+
+} // end .maa-author-blogs

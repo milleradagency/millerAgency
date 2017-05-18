@@ -1,0 +1,122 @@
+// main: ../main.scss
+
+.link-underline {
+
+  // -----------------------------------------
+  // ## headings 1-2
+  & h1 a,
+  & h2 a {
+    padding: 0;
+    background: none;
+    position: relative;
+    margin: 0;
+    border: none;
+    overflow: visible;
+    font: inherit;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0;
+    text-decoration: none;
+    transition: .1s ease-in-out;
+    transition-property: color,background-color,border-color;
+
+    // -----------------------------------------
+    // ## link underline
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      right: 100%;
+      border-bottom: 10px solid mix(white,$color-black-light,30%);
+      transition: right .2s ease-out;
+    }
+
+    &:hover, &:focus {
+      color: mix(white,$color-black-light,30%);
+      &:before {
+        right: 0;
+      }
+    }
+  } // end headings 1-3
+
+  // -----------------------------------------
+  // ## headings 3-6
+  & h3 a,
+  & h4 a,
+  & h5 a,
+  & h6 a {
+    padding: 0;
+    background: none;
+    position: relative;
+    margin: 0;
+    border: none;
+    overflow: visible;
+    font: inherit;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0;
+    text-decoration: none;
+    transition: .1s ease-in-out;
+    transition-property: color,background-color,border-color;
+
+    // -----------------------------------------
+    // ## link underline
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 100%;
+      border-bottom: 2px solid mix(white,$color-black-light,30%);
+      transition: right .2s ease-out;
+    }
+
+    &:hover, &:focus {
+      color: mix(white,$color-black-light,30%);
+      &:before {
+        right: 0;
+      }
+    }
+  } // end headings 4-6
+
+  // -----------------------------------------
+  // ## copy
+  & p a,
+  & ul a,
+  & ol a,
+  & li a {
+    padding: 0;
+    background: none;
+    position: relative;
+    margin: 0;
+    border: none;
+    overflow: visible;
+    font: inherit;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    transition-property: color,background-color,border-color;
+
+    // -----------------------------------------
+    // ## link underline
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      right: 100%;
+      border-bottom: 1px solid $color-primary-light;
+      transition: right .2s ease-out;
+    }
+
+    &:hover, &:focus {
+      // color: $color-bodyColor !important;
+      &:before {
+        right: 0;
+      }
+    }
+  } // end copy
+} // end link-underline

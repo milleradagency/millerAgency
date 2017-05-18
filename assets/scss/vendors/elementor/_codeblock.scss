@@ -1,0 +1,59 @@
+.wedocs-single-wrap .wedocs-single-content article .entry-content pre {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  margin: -15px 0 1.5rem;
+  border-radius: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: $z-depth-2;
+} // end pre
+
+.hljs {
+  padding: 3rem 1rem 1rem;
+  position: relative;
+} // end .hljs
+
+.code-scss {
+  & code.scss.hljs:before {
+    content: "SCSS";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $color-white-off;
+    background: $color-code-scss;
+    width: 100%;
+    padding: .25rem 1rem;
+  }
+} // end .code-scss
+
+// https://www.web2generators.com/html-based-tools/online-html-entities-encoder-and-decoder
+.code-html {
+  & code.html.hljs:before {
+    content: "HTML";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $color-white-off;
+    background: $color-code-html;
+    width: 100%;
+    padding: .25rem 1rem;
+  }
+} // end .code-html
+
+.code-js {
+  & code.js.hljs:before {
+    content: "JavaScript";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $color-black-light;
+    background: $color-code-js;
+    width: 100%;
+    padding: .25rem 1rem;
+  }
+} // end .code-html
+
+@media (min-width:1200px) {
+  .hljs {
+    padding: 4rem 2rem 2rem;
+  } // end .hljs
+} // end @media

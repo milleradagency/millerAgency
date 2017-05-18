@@ -1,0 +1,8 @@
+
+// -----------------------------------------
+// ## force cursor styles
+.cursor-pointer {
+  & div {
+    cursor: pointer;
+  }
+}

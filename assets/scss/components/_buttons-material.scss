@@ -1,0 +1,100 @@
+// standard button
+a.elementor-button {
+	text-decoration: none;
+	color: $button-raised-color;
+  background-color: $button-raised-background;
+  text-align: center;
+  letter-spacing: .5px;
+	text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
+	border-bottom: 1px solid rgba(0,0,0,.25);
+  font-size: 14px;
+  text-shadow: $text-shadow-1;
+	box-shadow: $z-depth-1;
+	&:hover, &:focus {
+		// background-color: #2bbbad;
+		text-shadow: $text-shadow-2;
+		box-shadow: $z-depth-2;
+	}
+}
+
+// submit button
+.elementor-field-group.elementor-field-type-submit > button {
+	text-decoration: none;
+  color: $button-submit-color;
+  background-color: $button-submit-background;
+  text-align: center;
+  letter-spacing: .5px;
+	text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
+	border: 0;
+	border-bottom: 1px solid rgba(0,0,0,.25);
+	padding: 12px 24px;
+	border-radius: 3px;
+	width: 15%;
+  font-size: 15px;
+  text-shadow: $text-shadow-1;
+	box-shadow: $z-depth-1;
+	&:hover, &:focus {
+		background-color: $button-submit-background-hover;
+		text-shadow: $text-shadow-2;
+		box-shadow: $z-depth-2;
+	}
+}
+
+// info
+.elementor-element.elementor-button-info .elementor-button {
+	color: $button-info-color;
+	background-color: $button-info-background;
+	&:hover, &:focus {
+		background-color: $button-info-background-hover;
+	}
+}
+
+// success
+.elementor-element.elementor-button-success .elementor-button {
+	color: $button-success-color;
+	background-color: $button-success-background;
+	&:hover, &:focus {
+		background-color: $button-success-background-hover;
+	}
+}
+
+// warning
+.elementor-element.elementor-button-warning .elementor-button {
+	color: $button-warning-color;
+	background-color: $button-warning-background;
+	&:hover, &:focus {
+		background-color: $button-warning-background-hover;
+	}
+}
+
+// danger
+.elementor-element.elementor-button-danger .elementor-button {
+	color: $button-danger-color;
+	background-color: $button-danger-background;
+	&:hover, &:focus {
+		background-color: $button-danger-background-hover;
+	}
+}
+
+// large
+.elementor-button.elementor-size-lg {
+	&:hover, &:focus {
+		text-shadow: $text-shadow-2;
+		box-shadow: $z-depth-3;
+	}
+}
+
+// extra large
+.elementor-button.elementor-size-xl {
+  font-size: 20px;
+  padding: 25px;
+  border-radius: 6px;
+	&:hover, &:focus {
+		text-shadow: $text-shadow-2;
+		box-shadow: $z-depth-3;
+	}
+}

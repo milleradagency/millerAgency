@@ -1,0 +1,112 @@
+
+// -----------------------------------------
+// ## color
+@media (min-width: 768px) {
+  .ks-box-primary {
+    height: 320px !important;
+  }
+}
+
+.ks-box .ks-Color {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+}
+
+#ks-color-primary {
+    color: $color-white;
+    background-color: $color-primary;
+  &-light {
+    color: $color-white;
+    background-color: $color-primary-light;
+  }
+  &-lightest {
+    color: $color-white;
+    background-color: $color-primary-lightest;
+  }
+  &-dark {
+    color: $color-white;
+    background-color: $color-primary-dark;
+  }
+  &-darkest {
+    color: $color-white;
+    background-color: $color-primary-darkest;
+  }
+}
+
+#ks-color-accent {
+    color: $color-white;
+    background-color: $color-accent;
+  &-light {
+    color: $color-white;
+    background-color: $color-accent-light;
+  }
+  &-lightest {
+    color: $color-white;
+    background-color: $color-accent-lightest;
+  }
+  &-dark {
+    color: $color-white;
+    background-color: $color-accent-dark;
+  }
+  &-darkest {
+    color: $color-white;
+    background-color: $color-accent-darkest;
+  }
+}
+
+#ks-color-black {
+    color: $color-white;
+    background-color: $color-black;
+  &-light {
+    color: $color-white;
+    background-color: $color-black-light;
+  }
+  &-lightest {
+    color: $color-white;
+    background-color: $color-black-lightest;
+  }
+}
+
+#ks-color-gray {
+    color: $color-white;
+    background-color: $color-gray;
+  &-light {
+    color: $color-white;
+    background-color: $color-gray-light;
+  }
+  &-lightest {
+    color: $color-white;
+    background-color: $color-gray-lightest;
+  }
+}
+
+#ks-color-white {
+    color: $color-black-lightest;
+    background-color: $color-white;
+    border: 1px solid $color-gray-lightest;
+  &-off {
+    color: $color-black-lightest;
+    background-color: $color-white-off;
+    border: 1px solid $color-gray-lightest;
+  }
+}
+
+#ks-color-alert {
+  &-success {
+    color: $color-white;
+    background-color: $color-alert-success;
+  }
+  &-warning {
+    color: $color-white;
+    background-color: $color-alert-warning;
+  }
+  &-error {
+    color: $color-black-lightest;
+    background-color: $color-alert-error;
+  }
+}

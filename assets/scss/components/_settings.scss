@@ -1,0 +1,16 @@
+.style-settings {
+  position: absolute;
+  z-index: 1010;
+  top: -2px;
+  right: 0;
+  padding: 4px;
+
+  & .uk-icon {
+    cursor: pointer;
+  }
+
+  & .uk-dropdown {
+    color: initial;
+    min-width: 100px;
+  }
+}

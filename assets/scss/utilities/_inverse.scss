@@ -1,0 +1,13 @@
+// main: ../main.scss
+
+.uk-light {
+  & h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    color: $color-white-off;
+  }
+}
+
+.uk-dark {
+  & h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    color: $color-black-light;
+  }
+}

@@ -1,0 +1,55 @@
+// main: ../main.scss
+
+html, body {
+  color: $color-bodyColor;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  // display: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  // color: $color-headingsColor;
+  font-family: $font-headings;
+}
+
+p,ul,ol,li {
+  font-family: $font-bodyCopy;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a,
+a:link,
+a:visited {
+  cursor: pointer;
+  transition: $transition-ease-fast;
+  color: $color-primary;
+  &:hover, &:focus {
+    cursor: pointer;
+    color: $color-black-light;
+    text-decoration: none;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+.codeInline {
+  color: #d19a66;
+  background: #282c34;
+  margin: 0 .5rem;
+  padding: .25rem 1rem;
+  font-size: .9rem;
+  font-family: monospace;
+  box-shadow: $z-depth-1;
+}

@@ -1,0 +1,110 @@
+
+.maa-button-home {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  margin: 10px;
+  background: transparent;
+  color: $color-white;
+  background: transparent;
+  transform: translateY(-100px);
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid $color-white;
+  border-radius: 0;
+  overflow: visible;
+  font: inherit;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 25px;
+  transition-property: color,background-color,border-color;
+  transition: 300ms ease-in-out;
+  cursor: none;
+  &:hover, &:focus {
+    color: $color-black-lightest;
+    background: $color-white;
+  }
+}
+
+.maa-cover-tint {
+  content: "";
+  background: rgba(0,0,0,.45);
+  width: 100%;
+  height: 100%;
+  transition: 300ms ease-in-out;
+  opacity: 0;
+}
+
+.maa-cover-home-01 {
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  transition: 300ms ease-in-out;
+  // border-top: 1px solid rgba(250,250,250,.35);
+  // border-bottom: 1px solid rgba(0,0,0,.55);
+  // border-radius: 4px;
+  // box-shadow: $z-depth-1;
+
+  & h2, & h3, & h4, & h5, & h6, & p {
+    text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+  }
+
+  &:hover, &:focus {
+    // box-shadow: $z-depth-3;
+
+    & .maa-button-home {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      cursor: pointer;
+    }
+
+    & .maa-cover-tint {
+      opacity: 1;
+    }
+
+    & h2, & h3, & h4, & h5, & h6, & p {
+      text-shadow: 1px 1px 1px rgba(0,0,0,0);
+    }
+  } // end hover
+}
+
+.maa-cover-home-02 {
+  @extend .maa-cover-home-01;
+}
+
+.maa-cover-home-03 {
+  @extend .maa-cover-home-01;
+}
+
+.maa-cover-home-04 {
+  @extend .maa-cover-home-01;
+  @media (min-width: 768px) {
+    height: 150px;
+  }
+}
+
+.maa-cover-home-05 {
+  @extend .maa-cover-home-01;
+  @media (min-width: 768px) {
+    height: 150px;
+  }
+}
+
+.maa-cover-home-06 {
+  @extend .maa-cover-home-01;
+  @media (min-width: 768px) {
+    height: 466px;
+  }
+}

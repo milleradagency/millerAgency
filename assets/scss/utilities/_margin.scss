@@ -1,0 +1,14 @@
+// main: ../main.scss
+
+.margin-remove {
+  &.elementor-widget:not(:last-child) {
+    margin: 0;
+  }
+}
+
+.text-margin-remove {
+  & h1, & h2, & h3, & h4, & h5, & h6,
+  & p, & span, & li, & pre {
+    margin: 0;
+  }
+}

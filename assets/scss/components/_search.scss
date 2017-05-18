@@ -1,0 +1,10 @@
+.uk-search-default {
+  width: 100%;
+  transition: 300ms ease-in-out;
+  border: 1px solid $color-uikit-gray-lighter;
+  // box-shadow: $z-depth-uikit-1;
+  &:hover, &:focus, &:active {
+    border: 1px solid mix(black,$color-uikit-gray-lighter,20%);
+    // box-shadow: $z-depth-uikit-2;
+  }
+}

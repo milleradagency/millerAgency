@@ -1,0 +1,50 @@
+
+// -----------------------------------------
+// ## countdown overrides
+.elementor-widget-countdown {
+	& .elementor-countdown-item {
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+
+		& .elementor-countdown-digits {
+			font-size: 2rem;
+				@media (min-width: 375px) {
+					font-size: 4rem;
+				}
+				@media (min-width: 1024px) {
+					font-size: 5rem;
+				}
+				@media (min-width: 1200px) {
+					font-size: 6rem;
+				}
+				@media (min-width: 1600px) {
+					font-size: 8rem;
+				}
+			font-weight: lighter;
+			color: $color-black-light;
+
+			& .elementor-countdown-days {
+
+			} // end days
+
+		} // end digits
+
+		& .elementor-countdown-label {
+			color: $color-gray;
+			font-size: .85rem;
+    	margin-top: 4px;
+		} // end label
+
+		&:after {
+			content: ":";
+			position: absolute;
+		} // end :after
+
+	} // end item
+}  // end widget
+
+.elementor-widget-countdown {
+	max-width: 80%;
+	margin: 0 auto;
+} // end inline widget

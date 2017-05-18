@@ -1,0 +1,17 @@
+span.badge {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 2px;
+}
+
+span.badge.new {
+  background-color: $color-primary-light;
+}
+
+span.badge.important {
+  background-color: $color-accent-light;
+  &:after {
+    content: " important";
+  }
+}

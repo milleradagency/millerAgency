@@ -1,0 +1,21 @@
+.elementor-testimonial-content {
+	font-size: 1.25rem;
+	line-height: 1.25;
+	letter-spacing: -.5px;
+	margin-bottom: 1rem;
+	font-style: italic;
+	color: $color-bodyColor;
+	position: relative;
+
+	&:before {
+		content: "\"";
+		font-size: 15rem;
+		line-height: 1;
+		font-family: cursive;
+		position: absolute;
+		top: -35px;
+		left: -20px;
+		opacity: .1;
+		transform: rotate(15deg);
+	}
+}

@@ -1,0 +1,41 @@
+a.uk-button-default {
+	color: $button-default-color;
+	background-color: $button-default-background;
+  border-width: 1px;
+	border-style: solid;
+	border-color: $button-default-border;
+	border-radius: 0;
+  overflow: visible;
+  font: inherit;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+	padding: 15px 30px;
+  transition-property: color,background-color,border-color;
+	transition: 300ms ease-in-out;
+	&:hover, &:focus {
+		color: $button-default-color-hover;
+		background-color: $button-default-background-hover;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $button-default-border-hover;
+		text-decoration: none;
+	}
+}
+
+a.button-support {
+	color: $button-warning-color;
+	background: $button-warning-background;
+	padding: 0 8px 1px;
+	margin-left: 4px;
+	&:hover, &:focus {
+		color: $button-warning-color;
+		background: $button-warning-background-hover;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,33 @@
+
+// -----------------------------------------
+// ## archive pages (e.g. — /blog/business)
+
+// body.archive
+.archive {
+
+	// hide body content
+	& .elementor.blog-post {
+		// display: none;
+	}
+
+	// hide "Edit Post" link
+	& .post-edit-link {
+		display: none;
+	}
+
+	// removes UIkit default top margin
+	& .uk-article+.uk-article {
+		margin-top: 0;
+	}
+
+	// adds bottom border and adjusts item spacing
+	& .uk-article {
+		border-bottom: 1px solid #ddd;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
+} // end .archive

@@ -1,0 +1,6 @@
+.tagcloud {
+  & a {
+    text-transform: uppercase;
+    transform: scale(.75);
+  }
+}

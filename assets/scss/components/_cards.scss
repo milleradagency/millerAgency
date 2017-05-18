@@ -1,0 +1,108 @@
+// main: ../main.scss
+
+$card-image-border-radius:      $card-border-radius $card-border-radius 0 0;
+$card-horz-image-border-radius: $card-border-radius 0 0 $card-border-radius;
+$card-content-border-radius:    0 0 $card-border-radius $card-border-radius;
+
+.card {
+  background-color: $card-bg-color;
+  border-radius: $card-border-radius;
+  box-shadow: $z-depth-1 !important;
+
+  & .card-content {
+    border-radius: $card-content-border-radius;
+  }
+
+  & .card-action {
+    border-radius: $card-content-border-radius;
+    & a {
+      color: $card-link-color !important;
+      &:hover, &:focus {
+        color: mix(white, $card-link-color, 60%) !important;
+      }
+    }
+  }
+
+  & .card-reveal {
+    background-color: $card-bg-color;
+    border-radius: $card-border-radius;
+    height: 100.3%;
+  }
+
+  & .horizontal {
+    border-radius: $card-border-radius;
+    & .card-image img {
+      border-radius: $card-horz-image-border-radius;
+    }
+  }
+
+  & .card-image img {
+    display: block;
+    border-radius: $card-image-border-radius;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+}
+
+.uk-card {
+  & .elementor-flip-box {
+    box-sizing: border-box;
+    transition: box-shadow .1s ease-in-out;
+    height: 175px;
+    @media (min-width:768px) {
+      height: 280px;
+    }
+  }
+
+  & .elementor-flip-box__layer {
+    transition: all .3s ease-in-out;
+  }
+
+  &.uk-card-default {
+    background: #fff;
+    & .elementor-icon {
+      color: #666;
+      font-size: 1rem;
+      & .fa {
+        font-size: 2rem;
+      }
+      & .elementor-icon i {
+        width: auto;
+        height: auto;
+      }
+    }
+    & .elementor-flip-box__front {
+      background: #fff;
+      & .elementor-flip-box__layer__description,
+      & .elementor-flip-box__layer__title {
+        margin-top: 8px;
+        color: #666;
+      }
+    }
+    & .elementor-flip-box__back {
+      background: $color-primary;
+      & .elementor-flip-box__layer__description,
+      & .elementor-flip-box__layer__title {
+        color: #fff;
+      }
+    }
+    & .elementor-flip-box {
+      // box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      box-shadow: $z-depth-1;
+      &:hover, &:focus {
+        box-shadow: $z-depth-3;
+      }
+    }
+  }
+}
+
+.elementor-flip-box__layer__title {
+  line-height: 1.2;
+}

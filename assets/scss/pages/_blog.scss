@@ -1,0 +1,454 @@
+
+// variables
+$blog-post-h1-color:								$color-white-off;
+$blog-post-h1-border-color:					$color-black-light;
+$blog-post-meta-color:							$color-black-lightest;
+$blog-post-meta-link-color:					$color-black;
+$blog-post-background-color:				$color-accent;
+
+
+// -----------------------------------------
+// ## blog globals
+// blog specific padding and fixes
+.blog-post,
+.blog-post-comments,
+.blog-post-pagination {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.blog-post-comments {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.blog-post-info {
+	color: $blog-post-meta-color;
+	padding: 10px 10px 0;
+	margin-bottom: 0;
+	& a, & a:visited {
+		color: $blog-post-meta-link-color;
+		padding: 0;
+	  background: none;
+	  position: relative;
+	  margin: 0;
+	  border: none;
+	  overflow: visible;
+	  font: inherit;
+	  display: inline-block;
+	  box-sizing: border-box;
+	  padding: 0;
+	  text-decoration: none;
+	  transition: .1s ease-in-out;
+	  transition-property: color,background-color,border-color;
+
+		// -----------------------------------------
+	  // ## link underline
+	  &:before {
+	    content: "";
+	    position: absolute;
+	    bottom: 1px;
+	    left: 0;
+	    right: 0;
+	    border-bottom: 1px solid $blog-post-meta-link-color;
+	    transition: .4s ease-out;
+	  } // end before
+
+		&:hover, &:focus {
+			color: $blog-post-meta-link-color;
+			text-decoration: none;
+			&:before {
+				right: 100%;
+	      left: 100%;
+	    }
+		} // end hover
+	} // end a
+} // end post-info
+
+.blog-post-title {
+	color: $blog-post-h1-color;
+	padding: 10px 10px 15px;
+	box-shadow: -10px 0 0px 0px $blog-post-h1-border-color;
+}
+
+.blog-post-header {
+	background-color: $blog-post-background-color;
+	padding: 4rem 2rem;
+	@media (min-width:1024px) {
+		padding: 8rem 2rem;
+	}
+}
+
+.blog-post-pagination {
+	padding: 10px;
+
+	& li {
+		width: 100%;
+		@media (min-width:960px) {
+			width: auto;
+		}
+	}
+
+	& span {
+		margin: 20px;
+		@media (min-width:960px) {
+			margin: 0;
+		}
+	}
+
+	& li:first-child {
+		padding-left: 0;
+	}
+
+	& a, & a:visited {
+		color: $color-primary;
+		padding: 0;
+	  background: none;
+	  position: relative;
+	  margin: 0;
+	  border: none;
+	  overflow: visible;
+	  font: inherit;
+	  display: inline-block;
+	  box-sizing: border-box;
+	  padding: 0;
+	  text-decoration: none;
+	  transition: .1s ease-in-out;
+	  transition-property: color,background-color,border-color;
+
+		// -----------------------------------------
+	  // ## link underline
+	  &:before {
+	    content: "";
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    right: 100%;
+	    border-bottom: 1px solid $color-primary-lightest;
+	    transition: right .4s ease-out;
+	  } // end before
+
+		&:hover, &:focus {
+			color: $color-primary-lightest;
+			text-decoration: none;
+			&:before {
+				right: 0;
+	    }
+		} // end hover
+	} // end a
+}
+
+.blog-post-tags {
+	text-transform: lowercase;
+	padding: 10px;
+	margin-bottom: 0;
+	& a {
+		position: relative;
+		// -----------------------------------------
+		// ## link underline
+		&:before {
+			content: "";
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    right: 100%;
+	    border-bottom: 1px solid $color-black-light !important;
+	    transition: right .3s ease-out;
+		}
+
+		&:hover, &:focus {
+			color: $color-bodyColor !important;
+
+			&:before {
+				right: 0;
+			}
+		} // end hover
+	}
+}
+
+.blog-post-image {
+	max-height: 600px;
+	max-width: 900px;
+	padding: 0 10px;
+	margin: 0 auto;
+	@media (min-width: 1024px) {
+		margin: 0 auto;
+	}
+	overflow: hidden;
+	position: relative;
+}
+
+.blog-post-padding {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.blog-breadcrumbs {
+	max-width: 900px;
+	margin: 0 auto;
+	& > .uk-breadcrumb {
+		padding-left: 10px;
+		margin-bottom: 0;
+	}
+}
+
+.page-title {
+	padding: 0 10px;
+}
+
+.hero-image {
+	max-height: 600px;
+	overflow: hidden;
+	position: relative;
+}
+
+// -----------------------------------------
+// ## blog lists
+
+// -----------------------------------------
+// ## blog single posts
+// capitalize author names
+.blog-author {
+  text-transform: capitalize;
+}
+
+// -----------------------------------------
+// ## blog comments
+// capitalize comment author names
+#commentform {
+  & .uk-article-meta .uk-button.uk-button-text {
+    text-transform: capitalize;
+    position: relative;
+    bottom: 1px;
+  }
+}
+
+.comment {
+	// adds extra padding around individual comments
+	padding: 10px;
+}
+
+.commentlist {
+	// adds <hr> line and space before child comments
+	& .children {
+		padding-top: 20px;
+		border-top: 1px solid rgba(0,0,0,.15);
+		margin-top: 20px;
+	}
+}
+
+// comment author styles
+.comment-author  {
+	margin-bottom: 20px;
+
+	// turns comment author images into circles
+	& > img {
+		border-radius: 50%;
+		margin-right: 10px;
+	}
+
+	// capitalize comment author names
+	& .fn {
+		text-transform: capitalize;
+		font-style: normal;
+		font-weight: bold;
+	}
+}
+
+
+// -----------------------------------------
+// ## POST TITLES
+article.elementor-post {
+	& .elementor-post__title > a {
+		position: relative;
+		// -----------------------------------------
+		// ## link underline
+		&:before {
+			content: "";
+	    position: absolute;
+	    bottom: 2px;
+	    left: 0;
+	    right: 100%;
+	    border-bottom: 1px solid $color-black-light !important;
+	    transition: right .3s ease-out;
+		}
+
+		&:hover, &:focus {
+			color: $color-bodyColor !important;
+
+			&:before {
+				right: 0;
+			}
+		} // end hover
+	} // end a
+} // end title
+
+
+// -----------------------------------------
+// ## FOOTER
+footer.blog-post {
+	border-top: 1px solid #ddd;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+// -----------------------------------------
+// ## SIDEBAR
+
+// sidebar links
+.page-id-54751 {
+	& .menu-item > a,
+	& .cat-item > a,
+	& .tagcloud > a,
+	& .elementor-post__read-more {
+		position: relative;
+		// -----------------------------------------
+		// ## link underline
+		&:before {
+			content: "";
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    right: 100%;
+	    border-bottom: 1px solid $color-black-light !important;
+	    transition: right .3s ease-out;
+		}
+
+		&:hover, &:focus {
+			color: $color-bodyColor !important;
+
+			&:before {
+				right: 0;
+			}
+		} // end hover
+	} // end menu-item
+} // end page-id
+
+// Select Field
+// ==========================================================================
+.elementor-widget-container {
+
+select {
+	// -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+
+select.browser-default { display: block; }
+
+select {
+  background-color: $select-background;
+  width: 100%;
+  padding: $select-padding;
+  border: 1px solid $color-uikit-gray-lighter;
+  border-radius: 0;
+  height: $input-height;
+}
+
+.select-label {
+  position: absolute;
+}
+
+.select-wrapper {
+  position: relative;
+
+  input.select-dropdown {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: $input-border;
+    outline: none;
+    height: $input-height;
+    line-height: $input-height;
+    width: 100%;
+    font-size: $input-font-size;
+    margin: $input-margin;
+    padding: 0;
+    display: block;
+  }
+
+  span.caret {
+    color: initial;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 10px;
+    margin: auto 0;
+    font-size: 10px;
+    line-height: 10px;
+
+    &.disabled {
+      color: $input-disabled-color;
+    }
+  }
+
+  & + label {
+    position: absolute;
+    top: -14px;
+    font-size: $label-font-size;
+  }
+}
+
+// Disabled styles
+select:disabled {
+  color: rgba(0,0,0,.3);
+}
+
+.select-wrapper input.select-dropdown:disabled {
+  color: rgba(0,0,0,.3);
+  cursor: default;
+  -webkit-user-select: none; // webkit (safari, chrome) browsers
+  -moz-user-select: none; // mozilla browsers
+  -ms-user-select: none; // IE10+
+  border-bottom: 1px solid rgba(0,0,0,.3);
+}
+
+.select-wrapper i {
+  color: $select-disabled-color;
+}
+
+.select-dropdown li.disabled,
+.select-dropdown li.disabled > span,
+.select-dropdown li.optgroup {
+  color: $select-disabled-color;
+  background-color: transparent;
+}
+
+// Prefix Icons
+.prefix ~ .select-wrapper {
+  margin-left: 3rem;
+  width: 92%;
+  width: calc(100% - 3rem);
+}
+
+.prefix ~ label { margin-left: 3rem; }
+
+// Icons
+.select-dropdown li {
+  img {
+    height: $dropdown-item-height - 10;
+    width: $dropdown-item-height - 10;
+    margin: 5px 15px;
+    float: right;
+  }
+}
+
+// Optgroup styles
+.select-dropdown li.optgroup {
+  border-top: 1px solid $dropdown-hover-bg-color;
+
+  &.selected > span {
+    color: rgba(0, 0, 0, .7);
+  }
+
+  & > span {
+    color: rgba(0, 0, 0, .4);
+  }
+
+  & ~ li.optgroup-option {
+    padding-left: 1rem;
+  }
+}
+
+} // end .elementor-widget-container

@@ -1,0 +1,620 @@
+// main: ../main.scss
+
+// -----------------------------------------
+// support page styles and fixes
+
+// -----------------------------------------
+// ## globals
+// remove border radius
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+  border-radius: 0;
+}
+
+// fix responsive table
+.table-responsive {
+  width: 100%;
+  overflow: scroll;
+}
+
+.wpsp_reply,
+.replyFloatedContainer,
+#wpsp_reply_attachment {
+  margin-top: 32px !important;
+}
+
+.replyFloatLeft {
+  margin-bottom: 15px;
+}
+
+// hide loading icon.. fuck that shit
+.wait {
+  display: none !important;
+}
+
+// hide ticket "ADD NOTES" button
+#wpsp_add_note_btn {
+  display: none;
+}
+
+// hide CC and BBC email sections
+#wpsp_replycc,
+#wpsp_replybcc {
+  display: none;
+}
+
+// -----------------------------------------
+// ## body container
+// remove background color and padding
+#theadReplyContainer {
+  background-color: #fff;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 32px;
+}
+
+#tblFontEndTickets {
+  & tr {
+    margin: 4px auto;
+    padding: 4px 0;
+    transition: 300ms ease-in-out;
+  }
+  & th {
+    background: #fff;
+    border-bottom: 2px solid #999;
+    border-top: 0;
+  }
+}
+
+// striped background colors and hover
+.support_bs .table-striped > tbody > tr:nth-child(odd) > td, .support_bs .table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #fff;
+}
+.support_bs .table-hover > tbody > tr:hover > td, .support_bs .table-hover > tbody > tr:hover > th {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+// table padding fix
+.support_bs .table > thead > tr > th, .support_bs .table > tbody > tr > th, .support_bs .table > tfoot > tr > th, .support_bs .table > thead > tr > td, .support_bs .table > tbody > tr > td, .support_bs .table > tfoot > tr > td {
+  padding: 16px 8px;
+}
+
+// remove padding on support page
+.elementor-54742 {
+  padding: 0;
+}
+
+#create_ticket_subject {
+  width: 100%;
+}
+
+// -----------------------------------------
+// ## front-end dashboard stats
+.wpsp_stats_box {
+  width: 99%;
+  & li {
+    width: 30%;
+    background: #fff;
+    box-shadow: none;
+    text-shadow: none;
+  }
+  & .wpsp_stat_text {
+    line-height: 32px;
+  }
+}
+
+// -----------------------------------------
+// ## general link colors
+.support_bs a {
+  color: $button-default-color !important;
+	background-color: $button-default-background !important;
+  border-radius: 0 !important;
+}
+
+// -----------------------------------------
+// ## create new ticket
+#frmCreateNewTicket code,
+#faq_container code {
+  border-radius: 0 4px 4px 0 !important;
+  color: #fff !important;
+  background-color: #c7384e !important;
+  padding: 2px 4px 3px !important;
+}
+
+// -----------------------------------------
+// ## nav tabs
+// remove all borders
+.support_bs .nav-tabs,
+.support_bs .nav-tabs > li.active > a {
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  // text-align: center !important;
+}
+
+// active tab color
+.support_bs .nav-tabs > li.active > a {
+  color: #fff !important;
+  background-color: $color-primary !important;
+  // text-align: center !important;
+  &:hover, &:focus {
+    color: #fff !important;
+    background-color: $color-primary !important;
+  }
+}
+
+.support_bs .nav-tabs > li > a:hover {
+  color: #0f0f0f !important;
+  border-color: #0f0f0f!important;
+  border-radius: 0;
+}
+
+// spacing
+.support_bs .nav-tabs > li {
+  margin-bottom: 8px;
+  width: 100%;
+  border-radius: 0;
+  padding-right: 40px;
+  &:last-child {
+    padding-right: 0;
+  }
+  // text-align: center !important;
+}
+
+// filter spacing
+#wpspBtnApplyFrontTicketFilter,
+#wpspBtnResetFrontTicketFilter {
+  margin: 4px auto;
+}
+
+// -----------------------------------------
+// ## badge labels
+.support_bs .label {
+  display: inline;
+  padding: 4px 16px;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.support_bs .label-info {
+  background-color: #595959;
+}
+
+// .support_bs .label-danger {
+//   background-color: $color-alert-danger !important;
+// }
+
+// -----------------------------------------
+// ## popups
+#psmwpsp_loader {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100000;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: auto;
+  padding: 32px;
+  right: 0;
+  margin: 0;
+}
+
+
+// -----------------------------------------
+// ## wysiwyg text editor
+// remove box shadow
+.cke_chrome {
+  box-shadow: none !important;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  margin-bottom: 32px;
+}
+
+.cke_top {
+  border-bottom: 1px solid #b6b6b6 !important;
+  padding: 6px 8px 2px !important;
+  white-space: normal !important;
+  box-shadow: none !important;
+  background: #eee !important;
+  background-image: none !important;
+  filter: none !important;
+}
+
+.cke_editable {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.cke_bottom {
+  padding: 6px 8px 2px !important;
+  position: relative !important;
+  // border-top: 1px solid #ddd !important;
+  box-shadow: none !important;
+  background: #fff !important;
+  background-image: none !important;
+  filter: none !important;
+}
+
+.cke_resizer {
+  border-color: transparent #999 transparent transparent !important;
+}
+
+// -----------------------------------------
+// ## input boxes
+.support_bs input {
+  max-width: 100%;
+  // width: 100%;
+  border: 0 none;
+  padding: 0 6px;
+  background: #fff;
+  color: #666;
+  border: 1px solid #e5e5e5;
+  transition: .2s ease-in-out;
+  transition-property: color,background-color,border;
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 38px;
+  border-radius: 0;
+}
+
+// -----------------------------------------
+// ## select dropdown boxes
+.support_bs select {
+  @extend .uk-select;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 0 !important;
+  padding: 0 6px;
+  background: #fff;
+  color: #666;
+  border: 1px solid #e5e5e5;
+  transition: .2s ease-in-out;
+  transition-property: color,background-color,border;
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 38px;
+  padding-right: 20px;
+}
+
+// dropdown selection spacing fix
+.replyFloatLeft {
+  width: 32%;
+}
+
+#wpsp_category_reply {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+// -----------------------------------------
+// ## attachment section
+// attachment input container
+.wpsp_frm_attachment_container {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 10px 0 30px;
+  width: 100%;
+  margin-top: 0;
+}
+
+// attachment input
+.wpsp_frm_attachment_input {
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+
+// attachment background
+.wpsp_frm_attachment {
+  font-weight: normal;
+  background: #444 !important;
+  width: 100%;
+  border-radius: 0;
+}
+
+// attachment remove link
+.wpsp_attachment_ui_remove {
+  transition: 300ms ease-in-out;
+  border-radius: 0;
+  &:hover,
+  &:focus {
+    color: #ff9c9c;
+  }
+}
+
+// -----------------------------------------
+// ## discussion and comment section
+// comment header
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active, .ui-button:active,
+.ui-button.ui-state-active:hover {
+  color: #fff !important;
+  background: $color-primary;
+  border: 1px solid $color-primary-darkest;
+  box-shadow: $z-depth-1;
+  border-radius: 0;
+
+  & em {
+    color: mix(white,$color-primary,75%);
+  }
+}
+
+// comment container
+.threadContainer {
+  padding: 0 !important;
+  box-shadow: $z-depth-1;
+  position: relative;
+  z-index: 1;
+  border-radius: 0;
+}
+
+// comment body
+.threadBody {
+  padding: 0 20px 20px;
+  border-radius: 0;
+}
+
+// comment header "priority change" block
+#threadAccordion h3.unclickableAcc {
+  margin: 16px auto;
+  border-radius: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 0;
+  box-shadow: none;
+  color: #999 !important;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: normal;
+  pointer-events: none;
+
+  & .ui-icon {
+    display: none;
+  }
+}
+
+
+// -----------------------------------------
+// ## button styles
+// regular buttons
+.support_bs .btn {
+  @extend .elementor-button-link.elementor-button;
+  color: $button-default-color !important;
+	background-color: $button-default-background !important;
+  border-width: 1px;
+	border-style: solid;
+	border-color: $button-default-border !important;
+	&:hover, &:focus {
+		color: $button-default-color-hover !important;
+		background-color: $button-default-background-hover !important;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $button-default-border-hover !important;
+		text-decoration: none;
+	}
+}
+
+// submit button
+#wpsp_submit_reply_btn,
+#wpsp_submit {
+  color: $button-success-color !important;
+	background-color: $button-success-background !important;
+	margin: 0;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $button-success-background !important;
+	border-radius: 0;
+	overflow: visible;
+	font: inherit;
+	text-transform: none;
+	display: inline-block;
+	box-sizing: border-box;
+	// padding: 0 30px;
+	vertical-align: middle;
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	// transition: .1s ease-in-out;
+	transition-property: color,background-color,border-color;
+	transition: 300ms ease-in-out;
+	&:hover, &:focus {
+		color: $button-submit-color-hover !important;
+		background-color: $button-success-background-hover !important;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $button-success-background-hover !important;
+		text-decoration: none;
+	}
+}
+
+// previews and next buttons
+.support_bs .pager .disabled > a,
+.support_bs .pager .disabled > a:hover,
+.support_bs .pager .disabled > a:focus,
+.support_bs .pager .disabled > span {
+  border-radius: 0;
+}
+.support_bs .pager li {
+  font-size: 12px;
+}
+
+// -----------------------------------------
+// ## general typography
+// table headers
+.support_bs th {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+// -----------------------------------------
+// ## faq area
+.faq_filter {
+  padding-left: 0;
+  width: 100%;
+  & > div {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+// hides FAQ categories (for now...)
+.faq_item {
+  display: none;
+  & table {
+    width: 100%;
+    & > tbody > tr > td:first-child {
+      width: 10%;
+      padding-right: 20px;
+    }
+  }
+}
+
+.faq_search {
+  width: 100%;
+  & table, & tbody, & tr, & td {
+    width: 100%;
+  }
+}
+
+#filter_by_faq_category_front {
+  padding: 0 10px;
+}
+
+#filter_by_faq_search_front {
+  width: 100%;
+  padding: 20px 8px;
+  transition: 100ms ease-in-out;
+  &:focus, &:active {
+    padding: 26px 8px;
+    box-shadow: $z-depth-3;
+  }
+}
+
+#FAQ_TAB #tblFontEndTickets {
+  tr > th:last-child {
+    display: none;
+  }
+  tr > td:nth-child(2) {
+    display: none;
+  }
+}
+
+// -----------------------------------------
+// ## responsive fixes
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+  // bring back the following elements on mobile
+  .support_bs .category, .support_bs .priority {
+    display: block;
+  }
+
+  // nav tabs
+  .support_bs .nav > li > a {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  // convert all table items to block items
+  // change FAQ mobile question list styles
+  #tblFontEndTickets {
+    & tr {
+      margin: 8px auto;
+      padding: 0;
+      display: block;
+      width: 100%;
+      background: #fff !important;
+      border: 1px solid #ddd !important;
+      transition: 300ms ease-in-out;
+
+      &:nth-child(odd) > td {
+        background: #fff !important;
+      }
+
+      &:hover, &:focus {
+        border: 1px solid #000 !important;
+        background: #fff !important;
+      }
+
+      & td:hover, & td:focus {
+        background: #fff !important;
+      }
+    }
+  }
+
+  .support_bs .table > thead > tr > th, .support_bs .table > tbody > tr > th, .support_bs .table > tfoot > tr > th, .support_bs .table > thead > tr > td, .support_bs .table > tbody > tr > td, .support_bs .table > tfoot > tr > td {
+    border-top: 0;
+    width: 100%;
+    display: block;
+  }
+
+  // hide headers on mobile
+  #wpsp_front_id,
+  #wpsp_front_status,
+  #wpsp_front_subject,
+  #wpsp_front_category,
+  #wpsp_front_priority,
+  #wpsp_front_updated {
+    display: none !important;
+  }
+
+  // hide header box (because it's now empty)
+  #tblFontEndTickets tr:first-of-type {
+    display: none !important;
+  }
+
+  // hide category on mobile FAQs
+  #tblFontEndTickets tr td:nth-child(2) {
+    display: none !important;
+  }
+
+  // responsive nav fix
+  .support_bs .nav-tabs > li {
+    width: auto;
+    padding-right: 0;
+  }
+
+  // -----------------------------------------
+  // ## front-end dashboard stats
+  .wpsp_stats_box {
+    width: 95%;
+    & li {
+      width: 100%;
+    }
+  }
+
+  // responsive buttons
+  .support_bs .btn,
+  .replyFloatLeft {
+    width: 100%;
+  }
+
+  #wpsp_category_reply {
+    margin: 0;
+  }
+
+  #wpsp_reset,
+  #wpsp_submit_reply_btn {
+    margin-top: 32px !important;
+  }
+}

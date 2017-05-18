@@ -1,0 +1,21 @@
+
+// -----------------------------------------
+// ## search results page
+
+// adds bottom border and adjusts item spacing
+.search-results {
+	border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+	&:last-of-type {
+		border-bottom: 0;
+	}
+}
+
+// removes article.post padding of 5px left/right
+// body.search {
+// 	& article.post {
+// 		padding-left: 15px;
+// 		padding-right: 15px;
+// 	}
+// }

@@ -1,0 +1,30 @@
+.elementor-form {
+  // Remove Focus Boxes
+  select:focus {
+    outline: $select-focus;
+  }
+
+  button:focus {
+    outline: none;
+    background-color: $button-background-focus;
+  }
+
+  label {
+    font-size: $label-font-size;
+    color: $input-border-color;
+  }
+} // end .elementor-form
+
+.elementor-field-group {
+  margin-bottom: 3rem !important;
+}
+
+@import 'input-fields';
+@import 'radio-buttons';
+@import 'checkboxes';
+@import 'switches';
+@import 'select';
+@import 'file-input';
+@import 'range';
+@import "dropdowns";
+@import "textarea";
