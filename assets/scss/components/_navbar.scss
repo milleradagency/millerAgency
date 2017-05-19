@@ -27,7 +27,7 @@
     }
 
     & img {
-      max-width: 60px;
+      width: 60px;
     }
   }
 
@@ -121,8 +121,7 @@
   position: relative;
 
   & img {
-    width: 100%;
-    max-width: 100px;
+    width: 100px;
   } // end img
 
   & .logo-box {
@@ -162,10 +161,14 @@
   left: 0;
   z-index: 999;
   background: #fff;
-  box-shadow: $z-depth-1;
+  height: 0;
+  overflow: hidden;
   transform: translateY(-40px);
   transition: 300ms ease-in-out;
-  display: none;
+  // display: none;
+  @media (max-width: 1023px) {
+    display: none;
+  }
 
   & .uk-navbar {
     margin-top: 0;
@@ -190,7 +193,10 @@
 
 // slide in animations
 .mini-navbar-visible {
+  height: 80px;
+  overflow: visible;
   transform: translateY(0);
+  box-shadow: $z-depth-1;
 }
 
 

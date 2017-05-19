@@ -11,17 +11,16 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags ?>
 
-    <?php
-      // Always force latest IE rendering engine (even in intranet) & Chrome Frame
-      // Remove this if you use the .htaccess
-    ?>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php // Document Title ?>
+    <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+
+    <?php // Mobile Meta ?>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-
-    <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
     <!-- COMPANY INFORMATION -->
     <meta name="url" content="<?php echo get_site_url(); ?>">

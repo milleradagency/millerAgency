@@ -36,7 +36,6 @@
   </div>
 
   <footer class="maa-footer" id="footer">
-
     <div class="uk-container uk-margin-remove-top uk-margin-medium-bottom uk-text-smaller" uk-navbar>
       <ul class="uk-navbar-nav maa-footer-links uk-width-1-1 uk-flex-center uk-text-center">
         <li><a href="/seo-evaluation">Check Your SEO</a></li>
@@ -84,82 +83,6 @@
 
     </div>
   </footer>
-
-  <!-- FOOTER -->
-  <!-- <footer class="uk-container uk-margin-medium-top uk-margin-medium-bottom" id="footer"> -->
-
-    <?php // ---------------------- ?>
-    <?php // SOCIAL ICONS ?>
-    <!-- <div class="uk-text-meta uk-text-center">
-      <ul class="uk-nav uk-list list-inline">
-        <li class="uk-margin-right">
-          <a href="https://www.facebook.com/pages/Miller-Ad-Agency/115464605176063" target="_blank" title="Like Us" uk-tooltip>
-            <span uk-icon="icon: facebook" class="uk-icon"></span>
-          </a>
-        </li>
-        <li class="uk-margin-right">
-          <a href="https://www.instagram.com/milleradagency/" target="_blank" title="Double tap our faces" uk-tooltip>
-            <span uk-icon="icon: instagram" class="uk-icon"></span>
-          </a>
-        </li>
-        <li class="uk-margin-right">
-          <a href="https://www.linkedin.com/company/miller-ad-agency" target="_blank" title="Link us? Follow us? Or...?" uk-tooltip>
-            <span uk-icon="icon: linkedin" class="uk-icon"></span>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/milleragency" target="_blank" title="#millerAgency" uk-tooltip>
-            <span uk-icon="icon: twitter" class="uk-icon"></span>
-          </a>
-        </li>
-      </ul>
-    </div> -->
-
-    <?php // COPYRIGHT ETC ?>
-    <!-- <div id="footerCopyright" class="uk-text-meta uk-text-center"> -->
-
-      <?php // ---------------------- ?>
-      <?php // COPYRIGHT ETC ?>
-      <!-- <p class="copyright uk-margin-small-bottom">
-        &copy; 1984<script>new Date().getFullYear()>2010&&document.write("–"+new Date().getFullYear());</script>
-        <?php bloginfo('name'); ?>.
-      </p> -->
-
-      <?php // ---------------------- ?>
-      <?php // SUPPORT LINK ?>
-      <!-- <p class="maa-credits uk-text-small">
-        Find something wrong? <a href="/support" class="button-support">Submit a ticket</a>
-      </p> -->
-
-      <?php // ---------------------- ?>
-      <?php // CREDITS ?>
-      <!-- <p class="maa-credits uk-text-small uk-margin-remove">
-        Powered by WordPress, Elementor, &amp; HTML5 Boilerplate.
-      </p> -->
-
-      <?php // ---------------------- ?>
-      <?php // PAGE LOAD STATS ?>
-      <!-- <p class="query-load uk-text-small uk-margin-remove">
-        <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds.
-      </p> -->
-
-    <!-- </div> -->
-
-  <!-- </footer> -->
-
-  <?php
-    // <div id="site-settings">
-    //   <div class="uk-modal-close-full uk-inline style-settings">
-    //     <span uk-icon="icon: cog" class="uk-open" type="button" aria-expanded="true"></span>
-    //     <div uk-dropdown="mode: click" class="uk-dropdown uk-dropdown-bottom-right uk-text-small uk-text-center" style="top: 40px; right: 0px;">
-    //       <div id="settings-font-size">
-    //         <span uk-icon="icon: minus"></span>&nbsp;Aa&nbsp;<span uk-icon="icon: plus"></span>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-  ?>
-
 </div>
 <?php
   // ------------------
@@ -173,12 +96,9 @@
   // if/else -> https://developer.wordpress.org/reference/functions/is_page/
   // thanks to http://stackoverflow.com/a/12534908 for echo multiple lines of html
 
-
-
-
   // ------------------
   // ALL PAGES (except those listed below)
-  if (!is_page("Media", "Web", "Branding")) {
+  if (!is_page(array("Media", "Web", "Branding"))) {
     echo
       "<div id='offcanvas' uk-offcanvas='overlay:true'>
         <div class='uk-offcanvas-bar'>
@@ -248,10 +168,10 @@
         <div class='uk-offcanvas-bar'>
           <div class='maa-offcanvas-media-header' style='background-image:url(/wp-content/uploads/cover-home-web.jpg);'>
             <div class='uk-overlay uk-light uk-position-bottom'>
-              <h4 class='uk-margin-remove'>Media Advertising</h4>
+              <h4 class='uk-margin-remove'>Web Development</h4>
             </div>
           </div>
-          <button class='uk-offcanvas-close' type='button' uk-close></button>";
+          <button class='uk-offcanvas-close uk-close-large uk-background-muted uk-border-circle' type='button' uk-close></button>";
             $menu_args = array(
               'theme_location'    => 'mobile',
               'container'         => 'ul',
@@ -280,7 +200,7 @@
         <div class='uk-offcanvas-bar'>
           <div class='maa-offcanvas-media-header' style='background-image:url(/wp-content/uploads/cover-home-branding.jpg);'>
             <div class='uk-overlay uk-light uk-position-bottom'>
-              <h4 class='uk-margin-remove'>Media Advertising</h4>
+              <h4 class='uk-margin-remove'>Branding &amp; Style</h4>
             </div>
           </div>
           <button class='uk-offcanvas-close' type='button' uk-close></button>";

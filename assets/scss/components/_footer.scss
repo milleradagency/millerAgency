@@ -7,7 +7,8 @@
 }
 
 .maa-footer {
-  background-color: mix(white,$color-uikit-gray-lighter,50%);
+  color: #999;
+  background-color: #222;
   padding: 40px 0 52px;
   margin: 0 auto;
 
@@ -15,7 +16,32 @@
     height: initial;
     flex-wrap: wrap;
     & a {
+      font-size: .875rem;
       line-height: 1.2;
+      transition: 300ms ease-in-out;
+      position: relative;
+
+  		// -----------------------------------------
+  		// ## link underline
+  		&:before {
+  			content: "";
+  	    position: absolute;
+  	    bottom: 0;
+  	    left: 0;
+  	    right: 0;
+  	    border-bottom: 1px solid #999 !important;
+  	    transition: .4s ease-out;
+  		}
+
+      &:hover,
+      &:focus {
+        color: $color-white !important;
+        text-decoration: none;
+        &:before {
+  				right: 100%;
+  	      left: 100%;
+  	    }
+      }
     }
 
     & li {

@@ -61,9 +61,12 @@ $(document).ready(function() {
   // slide up mobile-navbar and <li> items
   $(".mobile-navbar").velocity( fadeIn );
   $(".mobile-navbar a").velocity( slideUpIn, {
-    stagger: 200,
+    stagger: 100,
     drag: true,
   });
+
+  // wrap mobile sidebar list anchor links in UIkit uk-toggle elements
+  $("#offcanvas ul > li > a").wrap("<div uk-toggle='target: #offcanvas' style='padding:5px 0; position: relative; height:15px;'></div>");
 
   // delete header on homepage
   if($("body").hasClass("home")) {
