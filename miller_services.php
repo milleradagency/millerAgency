@@ -1,3 +1,5 @@
+<?php /* Template Name: Miller Services */ ?>
+
 <?php
 /**
  * @package WordPress
@@ -9,23 +11,8 @@ get_header(); ?>
 <div id="main" role="main" class="uk-margin-large-bottom">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   <article class="post" id="post-<?php the_ID(); ?>">
-    <header class="uk-container-expand" id="main-header">
-
-      <!-- Featured Images -->
-      <div class="uk-width-1-1 hero-image uk-margin-small-bottom">
-        <?php
-
-          $attr = array(
-            'class' => 'uk-width-1-1',
-          );
-
-          if( has_post_thumbnail() ):
-              echo the_post_thumbnail($attr);
-          endif;
-        ?>
-      </div>
-
-      <div class="elementor-section uk-margin-small-bottom">
+    <header class="uk-container-expand uk-margin-small-top" id="main-header">
+      <div class="elementor-section" style="margin-bottom:-9px;">
         <?php custom_breadcrumbs(); ?>
       </div>
     </header>
@@ -36,8 +23,6 @@ get_header(); ?>
 
   </article>
   <?php endwhile; endif; ?>
-
-  <?php comments_template(); ?>
 
 </div>
 

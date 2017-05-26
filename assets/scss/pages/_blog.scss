@@ -1,25 +1,45 @@
 
 // variables
-$blog-post-h1-color:								$color-white-off;
-$blog-post-h1-border-color:					$color-black-light;
-$blog-post-meta-color:							$color-black-lightest;
-$blog-post-meta-link-color:					$color-black;
-$blog-post-background-color:				$color-accent;
+$blog-post-h1-color:								$color-white;
+$blog-post-h1-border-color:					$color-accent;
+$blog-post-meta-color:							$color-gray-light;
+$blog-post-meta-link-color:					$color-primary;
+$blog-post-background-color:				$color-uikit-gray-lighter;
+$blog-image-tint:										rgba(0, 0, 0, .75);
 
+
+// -----------------------------------------
+// ## image thumbnails
+.elementor-post__thumbnail {
+	padding-bottom: 0 !important;
+}
 
 // -----------------------------------------
 // ## blog globals
 // blog specific padding and fixes
 .blog-post,
 .blog-post-comments,
-.blog-post-pagination {
-	max-width: 900px;
+.blog-post-pagination,
+.single-post .elementor-text-editor,
+.single-post .elementor-heading-title {
+	// max-width: 900px;
+	max-width: 630px;
 	margin: 0 auto;
 }
 
 .blog-post-comments {
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.blog-author-info {
+  margin: -50px auto 16px;
+	position: relative;
+	z-index: 1;
+
+	& img {
+		width: 100px;
+	}
 }
 
 .blog-post-info {
@@ -74,9 +94,29 @@ $blog-post-background-color:				$color-accent;
 .blog-post-header {
 	background-color: $blog-post-background-color;
 	padding: 4rem 2rem;
+	position: relative;
+	overflow: hidden;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
 	@media (min-width:1024px) {
 		padding: 8rem 2rem;
 	}
+}
+
+.blog-post-header-info {
+	position: relative;
+	z-index: 1;
+}
+
+// blog header image tint
+.blog-image-tint {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: $blog-image-tint;
+	z-index: 0;
 }
 
 .blog-post-pagination {

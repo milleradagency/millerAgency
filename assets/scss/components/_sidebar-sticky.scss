@@ -3,3 +3,9 @@
   top: 160px;
   width: 200px;
 }
+
+.sidebar-sticky-services {
+  & .uk-list > li {
+    margin: 0;
+  }
+}

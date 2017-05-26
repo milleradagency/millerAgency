@@ -1,21 +1,20 @@
 
 // -----------------------------------------
 // ## mobile nav bar
+#offcanvas {
+  z-index: 6;
+}
+
 .uk-offcanvas-bar {
   color: $color-black-light;
   background: $color-white-off;
-  padding: 0;
+  padding: 0 0 60px;
+  width: 100%;
+  transform: translateY(100%);
 
   & a {
     color: $color-primary;
     transition: 300ms ease-in-out;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 
     &:hover,
     &:focus {
@@ -34,20 +33,34 @@
 
 // -----------------------------------------
 // ## MEDIA, WEB, BRANDING sidebar image styles
-.maa-offcanvas-media-header,
-.maa-offcanvas-web-header,
-.maa-offcanvas-branding-header {
+.maa-offcanvas-header {
   position: relative;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   width: 100%;
   height: 225px;
+  color: $color-white;
+
+  & a {
+    color: $color-white !important;
+  }
+
+  & img {
+    width: 100px;
+    margin: 4px;
+  }
+
+  & h3 {
+    color: $color-white !important;
+    font-weight: 300;
+    letter-spacing: .5px;
+  }
 
   & .uk-overlay {
     padding: 20px;
   }
-} // end media
+} // end offcanvas header
 
 // -----------------------------------------
 // ## background fade overlay
@@ -65,35 +78,102 @@
 
 // -----------------------------------------
 // ## off canvas menu styles
-#menu-mobile-menu {
-  & .current-menu-item a {
-    color: $color-primary !important;
-    transition: 300ms ease-in-out;
-    &:hover,
-    &:focus {
-      color: $color-black-light !important;
-    }
-  }
+#menu-mobile-menu,
+#menu-mobile-menu-1 {
+  padding: 0;
+  margin: 0 0 40px;
 
   & .menu-item {
-    padding: .5rem 0;
-    position: relative;
-    // margin: .5rem 0;
-    border-bottom: 1px solid $color-gray-lightest;
-      &:last-child { border: 0; }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.15;
+    text-transform: uppercase;
 
-    & .sub-menu .menu-item {
-      margin-left: 1rem;
-      border-bottom: 0;
-      &:before {
-        content: "·";
-        float: left;
-        margin-right: 4px;
+    & .current-menu-item a {
+      color: inherit;
+      border-color: $color-black;
+    }
+  } // end .menu-item
+
+  & a, & a:link, & a:visited {
+    padding: 4px 16px;
+    color: $color-black-lightest;
+
+    &:hover, &:focus {
+      color: $color-black;
+    }
+  } // end a
+
+  & .sub-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: scroll;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding: 12px 0 10px;
+    margin: 0;
+    background: $color-white-off;
+    border-top: 1px solid $color-white;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    box-shadow: inset 0px 12px 8px -14px rgba(0,0,0,0.35);
+
+    & .menu-item {
+      font-size: 14px;
+      text-transform: initial;
+      padding: 0 8px;
+      margin: 0;
+      touch-action: initial;
+
+      // adds higher padding to last-child, indicating that it's the last
+      &:last-child {
+        padding-right: 60px;
       }
+    }
+  } // end .sub-menu
+
+  // HIRE USS BUTTON
+  & .menu-item-54940 {
+    font-size: 26px;
+    & a {
+      font-weight: bold;
+      color: $color-primary;
+      border: 2px solid $color-primary;
+      padding: 8px 32px 4px;
     }
   }
 
-  // & .menu-item-has-children a:first-child {
-  //   @extend .uk-nav-header;
-  // }
+  &.current-menu-item a {
+    border-color: $color-primary;
+  }
+
+} // end #menu-mobile-menu
+
+#offcanvas p {
+  color: $color-gray;
+  & a {
+    text-decoration: underline;
+  }
+}
+
+#offcanvas .uk-modal-dialog {
+  padding-bottom: 60px;
+}
+
+#offcanvas .uk-modal-close {
+  position: absolute;
+  z-index: 9;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
 }

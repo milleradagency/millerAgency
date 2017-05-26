@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-<div id="main" role="main" class="maa-author uk-animation-slide-bottom-medium">
+<div id="main" role="main" class="maa-author">
 
   <?php // AUTHOR LOOP
     global $wp_query;

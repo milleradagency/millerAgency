@@ -37,49 +37,35 @@
 
   <footer class="maa-footer" id="footer">
     <div class="uk-container uk-margin-remove-top uk-margin-medium-bottom uk-text-smaller" uk-navbar>
-      <ul class="uk-navbar-nav maa-footer-links uk-width-1-1 uk-flex-center uk-text-center">
-        <li><a href="/seo-evaluation">Check Your SEO</a></li>
-        <li><a href="/google-adwords">Google AdWords</a></li>
-        <li><a href="http://www.bbb.org/dallas/business-reviews/advertising-agencies-and-counselors/miller-ad-agency-in-dallas-tx-90377086" target="_blank">
-          BBB A+ Rated Business&nbsp;<span uk-icon="icon: forward"></span></a>
-        </li>
-        <li><a href="http://www.baylor.edu/business/txfamily/index.php?id=97637" target="_blank">
-          Baylor Business&nbsp;<span uk-icon="icon: forward"></span></a>
-        </li>
-        <li><a href="/pandora-radio-advertising">Advertise on Pandora Radio</a></li>
+      <ul class="maa-footer-links uk-width-1-1 uk-flex-center uk-text-center">
+        <li><a href="/seo-evaluation" class="elementor-button elementor-size-sm">Check Your SEO</a></li>
+        <li><a href="/google-adwords" class="elementor-button elementor-size-sm">Google AdWords</a></li>
+        <li><a href="/better-business-bureau" class="elementor-button elementor-size-sm">BBB A+ Rated Business</a></li>
+        <li><a href="/baylor-business" class="elementor-button elementor-size-sm">Baylor Business</a></li>
+        <li><a href="/pandora-radio-advertising" class="elementor-button elementor-size-sm">Advertise on Pandora Radio</a></li>
       </ul>
     </div>
 
-    <div class="uk-container uk-margin-remove-top uk-margin-remove-bottom uk-navbar-container uk-navbar-transparent" uk-navbar>
+    <div class="uk-container uk-margin-remove-top uk-margin-remove-bottom uk-text-center">
 
-      <div class="uk-navbar-left">
         <?php // ---------------------- ?>
         <?php // COPYRIGHT ?>
         <p class="copyright uk-margin-small-bottom">
           &copy; 1984<script>new Date().getFullYear()>2010&&document.write("–"+new Date().getFullYear());</script>
-          <?php bloginfo('name'); ?>.
+          <?php bloginfo('name'); ?>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="https://goo.gl/maps/LChXN6prw412" target="_blank">2711 Valley View Lane, Suite 101, Dallas, Texas</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="tel:9722432211">972.243.2211</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="/privacy">Privacy Policy</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="/terms">Terms of Use</a>
         </p>
 
-        <?php // ---------------------- ?>
-        <?php // CREDITS ?>
-        <p class="maa-credits uk-text-small uk-margin-remove">
-          Powered by WordPress, Elementor, &amp; HTML5 Boilerplate.
-        </p>
-      </div>
-
-      <div class="uk-navbar-right">
         <?php // ---------------------- ?>
         <?php // LOAD PERFORMANCE ?>
-        <p class="query-load uk-text-small uk-margin-small-bottom">
+        <!-- <p class="query-load uk-text-small uk-margin-small-bottom">
           Load: <span class="perf-load"><?php echo get_num_queries(); ?></span> queries. <span class="perf-load"><?php timer_stop(1); ?></span> seconds.
-        </p>
+        </p> -->
 
         <?php // ---------------------- ?>
         <?php // SUPPORT LINK ?>
         <p class="maa-credits uk-text-small uk-margin-remove">
-          Find something wrong? <a href="/support" class="button-support">Submit a ticket</a>
+          Find something wrong with our website? <a href="/support">Submit a ticket</a>.
         </p>
-      </div>
 
     </div>
   </footer>
@@ -91,195 +77,76 @@
 ?>
 
 <!-- MOBILE OFF-CANVAS SIDEBAR NAV -->
+<div id="offcanvas" class="uk-modal-full uk-animation-slide-bottom-medium" uk-modal>
+  <div class="uk-modal-dialog">
+    <div class="maa-offcanvas-header" style="background-image:url(/wp-content/uploads/cover-mobilemenu.jpg);">
+      <div class="uk-overlay uk-light uk-position-bottom uk-text-center">
+        <a href="<?php echo get_option('home'); ?>/" class="maa-logo-icon">
+          <img src="<?php echo get_site_url(); ?>/wp-content/themes/millerAgency/assets/images/miller/maa-offcanvas-logo-icon.svg" alt="<?php bloginfo('name'); ?>">
+          <h3 class="uk-margin-remove">Media Ad Agency</h3>
+        </a>
+      </div>
+    </div>
+    <button class="uk-modal-close uk-close-large uk-background-muted uk-border-circle maa-mobile-toggle" type="button" uk-close></button>
+    <?php
+      $menu_args = array(
+        'theme_location'    => 'mobile',
+        'container'         => '',
+        'container_class'   => '',
+        'container_id'      => '',
+        'menu'              => '',
+        'menu_class'        => '',
+        'menu_id'           => '',
+        'echo'              => true,
+        'depth'             => 0,
+      );
+      wp_nav_menu( $menu_args );
+    ?>
+    <p class="uk-margin-small-bottom uk-text-center">
+      &copy; 1984<script>new Date().getFullYear()>2010&&document.write("–"+new Date().getFullYear());</script>&nbsp;<?php bloginfo('name'); ?>
+    </p>
+    <p class="uk-text-small uk-margin-medium-bottom uk-text-center">
+      Find something wrong with our website?<br /><a href="/support">Submit a ticket</a>.
+    </p>
+  </div>
+</div>
+
+
+
+<?php // ---------------------- ?>
+<?php // # load specific scripts for specific pages ?>
+<?php // ## Page —> ../support ?>
 <?php
-  // offcanvas menu variations
-  // if/else -> https://developer.wordpress.org/reference/functions/is_page/
-  // thanks to http://stackoverflow.com/a/12534908 for echo multiple lines of html
+  if (is_page('support')): ?>
+  <script src="/wp-content/themes/millerAgency/assets/js/page-support.js"></script>
+<?php endif; ?>
 
-  // ------------------
-  // ALL PAGES (except those listed below)
-  if (!is_page(array("Media", "Web", "Branding"))) {
-    echo
-      "<div id='offcanvas' uk-offcanvas='overlay:true'>
-        <div class='uk-offcanvas-bar'>
-          <div class='maa-offcanvas-media-header' style='background-image:url(/wp-content/uploads/cover-mobilemenu.jpg);'>
-            <div class='uk-overlay uk-light uk-position-bottom'>
-              <h4 class='uk-margin-remove'>Media.Agency</h4>
-            </div>
-          </div>
-          <button class='uk-offcanvas-close uk-close-large uk-background-muted uk-border-circle' type='button' uk-close></button>";
-            $menu_args = array(
-              'theme_location'    => 'mobile',
-              'container'         => 'ul',
-              'container_class'   => '',
-              'container_id'      => '',
-              'menu'              => '',
-              'menu_class'        => 'uk-nav',
-              'menu_id'           => '',
-              'echo'              => true,
-              'depth'             => 0,
-            );
-            wp_nav_menu( $menu_args );
-      echo
-        "</div>
-          </div>";
-  } else {
-    // null
-  };
 
-  // ------------------
-  // SERVICES -> MEDIA
-  // when the page with a post_title of "Media" is being displayed
-  if (is_page("Media")) {
-    echo
-      "<div id='offcanvas' uk-offcanvas='overlay:true'>
-        <div class='uk-offcanvas-bar'>
-          <div class='maa-offcanvas-media-header' style='background-image:url(/wp-content/uploads/cover-home-media.jpg);'>
-            <div class='uk-overlay uk-light uk-position-bottom'>
-              <h4 class='uk-margin-remove'>Media Advertising</h4>
-            </div>
-          </div>
-          <button class='uk-offcanvas-close uk-close-large uk-background-muted uk-border-circle' type='button' uk-close></button>";
-            $menu_args = array(
-              'theme_location'    => 'mobile',
-              'container'         => 'ul',
-              'container_class'   => '',
-              'container_id'      => '',
-              'menu'              => 'services-media',
-              'menu_class'        => 'uk-nav',
-              'menu_id'           => '',
-              'echo'              => true,
-              'depth'             => 0,
-            );
-            wp_nav_menu( $menu_args );
-      echo
-        "</div>
-          </div>";
-  } else {
-    // null
-  };
+<?php // ---------------------- ?>
+<?php // Wordpress enqueue scripts ?>
+<?php // 'wp_enqueue_scripts', 'millerAgency_assets' ?>
+<?php wp_footer(); ?>
 
-  // ------------------
-  // SERVICES -> WEB
-  // when the page with a post_title of "Web" is being displayed
-  if (is_page("Web")) {
-    echo
-      "<div id='offcanvas' uk-offcanvas='overlay:true'>
-        <div class='uk-offcanvas-bar'>
-          <div class='maa-offcanvas-media-header' style='background-image:url(/wp-content/uploads/cover-home-web.jpg);'>
-            <div class='uk-overlay uk-light uk-position-bottom'>
-              <h4 class='uk-margin-remove'>Web Development</h4>
-            </div>
-          </div>
-          <button class='uk-offcanvas-close uk-close-large uk-background-muted uk-border-circle' type='button' uk-close></button>";
-            $menu_args = array(
-              'theme_location'    => 'mobile',
-              'container'         => 'ul',
-              'container_class'   => '',
-              'container_id'      => '',
-              'menu'              => 'services-web',
-              'menu_class'        => 'uk-nav',
-              'menu_id'           => '',
-              'echo'              => true,
-              'depth'             => 0,
-            );
-            wp_nav_menu( $menu_args );
-    echo
-      "</div>
-        </div>";
-  } else {
-    // null
-  };
 
-  // ------------------
-  // SERVICES -> BRANDING
-  // when the page with a post_title of "Branding" is being displayed
-  if (is_page("Branding")) {
-    echo
-      "<div id='offcanvas' uk-offcanvas='overlay:true'>
-        <div class='uk-offcanvas-bar'>
-          <div class='maa-offcanvas-media-header' style='background-image:url(/wp-content/uploads/cover-home-branding.jpg);'>
-            <div class='uk-overlay uk-light uk-position-bottom'>
-              <h4 class='uk-margin-remove'>Branding &amp; Style</h4>
-            </div>
-          </div>
-          <button class='uk-offcanvas-close' type='button' uk-close></button>";
-            $menu_args = array(
-              'theme_location'    => 'mobile',
-              'container'         => 'ul',
-              'container_class'   => '',
-              'container_id'      => '',
-              'menu'              => 'services-branding',
-              'menu_class'        => 'uk-nav',
-              'menu_id'           => '',
-              'echo'              => true,
-              'depth'             => 0,
-            );
-            wp_nav_menu( $menu_args );
-    echo
-      "</div>
-        </div>";
-  } else {
-    // null
-  };
-?>
-
-  <!-- jQuery CDN -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Local Fallback if CDN fails -->
-  <script>window.jQuery || document.write('<script src="<?php echo $GLOBALS["TEMPLATE_RELATIVE_URL"] ?>js/jquery-3.2.1.min.js"><\/script>')</script>
-  <!-- Velocity.js -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
-  <!-- Velocity.js UI -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.ui.min.js"></script>
-  <!-- Adds UIkit dependancy DOM items before loading UIkit -->
-  <script src="/wp-content/themes/millerAgency/assets/js/uikit-toggle.js"></script>
-  <!-- UIkit -->
-  <script src="/wp-content/themes/millerAgency/assets/js/uikit.min.js"></script>
-  <!-- UIkit Icons -->
-  <script src="/wp-content/themes/millerAgency/assets/js/uikit-icons.min.js"></script>
-  <!-- Kerning.js -->
-  <!-- kerningjs.com -->
-  <!-- NOTE: Slows down page load considerably... -->
-  <!-- NOTE: Needs more research if we want to implement -->
-  <!-- <script src="/wp-content/themes/millerAgency/assets/js/kerning.min.js"></script> -->
-  <!-- Material Waves -->
-  <script src="/wp-content/themes/millerAgency/assets/js/waves.min.js"></script>
-  <!-- Highlight.js -->
-  <!-- highlightjs.org -->
-  <script src="/wp-content/themes/millerAgency/assets/js/highlight.pack.js"></script>
-  <!-- Initialize Highlight.js -->
-  <script>
-    $(document).ready(function() {
-      $('code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
+<?php // ---------------------- ?>
+<?php // Initialize Highlight.js ?>
+<script>
+  $(document).ready(function() {
+    $('code').each(function(i, block) {
+      hljs.highlightBlock(block);
     });
-  </script>
+  });
+</script>
 
-  <?php
-    // # load specific scripts for specific pages
-    // ## Page —> ../support
-    if (is_page('support')): ?>
-    <script src="/wp-content/themes/millerAgency/assets/js/page-support.js"></script>
-  <?php endif; ?>
 
-  <!-- Custom Scripts -->
-  <script src="/wp-content/themes/millerAgency/assets/js/millerAgency.js"></script>
-
-  <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."html5-boilerplate/js/plugins.js") ?>
-  <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."html5-boilerplate/js/main.js") ?>
-
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
-
-  <!-- Plugin Stylesheets & Scripts -->
-  <?php wp_footer(); ?>
+<?php // ---------------------- ?>
+<?php // Google Analytics: change UA-XXXXX-X to be your site's ID ?>
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
 
 </body>
 </html>

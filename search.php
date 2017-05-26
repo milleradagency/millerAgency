@@ -18,23 +18,25 @@ get_header(); ?>
 
     <?php while (have_posts()) : the_post(); ?>
 
-      <article <?php post_class( "uk-container search-results" ) ?>>
-        <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-        <?php   // POST TIME ?>
-        <?php  // the_time('l, F jS, Y') ?>
-        <?php // To add the POST TIME back into the theme, add the <time></time> before and after the PHP code ?>
+      <div class="uk-container">
+        <article <?php post_class( "search-results" ) ?>>
+          <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+          <?php   // POST TIME ?>
+          <?php  // the_time('l, F jS, Y') ?>
+          <?php // To add the POST TIME back into the theme, add the <time></time> before and after the PHP code ?>
 
-        <?php // <footer> ?>
-          <?php  // TAGS ?>
-          <?php // the_tags('Tags: ', ', ', '<br />'); ?>
-          <?php  // CATEGORIES ?>
-          <?php // the_category(', ') ?>
-          <?php  // EDIT LINK ?>
-          <?php // edit_post_link('Edit', '', ' | '); ?>
-          <?php  // COMMENTS ?>
-          <?php // comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-        <?php // </footer> ?>
-      </article>
+          <?php // <footer> ?>
+            <?php  // TAGS ?>
+            <?php // the_tags('Tags: ', ', ', '<br />'); ?>
+            <?php  // CATEGORIES ?>
+            <?php // the_category(', ') ?>
+            <?php  // EDIT LINK ?>
+            <?php // edit_post_link('Edit', '', ' | '); ?>
+            <?php  // COMMENTS ?>
+            <?php // comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+          <?php // </footer> ?>
+        </article>
+      </div>
 
     <?php endwhile; ?>
 

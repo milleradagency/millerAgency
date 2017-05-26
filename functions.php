@@ -4,6 +4,88 @@
  * @subpackage HTML5_Boilerplate
  */
 
+
+
+// ------------------------------
+// Async load
+// ikreativ.com/async-with-wordpress-enqueue
+function ikreativ_async_scripts($url) {
+  if ( strpos( $url, '#asyncload') === false )
+    return $url;
+  else if ( is_admin() )
+    return str_replace( '#asyncload', '', $url );
+  else
+    return str_replace( '#asyncload', '', $url )."' async='async";
+}
+add_filter( 'clean_url', 'ikreativ_async_scripts', 11, 1 );
+
+
+
+// ------------------------------
+// load main stylesheet
+// https://stackoverflow.com/a/41840861
+// using 'wp_print_styles' instead of 'wp_enqueue_styles' forces our main.css file
+// to be loaded after all the plugin stylesheets, allowing our custom styles to
+// override the elementor defaults
+// function millerStyles() {
+//   wp_register_style( 'main', get_template_directory_uri() . '/assets/css/main.css' );
+//   wp_enqueue_style( 'main' );
+// }
+// add_action ( 'wp_print_styles', 'millerStyles' );
+
+
+
+// ------------------------------
+// load scripts
+// wordpress enqueue  => developer.wordpress.org/reference/functions/wp_enqueue_script
+// wordpress register => developer.wordpress.org/reference/functions/wp_register_script
+// blog about topic   => premium.wpmudev.org/blog/adding-scripts-and-styles-wordpress-enqueueing
+// enqueue via CDN    => stackoverflow.com/a/40403412
+function millerAgency_assets() {
+
+  // jQuery 3.2.1 CDN
+  wp_deregister_script( 'jquery' ); // removes old jquery before loading new jquery
+  wp_register_script( 'jquery_cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', null, '3.2.1', true );
+	wp_enqueue_script( 'jquery_cdn' );
+
+  // jQuery 3.2.1 local
+  // wp_register_script( 'jquery_local', get_template_directory_uri() . '/assets/js/jquery-3.2.1.min.js', null, null, true );
+  // wp_enqueue_script( 'jquery_local' );
+
+
+  // Velocity.js
+  wp_register_script( 'velocity', 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js', null, null, true );
+  wp_enqueue_script( 'velocity' );
+
+  // VelocityUI.js
+  wp_register_script( 'velocity_ui', 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.ui.min.js', null, null, true );
+  wp_enqueue_script( 'velocity_ui' );
+
+  // Adds UIkit dependancy DOM items before loading UIkit next
+  wp_register_script( 'uikit_toggle', get_template_directory_uri() . '/assets/js/uikit-toggle.js', null, null, true );
+  wp_enqueue_script( 'uikit_toggle' );
+
+  // UIkit
+  wp_register_script( 'uikit', get_template_directory_uri() . '/assets/js/uikit.min.js', null, null, true );
+  wp_enqueue_script( 'uikit' );
+
+  // UIkit Icons
+  wp_register_script( 'uikit_icons', get_template_directory_uri() . '/assets/js/uikit-icons.min.js', null, null, true );
+  wp_enqueue_script( 'uikit_icons' );
+
+  // Highlight.js
+  wp_register_script( 'highlightjs', get_template_directory_uri() . '/assets/js/highlight.pack.js#asyncload', null, null, true );
+  wp_enqueue_script( 'highlightjs' );
+
+  // millerAgency.js
+  wp_register_script( 'millerjs', get_template_directory_uri() . '/assets/js/millerAgency.js#asyncload', null, null, true );
+  wp_enqueue_script( 'millerjs' );
+
+}
+add_action( 'wp_enqueue_scripts', 'millerAgency_assets' );
+
+
+
 // ------------------------------
 // Custom HTML5 Comment Markup
 function mytheme_comment($comment, $args, $depth) {
@@ -31,12 +113,16 @@ function mytheme_comment($comment, $args, $depth) {
 <?php
 }
 
+
+
 // ------------------------------
 // Featured Image
 function mytheme_post_thumbnails() {
     add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'mytheme_post_thumbnails' );
+
+
 
 // ------------------------------
 // Nav Menus
@@ -46,9 +132,13 @@ function nav_menu() {
 }
 add_action( 'after_setup_theme', 'nav_menu' );
 
+
+
 // ------------------------------
 // Widgetized Sidebar HTML5 Markup
 automatic_feed_links();
+
+
 
 // ------------------------------
 // Elementor post.css Fix
@@ -57,30 +147,108 @@ if ( isset( $meta['time'] ) ) {
 	wp_enqueue_style( 'elementor-post-' . $this->post_id, $this->url, [ ], $meta['time'] );
 }
 
+
+
 // ------------------------------
 // Remove sanitization for WordPress posts
 remove_filter( 'pre_user_description', 'wp_filter_post_kses');
 
+
+
 // ------------------------------
-// custom user fields
-// https://davidwalsh.name/add-profile-fields
-// function modify_contact_methods($profile_fields) {
-//
-//   // added fields
-//   $profile_fields["title"] = "Employee Title";
-// 	$profile_fields["facebook"] = "Facebook URL";
-// 	$profile_fields["gplus"] = "Google+ URL";
-//   $profile_fields["instagram"] = "Instagram Username";
-//   $profile_fields["linkedin"] = "LinkedIn Username";
-//   $profile_fields["pinterest"] = "Pinterest URL";
-//   $profile_fields["twitter"] = "Twitter Username";
-//
-// 	return $profile_fields;
-//
-// }
-// add_filter("user_contactmethods", "modify_contact_methods");
-//
-// $twitterHandle = get_the_author_meta('twitter');
+// custom post taxonomy — seperates portfolio categories from blog categories
+// codex.wordpress.org/Function_Reference/register_taxonomy#Example
+function create_portfolio_taxonomy() {
+	// Add new taxonomy, make it hierarchical (like categories)
+	$labels = array(
+		'name'              => _x( 'Work Categories', 'Taxonomy General Name' ),
+		'singular_name'     => _x( 'Work Category', 'Taxonomy Singular Name' ),
+		'search_items'      => __( 'Search Work Categories' ),
+		'all_items'         => __( 'All Work Categories' ),
+		'parent_item'       => __( 'Parent Work Category' ),
+		'parent_item_colon' => __( 'Parent Work Category:' ),
+		'edit_item'         => __( 'Edit Work Category' ),
+		'update_item'       => __( 'Update Work Category' ),
+		'add_new_item'      => __( 'Add New Work Category' ),
+		'new_item_name'     => __( 'New Work Name' ),
+		'menu_name'         => __( 'Work Categories' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+    'show_in_menu'      => true,
+		'show_admin_column' => true,
+    'show_in_admin_bar' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'work' ),
+	);
+
+  register_taxonomy( 'work_categories', array( 'portfolio' ), $args );
+}
+
+// Hook into the init action and call create_book_taxonomies when it fires
+add_action( 'init', 'create_portfolio_taxonomy', 0 );
+
+
+
+// ------------------------------
+// custom post type — portfolio/work
+// wpbeginner.com/wp-tutorials/how-to-create-custom-post-types-in-wordpress/
+function custom_post_type() {
+  // Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Portfolio', 'Post Type General Name' ),
+		'singular_name'       => _x( 'Portfolio', 'Post Type Singular Name' ),
+		'menu_name'           => __( 'Portfolio' ),
+		// 'parent_item_colon'   => __( 'Parent Movie' ),
+		'all_items'           => __( 'All' ),
+		'view_item'           => __( 'View Portfolio' ),
+		'add_new_item'        => __( 'Add New Portfolio' ),
+		'add_new'             => __( 'Add New' ),
+		'edit_item'           => __( 'Edit Portfolio' ),
+		'update_item'         => __( 'Update Portfolio' ),
+		'search_items'        => __( 'Search Portfolio' ),
+		'not_found'           => __( 'Not Found' ),
+		'not_found_in_trash'  => __( 'Not found in Trash' ),
+	);
+
+  // Set other options for Custom Post Type
+	$args = array(
+		'label'               => __( 'portfolio' ),
+		'description'         => __( 'Our work portfolio' ),
+		'labels'              => $labels,
+		// Features this CPT supports in Post Editor
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'work_catrgories' ),
+		// You can associate this CPT with a taxonomy or custom taxonomy.
+		'taxonomies'          => array( 'work_catrgories' ),
+		// A hierarchical CPT is like Pages and can have Parent and child items.
+    // A non-hierarchical CPT is like Posts.
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		// 'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		//'capability_type'     => 'page',
+	);
+
+	// Registering your Custom Post Type
+	register_post_type( 'portfolio', $args );
+}
+
+// Hook into the 'init' action so that the function
+// containing our post type registration is not
+// unnecessarily executed.
+add_action( 'init', 'custom_post_type', 1 );
+
+
 
 // ------------------------------
 // ADD USER ID COLUMN
@@ -172,6 +340,8 @@ add_action('admin_head-users.php',  'rd_user_id_column_style');
 //   'after_title' => '</h2>',
 // ));
 
+
+
 // ------------------------------
 // Custom Functions for CSS/Javascript Versioning
 $GLOBALS["TEMPLATE_URL"] = get_bloginfo('template_url')."/";
@@ -216,6 +386,8 @@ function versioned_resource($relative_url){
 //   }
 // }
 // add_action( "wp_enqueue_scripts", "masonry_script" );
+
+
 
 // ------------------------------
 // Breadcrumbs

@@ -9,7 +9,7 @@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i|Roboto:100,400|Domine:400,700|Playfair+Display:400,700,900|Pinyon+Script|Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Pinyon+Script');
 
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -21,11 +21,11 @@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$font-headings:               Open Sans, "Arial", sans-serif; // headings
-$font-bodyCopy:               Open Sans, "Arial", sans-serif; // body copy
+$font-headings:               Helvetica Neue, "Arial", sans-serif; // headings
+$font-bodyCopy:               Proxima Nova, "Arial", sans-serif; // body copy
 $display:                     inherit; // display type
 $ui:                          "Verdana", sans-serif; // ui type
-$fancy:                       Playfair Display, Georgia, "Times New Roman", serif;
+$fancy:                       Georgia, "Times New Roman", serif;
 $script:                      Pinyon Script, cursive;
 
 
@@ -39,7 +39,7 @@ $script:                      Pinyon Script, cursive;
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$color-primary:               #0053a0;
+$color-primary:               #0e75dd; // original: 0053a0
 $color-primary-light:         mix(white, $color-primary, 15%);
 $color-primary-lightest:      mix(white, $color-primary, 35%);
 $color-primary-dark:          mix(black, $color-primary, 15%);
@@ -67,6 +67,7 @@ $color-uikit-gray-lighter:    #e5e5e5;
 
 $color-headingsColor:         #303030; // off-black
 $color-bodyColor:             #595959; // light-black #4c4c4c
+$color-bodyColor-light:       #757575; // lightest on white for AA rating
 
 $color-alert-info:            #5bc0de;
 $color-alert-success:         #449d44;
@@ -223,8 +224,8 @@ $button-disabled-background:      $color-gray-light !default;
 // Default buttons (ghost button style)
 $button-default-color:            $color-gray !default;
 $button-default-color-hover:      mix(black, $button-default-color, 90%) !default;
-$button-default-background:       $color-white !default;
-$button-default-background-hover: $color-white !default;
+$button-default-background:       transparent !default;
+$button-default-background-hover: transparent !default;
 $button-default-border:           $color-gray !default;
 $button-default-border-hover:     mix(black, $button-default-border, 90%) !default;
 
@@ -278,6 +279,22 @@ $button-danger-background-hover:  mix(black, $button-danger-background, 30%) !de
 // -----------------------------------------
 // Button focus
 $button-background-focus:         mix(black, $button-default-background, 15%) !default;
+
+// -----------------------------------------
+// Services buttons - maa-button-services-transparent-dark
+$maa-btn-trn-dark-color:          $color-white !default; // "trn" stands for "transparent"
+$maa-btn-trn-dark-color-hover:    #222 !default;
+$maa-btn-trn-dark-background:     transparent !default;
+$maa-btn-trn-dark-border:         $color-white !default;
+$maa-btn-trn-dark-border-hover:   #222 !default;
+
+// -----------------------------------------
+// Services buttons - maa-button-services-transparent-light
+$maa-btn-trn-light-color:         $color-gray-lightest !default; // "trn" stands for "transparent"
+$maa-btn-trn-light-color-hover:   $color-white !default;
+$maa-btn-trn-light-background:    transparent !default;
+$maa-btn-trn-light-border:        $color-gray-lightest !default;
+$maa-btn-trn-light-border-hover:  $color-white !default;
 
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
