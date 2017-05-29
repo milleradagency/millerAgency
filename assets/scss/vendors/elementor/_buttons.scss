@@ -44,7 +44,8 @@ input#submit.uk-button.uk-button-default {
 }
 
 // submit button
-.elementor-field-group.elementor-field-type-submit > button {
+.elementor-field-group.elementor-field-type-submit > button,
+.elementor-button-link.elementor-button.elementor-submit {
 	color: $button-submit-color;
 	background-color: $button-submit-background;
 	margin: 0;

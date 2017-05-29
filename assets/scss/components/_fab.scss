@@ -1,7 +1,30 @@
-.maa-fab {
+.maa-fab,
+.maa-fab:link,
+.maa-fab:visited {
   position: fixed;
   bottom: 60px;
-  right: 0;
+  left: 0;
   padding: 20px;
   margin: 20px;
+  background: $color-primary;
+  box-shadow: $z-depth-1;
+  color: $color-white;
+  animation-delay: 1400ms;
+  &:hover, &:focus {
+    color: $color-white;
+    background: $color-primary;
+  }
+}
+
+#fab-modal .uk-modal-body {
+  padding: 0;
+}
+
+.uk-modal {
+  & .uk-nav.uk-list.uk-list-divider li {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border-top: 0;
+  }
 }

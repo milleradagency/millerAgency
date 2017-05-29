@@ -6,7 +6,7 @@
 ?>
 
   <!-- FOOTER -->
-  <div class="uk-text-center">
+  <div class="uk-text-center uk-margin-large-bottom" id="socialNetworks">
     <?php // ---------------------- ?>
     <?php // SOCIAL ICONS ?>
     <div class="uk-text-small">
@@ -83,11 +83,11 @@
   $link_address = "#fab-modal";
   if (is_page("Advertising")) {
     echo
-      "<a href='$link_address' class='uk-icon-button maa-fab' uk-toggle><span uk-icon='icon: check'></span></a>";
+      "<a href='$link_address' class='uk-icon-button maa-fab uk-animation-scale-up uk-hidden@m' uk-toggle><span uk-icon='icon: list'></span></a>";
     echo
         "<div id='fab-modal' uk-modal>
           <div class='uk-modal-dialog'>
-            <button class='uk-offcanvas-close uk-close-large uk-background-muted uk-border-circle' type='button' uk-close></button>
+            <button class='uk-close uk-close-large uk-background-muted uk-border-circle uk-modal-close-default' type='button' uk-close></button>
             <div class='uk-modal-header'>
               <h2 class='uk-modal-title'>Advertising</h2>
             </div>
@@ -98,7 +98,7 @@
                   'container_class'   => '',
                   'container_id'      => '',
                   'menu'              => 'services',
-                  'menu_class'        => 'uk-nav',
+                  'menu_class'        => 'uk-nav uk-list uk-list-divider',
                   'menu_id'           => '',
                   'echo'              => true,
                   'depth'             => 0,
@@ -107,8 +107,8 @@
             echo
             "</div>
             <div class='uk-modal-footer uk-text-right'>
-              <button class='uk-button uk-button-primary' type='button' uk-toggle>Hire Us</button>
-              <button class='uk-button uk-button-default uk-modal-close' type='button'>Cancel</button>
+              <a href='/contact' class='elementor-button-link elementor-button elementor-submit elementor-size-sm' type='button'>Hire Us</a>
+              <a class='elementor-button-link elementor-button elementor-size-sm uk-modal-close' type='button'>Close</a>
             </div>
           </div>
         </div>";

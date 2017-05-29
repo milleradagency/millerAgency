@@ -84,12 +84,12 @@ $(document).ready(function() {
 
 // transition on out
 // thanks to http://stackoverflow.com/a/38233311 for the correct .not() answer
-$("a[target!='_blank']").not("[href^='#']").on("click", function() {
-  $("body, #main, article").velocity( slideDownOut, {
-    stagger: 100,
-    drag: false
-  });
-});
+// $("a[target!='_blank']").not("[href^='#']").on("click", function() {
+//   $("body, #main, article").velocity( slideDownOut, {
+//     stagger: 100,
+//     drag: false
+//   });
+// });
 
 // wrap mobile sidebar list anchor links in UIkit uk-toggle elements
 // $(function() {
