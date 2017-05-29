@@ -39,7 +39,7 @@
 
 .uk-navbar-nav {
   list-style-type: none;
-  height: 80px;
+  height: 44px; 
 
   & li {
     padding: 0 15px;
@@ -163,7 +163,7 @@
   & .uk-navbar-item,
   & .uk-navbar-nav > li > a,
   & .uk-navbar-toggle {
-    height: 40px;
+    height: 22px;
     text-transform: uppercase;
   }
 
@@ -178,7 +178,7 @@
 
 // slide in animations
 .mini-navbar-visible {
-  height: 80px;
+  height: 44px;
   overflow: visible;
   transform: translateY(0);
   box-shadow: $z-depth-1;

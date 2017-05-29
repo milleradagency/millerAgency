@@ -4,6 +4,16 @@
 // npm install --only=dev
 var gulp = require('gulp');
 
+// Gulp FTP
+// https://www.npmjs.com/package/gulp-ftp
+// npm install --save-dev gulp-ftp
+// var ftp = require('gulp-ftp');
+
+// Gulp Util
+// https://www.npmjs.com/package/gulp-util
+// npm install gulp-util
+// var gutil = require('gulp-util');
+
 // Sass
 // https://www.npmjs.com/package/gulp-sass
 // npm install gulp-sass --save-dev
@@ -35,7 +45,7 @@ gulp.task('default', function () {
     .pipe(postcss([ autoprefixer() ]))
     .pipe(nano())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/css'));
+    .pipe(gulp.dest('assets/css'))
 });
 
 gulp.task('watch', function() {

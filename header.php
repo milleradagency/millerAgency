@@ -34,6 +34,8 @@
     <!-- FRONT-END DEVELOPER -->
     <meta name="designer" content="William Pansky, williampansky.com">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <?php // ---------------------- ?>
     <?php // HEADER ITEMS ?>
     <?php // Place favicon.ico and apple-touch-icon.png in the root directory ?>
@@ -44,7 +46,7 @@
 
     <?php // ---------------------- ?>
     <?php // Wordpress Templates require a style.css in theme root directory ?>
-    <?php versioned_stylesheet($GLOBALS["TEMPLATE_RELATIVE_URL"]."style.css") ?>
+    <?php // versioned_stylesheet($GLOBALS["TEMPLATE_RELATIVE_URL"]."style.css") ?>
 
     <?php // ---------------------- ?>
     <?php // Modernizr ?>

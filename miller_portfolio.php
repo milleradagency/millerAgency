@@ -23,7 +23,7 @@ get_header(); ?>
   <?php // ---------------------- ?>
   <?php // BREADCRUMBS ?>
   <section class="uk-margin-bottom">
-    <div class="uk-container uk-margin-small-bottom">
+    <div class="uk-container uk-margin-small-bottom uk-margin-small-top">
       <ul class="uk-breadcrumb">
         <li class="item-home">
           <a class="bread-link bread-home" href="/" title="Home">

@@ -46,7 +46,7 @@
       </ul>
     </div>
 
-    <div class="uk-container uk-margin-remove-top uk-margin-remove-bottom uk-text-center">
+    <div class="uk-container uk-margin-remove-top uk-margin-remove-bottom uk-text-center uk-text-small">
 
         <?php // ---------------------- ?>
         <?php // COPYRIGHT ?>
@@ -63,7 +63,7 @@
 
         <?php // ---------------------- ?>
         <?php // SUPPORT LINK ?>
-        <p class="maa-credits uk-text-small uk-margin-remove">
+        <p class="maa-credits uk-margin-remove">
           Find something wrong with our website? <a href="/support">Submit a ticket</a>.
         </p>
 
@@ -76,8 +76,49 @@
   // ------------------
 ?>
 
+<?php
+  // ------------------
+  // SERVICES -> MEDIA
+  // when the page with a post_title of "Media" is being displayed
+  $link_address = "#fab-modal";
+  if (is_page("Advertising")) {
+    echo
+      "<a href='$link_address' class='uk-icon-button maa-fab' uk-toggle><span uk-icon='icon: check'></span></a>";
+    echo
+        "<div id='fab-modal' uk-modal>
+          <div class='uk-modal-dialog'>
+            <button class='uk-offcanvas-close uk-close-large uk-background-muted uk-border-circle' type='button' uk-close></button>
+            <div class='uk-modal-header'>
+              <h2 class='uk-modal-title'>Advertising</h2>
+            </div>
+            <div class='uk-modal-body' uk-overflow-auto>";
+                $menu_args = array(
+                  'theme_location'    => 'mobile',
+                  'container'         => 'ul',
+                  'container_class'   => '',
+                  'container_id'      => '',
+                  'menu'              => 'services',
+                  'menu_class'        => 'uk-nav',
+                  'menu_id'           => '',
+                  'echo'              => true,
+                  'depth'             => 0,
+                );
+                wp_nav_menu( $menu_args );
+            echo
+            "</div>
+            <div class='uk-modal-footer uk-text-right'>
+              <button class='uk-button uk-button-primary' type='button' uk-toggle>Hire Us</button>
+              <button class='uk-button uk-button-default uk-modal-close' type='button'>Cancel</button>
+            </div>
+          </div>
+        </div>";
+  } else {
+    // null
+  };
+?>
+
 <!-- MOBILE OFF-CANVAS SIDEBAR NAV -->
-<div id="offcanvas" class="uk-modal-full uk-animation-slide-bottom-medium" uk-modal>
+<div id="offcanvas" class="uk-modal-full uk-animation-slide-bottom-small" uk-modal>
   <div class="uk-modal-dialog">
     <div class="maa-offcanvas-header" style="background-image:url(/wp-content/uploads/cover-mobilemenu.jpg);">
       <div class="uk-overlay uk-light uk-position-bottom uk-text-center">

@@ -45,8 +45,8 @@ function millerAgency_assets() {
 
   // jQuery 3.2.1 CDN
   wp_deregister_script( 'jquery' ); // removes old jquery before loading new jquery
-  wp_register_script( 'jquery_cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', null, '3.2.1', true );
-	wp_enqueue_script( 'jquery_cdn' );
+  // wp_register_script( 'jquery_cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', null, '3.2.1', true );
+	// wp_enqueue_script( 'jquery_cdn' );
 
   // jQuery 3.2.1 local
   // wp_register_script( 'jquery_local', get_template_directory_uri() . '/assets/js/jquery-3.2.1.min.js', null, null, true );
@@ -76,6 +76,8 @@ function millerAgency_assets() {
   // Highlight.js
   wp_register_script( 'highlightjs', get_template_directory_uri() . '/assets/js/highlight.pack.js#asyncload', null, null, true );
   wp_enqueue_script( 'highlightjs' );
+
+  //
 
   // millerAgency.js
   wp_register_script( 'millerjs', get_template_directory_uri() . '/assets/js/millerAgency.js#asyncload', null, null, true );
@@ -344,33 +346,33 @@ add_action('admin_head-users.php',  'rd_user_id_column_style');
 
 // ------------------------------
 // Custom Functions for CSS/Javascript Versioning
-$GLOBALS["TEMPLATE_URL"] = get_bloginfo('template_url')."/";
-$GLOBALS["TEMPLATE_RELATIVE_URL"] = wp_make_link_relative($GLOBALS["TEMPLATE_URL"]);
+// $GLOBALS["TEMPLATE_URL"] = get_bloginfo('template_url')."/";
+// $GLOBALS["TEMPLATE_RELATIVE_URL"] = wp_make_link_relative($GLOBALS["TEMPLATE_URL"]);
 
 // ------------------------------
 // Add ?v=[last modified time] to style sheets
-function versioned_stylesheet($relative_url, $add_attributes=""){
-  echo '<link rel="stylesheet" href="'.versioned_resource($relative_url).'" '.$add_attributes.'>'."\n";
-}
+// function versioned_stylesheet($relative_url, $add_attributes=""){
+//   echo '<link rel="stylesheet" href="'.versioned_resource($relative_url).'" '.$add_attributes.'>'."\n";
+// }
 
 // ------------------------------
 // Add ?v=[last modified time] to javascripts
-function versioned_javascript($relative_url, $add_attributes=""){
-  echo '<script src="'.versioned_resource($relative_url).'" '.$add_attributes.'></script>'."\n";
-}
+// function versioned_javascript($relative_url, $add_attributes=""){
+//   echo '<script src="'.versioned_resource($relative_url).'" '.$add_attributes.'></script>'."\n";
+// }
 
 // ------------------------------
 // Add ?v=[last modified time] to a file url
-function versioned_resource($relative_url){
-  $file = $_SERVER["DOCUMENT_ROOT"].$relative_url;
-  $file_version = "";
-
-  if(file_exists($file)) {
-    $file_version = "?v=".filemtime($file);
-  }
-
-  return $relative_url.$file_version;
-}
+// function versioned_resource($relative_url){
+//   $file = $_SERVER["DOCUMENT_ROOT"].$relative_url;
+//   $file_version = "";
+//
+//   if(file_exists($file)) {
+//     $file_version = "?v=".filemtime($file);
+//   }
+//
+//   return $relative_url.$file_version;
+// }
 
 // ------------------------------
 // limit masonry script to ONLY the /team page
