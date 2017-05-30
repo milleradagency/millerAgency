@@ -44,7 +44,7 @@ get_header(); ?>
 
   <article <?php post_class( "uk-article" ) ?> id="post-<?php the_ID(); ?>">
 
-    <header class="blog-post-header uk-margin-remove" style="background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
+    <header class="blog-post-header uk-margin-remove" id="blogHeader" uk-parallax="bgy: -200" style="background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
       <div class="blog-image-tint"></div>
       <div class="blog-post blog-post-header-info">
         <h1 class="blog-post-title uk-heading-primary uk-margin-bottom"><?php the_title(); ?></a></h1>

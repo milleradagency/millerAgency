@@ -77,7 +77,20 @@ function millerAgency_assets() {
   wp_register_script( 'highlightjs', get_template_directory_uri() . '/assets/js/highlight.pack.js#asyncload', null, null, true );
   wp_enqueue_script( 'highlightjs' );
 
-  //
+  // Numerator
+  wp_deregister_script( 'jquery-numerator' ); // De-register original inclusion to properly enqueue
+  wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js', null, null, true );
+  wp_enqueue_script( 'jquery-numerator' );
+
+  // Waypoints
+  wp_deregister_script( 'waypoints' ); // De-register original inclusion to properly enqueue
+  wp_register_script( 'waypoints', get_site_url() . '/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js', null, null, true );
+  wp_enqueue_script( 'waypoints' );
+
+  // Elementor Frontend
+  wp_deregister_script( 'elementor-frontend' ); // De-register original inclusion to properly enqueue
+  wp_register_script( 'elementor-frontend', get_site_url() . '/wp-content/plugins/elementor/assets/js/frontend.min.js#asyncload', null, null, true );
+  wp_enqueue_script( 'elementor-frontend' );
 
   // millerAgency.js
   wp_register_script( 'millerjs', get_template_directory_uri() . '/assets/js/millerAgency.js#asyncload', null, null, true );
@@ -85,6 +98,16 @@ function millerAgency_assets() {
 
 }
 add_action( 'wp_enqueue_scripts', 'millerAgency_assets' );
+
+
+// ------------------------------
+// load admin scripts
+function admin_assets() {
+  wp_deregister_script( 'elementor-frontend' ); // De-register original inclusion to properly enqueue
+  wp_register_script( 'elementor-frontend', get_site_url() . '/wp-content/plugins/elementor/assets/js/frontend.min.js#asyncload' );
+  wp_enqueue_script( 'elementor-frontend' );
+}
+add_action( 'admin_enqueue_scripts', 'admin_assets', 500 );
 
 
 
