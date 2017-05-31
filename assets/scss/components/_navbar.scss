@@ -21,6 +21,13 @@
     padding: 0 15px;
   }
 
+  & .uk-navbar {
+    @media(min-width:960px) {
+      height: 80px;
+      overflow: hidden;
+    }
+  }
+
   @media (min-width:1024px) {
     border-bottom: 1px solid $color-uikit-gray-lighter;
     // margin-bottom: 20px;
@@ -39,7 +46,7 @@
 
 .uk-navbar-nav {
   list-style-type: none;
-  height: 44px; 
+  height: 44px;
 
   & li {
     padding: 0 15px;
@@ -144,7 +151,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1;
   background: #fff;
   height: 0;
   overflow: hidden;
@@ -192,7 +199,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 7;
+  z-index: 3;
   border-top: 1px solid $color-uikit-gray-lighter;
   background: $color-white-off;
   box-shadow: $z-depth-3;

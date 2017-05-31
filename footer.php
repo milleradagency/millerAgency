@@ -51,8 +51,7 @@
         <?php // ---------------------- ?>
         <?php // COPYRIGHT ?>
         <p class="copyright uk-margin-small-bottom">
-          &copy; 1984<script>new Date().getFullYear()>2010&&document.write("–"+new Date().getFullYear());</script>
-          <?php bloginfo('name'); ?>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="https://goo.gl/maps/LChXN6prw412" target="_blank">2711 Valley View Lane, Suite 101, Dallas, Texas</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="tel:9722432211">972.243.2211</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="/privacy">Privacy Policy</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="/terms">Terms of Use</a>
+          <span id="copyrightFooter">&copy; 1984<script>document.getElementById('copyrightFooter').appendChild(document.createTextNode("–"+new Date().getFullYear()))</script></span>&nbsp;<?php bloginfo('name'); ?>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="https://goo.gl/maps/LChXN6prw412" target="_blank">2711 Valley View Lane, Suite 101, Dallas, Texas</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="tel:9722432211">972.243.2211</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="/privacy">Privacy Policy</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="/terms">Terms of Use</a>
         </p>
 
         <?php // ---------------------- ?>
@@ -78,43 +77,43 @@
 
 <?php
   // ------------------
-  // SERVICES -> MEDIA
+  // SERVICES MOBILE FAB MENU
   // when the page with a post_title of "Media" is being displayed
-  $link_address = "#fab-modal";
-  if (is_page("Advertising")) {
-    echo
-      "<a href='$link_address' class='uk-icon-button maa-fab uk-animation-scale-up uk-hidden@m' uk-toggle><span uk-icon='icon: list'></span></a>";
-    echo
-        "<div id='fab-modal' uk-modal>
-          <div class='uk-modal-dialog'>
-            <button class='uk-close uk-close-large uk-background-muted uk-border-circle uk-modal-close-default' type='button' uk-close></button>
-            <div class='uk-modal-header'>
-              <h2 class='uk-modal-title'>Advertising</h2>
-            </div>
-            <div class='uk-modal-body' uk-overflow-auto>";
-                $menu_args = array(
-                  'theme_location'    => 'mobile',
-                  'container'         => 'ul',
-                  'container_class'   => '',
-                  'container_id'      => '',
-                  'menu'              => 'services',
-                  'menu_class'        => 'uk-nav uk-list uk-list-divider',
-                  'menu_id'           => '',
-                  'echo'              => true,
-                  'depth'             => 0,
-                );
-                wp_nav_menu( $menu_args );
-            echo
-            "</div>
-            <div class='uk-modal-footer uk-text-right'>
-              <a href='/contact' class='elementor-button-link elementor-button elementor-submit elementor-size-sm' type='button'>Hire Us</a>
-              <a class='elementor-button-link elementor-button elementor-size-sm uk-modal-close' type='button'>Close</a>
-            </div>
-          </div>
-        </div>";
-  } else {
-    // null
-  };
+  // $link_address = "#fab-modal";
+  // if (is_page("Advertising")) {
+  //   echo
+  //     "<a href='$link_address' class='uk-icon-button maa-fab uk-animation-scale-up uk-hidden@m' uk-toggle><span uk-icon='icon: list'></span></a>";
+  //   echo
+  //       "<div id='fab-modal' uk-modal>
+  //         <div class='uk-modal-dialog'>
+  //           <button class='uk-close uk-close-large uk-background-muted uk-border-circle uk-modal-close-default' type='button' uk-close></button>
+  //           <div class='uk-modal-header'>
+  //             <h2 class='uk-modal-title'>Advertising</h2>
+  //           </div>
+  //           <div class='uk-modal-body' uk-overflow-auto>";
+  //               $menu_args = array(
+  //                 'theme_location'    => 'mobile',
+  //                 'container'         => 'ul',
+  //                 'container_class'   => '',
+  //                 'container_id'      => '',
+  //                 'menu'              => 'services',
+  //                 'menu_class'        => 'uk-nav uk-list uk-list-divider',
+  //                 'menu_id'           => '',
+  //                 'echo'              => true,
+  //                 'depth'             => 0,
+  //               );
+  //               wp_nav_menu( $menu_args );
+  //           echo
+  //           "</div>
+  //           <div class='uk-modal-footer uk-text-right'>
+  //             <a href='/contact' class='elementor-button-link elementor-button elementor-submit elementor-size-sm' type='button'>Hire Us</a>
+  //             <a class='elementor-button-link elementor-button elementor-size-sm uk-modal-close' type='button'>Close</a>
+  //           </div>
+  //         </div>
+  //       </div>";
+  // } else {
+  //   // null
+  // };
 ?>
 
 <!-- MOBILE OFF-CANVAS SIDEBAR NAV -->
@@ -143,8 +142,8 @@
       );
       wp_nav_menu( $menu_args );
     ?>
-    <p class="uk-margin-small-bottom uk-text-center">
-      &copy; 1984<script>new Date().getFullYear()>2010&&document.write("–"+new Date().getFullYear());</script>&nbsp;<?php bloginfo('name'); ?>
+    <p class="uk-margin-small-bottom uk-text-center" id="copyrightSidebar">
+      &copy; 1984<script>document.getElementById('copyrightSidebar').appendChild(document.createTextNode("–"+new Date().getFullYear()))</script>&nbsp;<?php bloginfo('name'); ?>
     </p>
     <p class="uk-text-small uk-margin-medium-bottom uk-text-center">
       Find something wrong with our website?<br /><a href="/support">Submit a ticket</a>.

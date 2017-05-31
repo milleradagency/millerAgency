@@ -1,11 +1,109 @@
 .sidebar-sticky {
   position: fixed;
   top: 160px;
-  width: 200px;
+  width: 165px;
+  right: 20px;
+  padding: 10px;
+  background: $color-white;
+  text-align: center;
+  // @media (min-width:960px) { display: none; }
 }
 
 .sidebar-sticky-services {
   & .uk-list > li {
     margin: 0;
   }
+}
+
+.sidebar-sticky-horizontal {
+  z-index: 2;
+  & li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .5px;
+    line-height: 1.15;
+    transition: 300ms ease-in-out;
+    // text-transform: uppercase;
+    @media (min-width:1024px) { padding: 4px 18px; }
+    @media (min-width:1600px) { padding: 4px 12px; }
+
+    & .current-menu-item a {
+      color: inherit;
+      border-color: $color-black;
+    }
+  } // end .menu-item
+
+  & a, & a:link, & a:visited {
+    padding: 4px 16px;
+    position: relative;
+    @media (min-width:1024px) { padding: 1px; }
+    color: $color-black-lightest;
+
+    // -----------------------------------------
+		// ## link underline
+		@media (min-width:1024px) {
+      &:before {
+  			content: "";
+  	    position: absolute;
+  	    bottom: 0;
+  	    left: 0;
+  	    right: 100%;
+  	    border-bottom: 1px solid $color-primary;
+  	    transition: right .3s ease-out;
+  		}
+    }
+
+    &:hover, &:focus {
+      color: $color-primary;
+      @media (min-width:1024px) { &:before { right: 0; } }
+    }
+  } // end a
+
+  & .uk-active {
+    @media (min-width:1024px) { padding: 4px 32px; }
+
+    & a, & a:link, & a:visited {
+      color: $color-primary;
+    }
+  }
+
+  & .sub-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @media (min-width:1600px) { justify-content: center; }
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: scroll;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding: 12px 0 10px;
+    margin: 0;
+    background: $color-white-off;
+    border-top: 1px solid $color-white;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    box-shadow: inset 0px 12px 8px -14px rgba(0,0,0,0.35);
+
+    & .menu-item {
+      font-size: 14px;
+      text-transform: initial;
+      padding: 0 8px;
+      margin: 0;
+      touch-action: initial;
+
+      // adds higher padding to last-child, indicating that it's the last
+      &:last-child {
+        padding-right: 60px;
+      }
+    }
+  } // end .sub-menu
 }

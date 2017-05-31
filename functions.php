@@ -43,15 +43,13 @@ add_filter( 'clean_url', 'ikreativ_async_scripts', 11, 1 );
 // enqueue via CDN    => stackoverflow.com/a/40403412
 function millerAgency_assets() {
 
-  // jQuery 3.2.1 CDN
-  wp_deregister_script( 'jquery' ); // removes old jquery before loading new jquery
-  // wp_register_script( 'jquery_cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', null, '3.2.1', true );
-	// wp_enqueue_script( 'jquery_cdn' );
-
-  // jQuery 3.2.1 local
-  // wp_register_script( 'jquery_local', get_template_directory_uri() . '/assets/js/jquery-3.2.1.min.js', null, null, true );
-  // wp_enqueue_script( 'jquery_local' );
-
+  // # DE-REGISTER SCRIPTS
+  // This removes scripts that are unneccesary on a global scale
+  // Please see below for the conditional (if) statements
+  wp_deregister_script( 'jquery' );                     // ## Original jQuery
+  wp_deregister_script( 'jquery-numerator' );           // ## Numerator
+  wp_deregister_script( 'waypoints' );                  // ## Waypoints
+  wp_deregister_script( 'elementor-frontend' );         // ## Elementor Frontend
 
   // Velocity.js
   wp_register_script( 'velocity', 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js', null, null, true );
@@ -77,18 +75,21 @@ function millerAgency_assets() {
   wp_register_script( 'highlightjs', get_template_directory_uri() . '/assets/js/highlight.pack.js#asyncload', null, null, true );
   wp_enqueue_script( 'highlightjs' );
 
-  // Numerator
-  wp_deregister_script( 'jquery-numerator' ); // De-register original inclusion to properly enqueue
-  wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js', null, null, true );
-  wp_enqueue_script( 'jquery-numerator' );
+  // Numerator — Used for the Elementor Widget => Counter
+  if ( is_page_template( 'elementor_page_counter.php' ) ) {
+    wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js', null, null, true );
+    wp_enqueue_script( 'jquery-numerator' );
+  }
 
   // Waypoints
-  wp_deregister_script( 'waypoints' ); // De-register original inclusion to properly enqueue
   wp_register_script( 'waypoints', get_site_url() . '/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js', null, null, true );
   wp_enqueue_script( 'waypoints' );
 
+  // Elementor Pro Frontend
+  wp_register_script( 'elementor-pro-frontend', get_site_url() . '/wp-content/plugins/elementor-pro/assets/js/frontend.min.js#asyncload', null, null, true );
+  wp_enqueue_script( 'elementor-pro-frontend' );
+
   // Elementor Frontend
-  wp_deregister_script( 'elementor-frontend' ); // De-register original inclusion to properly enqueue
   wp_register_script( 'elementor-frontend', get_site_url() . '/wp-content/plugins/elementor/assets/js/frontend.min.js#asyncload', null, null, true );
   wp_enqueue_script( 'elementor-frontend' );
 
@@ -245,12 +246,12 @@ function custom_post_type() {
 		'description'         => __( 'Our work portfolio' ),
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'work_catrgories' ),
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'add_new', 'page', 'work_catrgories' ),
 		// You can associate this CPT with a taxonomy or custom taxonomy.
 		'taxonomies'          => array( 'work_catrgories' ),
 		// A hierarchical CPT is like Pages and can have Parent and child items.
     // A non-hierarchical CPT is like Posts.
-		'hierarchical'        => false,
+		'hierarchical'        => true,
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -261,7 +262,7 @@ function custom_post_type() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		//'capability_type'     => 'page',
+		'capability_type'     => 'page',
 	);
 
 	// Registering your Custom Post Type

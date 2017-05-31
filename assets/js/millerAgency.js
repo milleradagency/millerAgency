@@ -118,3 +118,10 @@ jQuery(function($) {
     winH = $(this).height(); // you'll need the new height value
   });
 });
+
+
+// ---------
+// stops scroll from jumping back to stop
+$('a.sidebar-sticky-scroll').on('click', function(e){
+  return false;
+});

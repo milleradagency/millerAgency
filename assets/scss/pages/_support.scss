@@ -19,6 +19,12 @@
   overflow: scroll;
 }
 
+// fix table scroll and word break
+.ticket_list {
+  overflow: scroll;
+  white-space: nowrap;
+}
+
 .wpsp_reply,
 .replyFloatedContainer,
 #wpsp_reply_attachment {
@@ -45,6 +51,12 @@
   display: none;
 }
 
+// add min-height and min-width to assign agent box
+#assignTicketAgentId {
+  min-height: 200px;
+  min-width: 200px;
+}
+
 // -----------------------------------------
 // ## body container
 // remove background color and padding
@@ -66,6 +78,13 @@
     border-bottom: 2px solid #999;
     border-top: 0;
   }
+}
+
+// -----------------------------------------
+// ## fix attachment padding
+.threadAttachment {
+  padding: 20px;
+  border-top: 1px solid #dfdfdf;
 }
 
 // striped background colors and hover

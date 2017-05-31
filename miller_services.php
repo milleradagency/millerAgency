@@ -10,12 +10,12 @@ get_header(); ?>
 
 <div id="main" role="main" class="uk-margin-large-bottom">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+  <section class="elementor-section uk-margin-small-bottom uk-margin-small-top uk-text-truncate">
+    <?php custom_breadcrumbs(); ?>
+  </section>
   <article class="post" id="post-<?php the_ID(); ?>">
-    <header class="uk-container-expand uk-margin-small-top" id="main-header">
-      <div class="elementor-section" style="margin-bottom:-9px;">
-        <?php custom_breadcrumbs(); ?>
-      </div>
-    </header>
+    <!-- <header class="uk-container-expand uk-margin-small-top" id="main-header">
+    </header> -->
 
     <?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
 

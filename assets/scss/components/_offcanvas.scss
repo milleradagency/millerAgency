@@ -2,7 +2,7 @@
 // -----------------------------------------
 // ## mobile nav bar
 #offcanvas {
-  z-index: 6;
+  z-index: 2;
 }
 
 .uk-offcanvas-bar {
@@ -118,7 +118,7 @@
     flex-wrap: nowrap;
     white-space: nowrap;
     overflow-x: scroll;
-    touch-action: pan-x;
+    // touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
     width: 100%;
     padding: 12px 0 10px;
