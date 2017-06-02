@@ -72,9 +72,9 @@ get_header(); ?>
       </div>
 
       <nav class="blog-post">
-        <ul class="blog-post-pagination uk-flex-center uk-flex-between@m uk-text-center uk-pagination">
-          <li><span class="uk-pagination-previous"><?php previous_post_link('&laquo; %link') ?></span></li>
-          <li><span class="uk-pagination-previous"><?php next_post_link('%link &raquo;') ?></span></li>
+        <ul class="blog-post-pagination uk-flex-center uk-text-center uk-pagination">
+          <li><span class="uk-pagination-previous uk-padding-smaller"><?php previous_post_link('&laquo; %link') ?></span></li>
+          <li><span class="uk-pagination-previous uk-padding-smaller"><?php next_post_link('%link &raquo;') ?></span></li>
         </ul>
       </nav>
 

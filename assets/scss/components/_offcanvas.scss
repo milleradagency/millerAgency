@@ -3,6 +3,8 @@
 // ## mobile nav bar
 #offcanvas {
   z-index: 2;
+  background: $color-white;
+  margin-bottom: 60px;
 }
 
 .uk-offcanvas-bar {
@@ -64,7 +66,7 @@
 
 // -----------------------------------------
 // ## background fade overlay
-.uk-offcanvas-overlay:before {
+#offcanvas:before {
   content: "";
   position: absolute;
   top: 0;
@@ -72,7 +74,7 @@
   left: 0;
   right: 0;
   background: rgba(0,0,0,.5);
-  opacity: 0;
+  opacity: 1;
   transition: opacity .15s linear;
 }
 
@@ -168,6 +170,8 @@
 
 #offcanvas .uk-modal-dialog {
   padding-bottom: 60px;
+  min-height: 100vh;
+  height: auto;
 }
 
 #offcanvas .uk-modal-close {

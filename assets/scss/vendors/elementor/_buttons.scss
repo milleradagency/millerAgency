@@ -41,6 +41,7 @@ input#submit.uk-button.uk-button-default {
 
 input#submit.uk-button.uk-button-default {
 	padding: 15px 30px;
+	margin-bottom: 16px;
 }
 
 // submit button
@@ -191,14 +192,14 @@ input#submit.uk-button.uk-button-default {
 // #overrides elementor-button-default styles with custom css
 // -----------------------------------------
 // ## services => transparent for dark backgrounds
-.maa-button-services-transparent-light {
+.maa-services-btn-light {
 	& .elementor-button-link.elementor-button {
-		color: $maa-btn-trn-light-color;
-		background-color: $maa-btn-trn-light-background;
+		color: $maa-services-btn-light-color;
+		background-color: $maa-services-btn-light-bg;
 		margin: 0;
 	  border-width: 1px;
 		border-style: solid;
-		border-color: $maa-btn-trn-light-border;
+		border-color: $maa-services-btn-light-border;
 		border-radius: 0;
 	  overflow: visible;
 	  font: inherit;
@@ -216,9 +217,9 @@ input#submit.uk-button.uk-button-default {
 	  transition-property: color,background-color,border-color;
 		transition: 300ms ease-in-out;
 		&:hover, &:focus {
-			color: $maa-btn-trn-light-color-hover;
-			background-color: inherit;
-			border-color: $maa-btn-trn-light-border-hover;
+			color: $maa-services-btn-light-color-hover;
+			background-color: $maa-services-btn-light-bg-hover;
+			border-color: $maa-services-btn-light-border-hover;
 			text-decoration: none;
 		}
 	}
@@ -226,14 +227,14 @@ input#submit.uk-button.uk-button-default {
 
 // -----------------------------------------
 // ## services => transparent for light backgrounds
-.maa-button-services-transparent-dark {
+.maa-services-btn-dark {
 	& .elementor-button-link.elementor-button {
-		color: $maa-btn-trn-dark-color;
-		background-color: $maa-btn-trn-dark-background;
+		color: $maa-services-btn-dark-color;
+		background-color: $maa-services-btn-dark-bg;
 		margin: 0;
 	  border-width: 1px;
 		border-style: solid;
-		border-color: $maa-btn-trn-dark-border;
+		border-color: $maa-services-btn-dark-border;
 		border-radius: 0;
 	  overflow: visible;
 	  font: inherit;
@@ -251,9 +252,9 @@ input#submit.uk-button.uk-button-default {
 	  transition-property: color,background-color,border-color;
 		transition: 300ms ease-in-out;
 		&:hover, &:focus {
-			color: $maa-btn-trn-dark-color-hover;
-			background-color: inherit;
-			border-color: $maa-btn-trn-dark-border-hover;
+			color: $maa-services-btn-dark-color-hover;
+			background-color: $maa-services-btn-dark-bg-hover;
+			border-color: $maa-services-btn-dark-border-hover;
 			text-decoration: none;
 		}
 	}

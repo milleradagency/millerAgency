@@ -8,7 +8,7 @@
 	& .elementor-flip-box {
 		& .elementor-flip-box__button.elementor-button {
 			transform: translateY(-100px);
-		  opacity: 0;
+		  opacity: 1;
 		  visibility: hidden;
 			transition: 300ms ease-in-out;
 		}
@@ -16,7 +16,7 @@
 		&:hover, &:focus {
 
 			& .elementor-flip-box__button.elementor-button {
-				transform: translateY(0);
+				// transform: translateY(0);
 	      opacity: 1;
 	      visibility: visible;
 	      cursor: pointer;
@@ -177,5 +177,41 @@
 		& h2, & h3, & h4, & h5, & h6, & p {
 			text-shadow: 1px 1px 1px rgba(0,0,0,.25);
 		}
+	}
+}
+
+
+.maa-metro-tile {
+	& .elementor-flip-box {
+		&:hover, &:focus {
+			.elementor-flip-box__button.elementor-button {
+				animation-name: stylie-keyframes;
+			}
+		}
+	}
+}
+
+.elementor-flip-box__button.elementor-button {
+  // animation-name: stylie-keyframes;
+  animation-duration: 500ms;
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: once;
+  transform-origin: 0 0;
+}
+
+@keyframes stylie-keyframes {
+  0% {
+		transform: translateY(-100px);
+	}
+	50% {
+		transform: translateY(18px);
+	}
+	75% {
+		transform: translateY(-6px);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }

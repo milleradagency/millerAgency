@@ -31,6 +31,8 @@
 	right: 0;
 	left: 0;
 	z-index: 0;
+	height: 300px;
+	@media (min-width:960px) { height: 450px; }
 }
 
 // -----------------------------------------
@@ -41,7 +43,8 @@
 
 	& img {
     max-width: 250px;
-		margin-top: 300px;
+		margin-top: 100px;
+		@media (min-width:960px) { margin-top: 300px; }
 		box-shadow: $z-depth-uikit-1;
 	}
 }

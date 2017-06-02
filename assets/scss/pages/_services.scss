@@ -31,3 +31,16 @@
 		@media (min-width:1600px) { background-image: none; }
 	} // end blue
 } // end .maa-services-top-fade
+
+
+// -----------------------------------------
+// ## services => print
+#services-print {
+	@media (max-width:425px) {
+    background-image: url('http://miller.agency/wp-content/uploads/maa-services-print-mobile.jpg') !important;
+		& .elementor-widget-wrap {
+			text-align: right;
+			padding-left: 60px;
+		}
+	}
+}

@@ -62,7 +62,7 @@ $(document).ready(function() {
   // TODO: Move script to ONLY the blog loop page
   if ($("article").hasClass("post")) {
     // adds UIkit heading bullet style to all widget <h5> items
-    $(".elementor-widget-container h5").addClass("uk-heading-bullet");
+    // $(".elementor-widget-container h5").addClass("uk-heading-bullet");
     // adds UIkit list styles to category widget
     $(".elementor-widget-wp-widget-categories ul").addClass("uk-list");
     // adds UIkit list styles to archives widget

@@ -2,4 +2,9 @@
 .uk-textarea {
   border: 1px solid #cecece;
   background: #fdfdfd;
+  font-family: sans-serif;
+
+  &:focus, &:active {
+    border-color: $input-focus-color;
+  }
 }

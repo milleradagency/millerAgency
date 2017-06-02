@@ -6,7 +6,7 @@
 ?>
 
   <!-- FOOTER -->
-  <div class="uk-text-center uk-margin-large-bottom" id="socialNetworks">
+  <div class="uk-text-center" id="socialNetworks">
     <?php // ---------------------- ?>
     <?php // SOCIAL ICONS ?>
     <div class="uk-text-small">
@@ -35,45 +35,61 @@
     </div>
   </div>
 
-  <footer class="maa-footer" id="footer">
-    <div class="uk-container uk-margin-remove-top uk-margin-medium-bottom uk-text-smaller" uk-navbar>
-      <ul class="maa-footer-links uk-width-1-1 uk-flex-center uk-text-center">
-        <li><a href="/seo-evaluation" class="elementor-button elementor-size-sm">Check Your SEO</a></li>
-        <li><a href="/google-adwords" class="elementor-button elementor-size-sm">Google AdWords</a></li>
-        <li><a href="/better-business-bureau" class="elementor-button elementor-size-sm">BBB A+ Rated Business</a></li>
-        <li><a href="/baylor-business" class="elementor-button elementor-size-sm">Baylor Business</a></li>
-        <li><a href="/pandora-radio-advertising" class="elementor-button elementor-size-sm">Advertise on Pandora Radio</a></li>
-      </ul>
-    </div>
-
-    <div class="uk-container uk-margin-remove-top uk-margin-remove-bottom uk-text-center uk-text-small">
-
-        <?php // ---------------------- ?>
-        <?php // COPYRIGHT ?>
-        <p class="copyright uk-margin-small-bottom">
-          <span id="copyrightFooter">&copy; 1984<script>document.getElementById('copyrightFooter').appendChild(document.createTextNode("–"+new Date().getFullYear()))</script></span>&nbsp;<?php bloginfo('name'); ?>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="https://goo.gl/maps/LChXN6prw412" target="_blank">2711 Valley View Lane, Suite 101, Dallas, Texas</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="tel:9722432211">972.243.2211</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="/privacy">Privacy Policy</a>&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;<a href="/terms">Terms of Use</a>
-        </p>
-
-        <?php // ---------------------- ?>
-        <?php // LOAD PERFORMANCE ?>
-        <!-- <p class="query-load uk-text-small uk-margin-small-bottom">
-          Load: <span class="perf-load"><?php echo get_num_queries(); ?></span> queries. <span class="perf-load"><?php timer_stop(1); ?></span> seconds.
-        </p> -->
-
-        <?php // ---------------------- ?>
-        <?php // SUPPORT LINK ?>
-        <p class="maa-credits uk-margin-remove">
-          Find something wrong with our website? <a href="/support">Submit a ticket</a>.
-        </p>
-
-    </div>
-  </footer>
 </div>
 <?php
   // ------------------
   // end of #container
   // ------------------
 ?>
+
+<footer class="maa-footer" id="footer">
+  <div class="uk-container uk-margin-remove-top uk-margin-medium-bottom uk-text-smaller" uk-navbar>
+    <ul class="maa-footer-links uk-width-1-1 uk-flex-center uk-text-center">
+      <li><a href="/seo-evaluation" class="elementor-button elementor-size-sm">Check Your SEO</a></li>
+      <li><a href="/google-adwords" class="elementor-button elementor-size-sm">Google AdWords</a></li>
+      <li><a href="/better-business-bureau" class="elementor-button elementor-size-sm">BBB A+ Rated Business</a></li>
+      <li><a href="/baylor-business" class="elementor-button elementor-size-sm">Baylor Business</a></li>
+      <li><a href="/pandora-radio-advertising" class="elementor-button elementor-size-sm">Advertise on Pandora Radio</a></li>
+    </ul>
+  </div>
+
+  <div class="uk-container uk-margin-remove-top uk-margin-remove-bottom uk-text-center uk-text-small">
+
+      <?php // ---------------------- ?>
+      <?php // COPYRIGHT ?>
+      <p class="copyright uk-margin-small-bottom" id="copyrightFooter">
+        © 1984<script>document.getElementById('copyrightFooter').appendChild(document.createTextNode("–"+new Date().getFullYear()))</script>&nbsp;Miller Ad Agency
+      </p>
+
+      <ul class="maa-footer-details uk-margin-remove-top uk-margin-small-bottom">
+        <li>
+          <a href="https://goo.gl/maps/LChXN6prw412" target="_blank" class="maa-footer-map-link">2711 Valley View Lane, Suite 101, Dallas, TX</a>
+        </li>
+        <li>
+          <a href="tel:9722432211">972.243.2211</a>
+        </li>
+        <li>
+          <a href="/privacy">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/terms">Terms of Use</a>
+        </li>
+      </ul>
+
+      <?php // ---------------------- ?>
+      <?php // LOAD PERFORMANCE ?>
+      <!-- <p class="query-load uk-text-small uk-margin-small-bottom">
+        Load: <span class="perf-load"><?php echo get_num_queries(); ?></span> queries. <span class="perf-load"><?php timer_stop(1); ?></span> seconds.
+      </p> -->
+
+      <?php // ---------------------- ?>
+      <?php // SUPPORT LINK ?>
+      <p class="maa-credits uk-margin-remove">
+        Find something wrong with our website? <a href="/support">Submit a ticket.</a>
+      </p>
+
+  </div>
+</footer>
 
 <?php
   // ------------------

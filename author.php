@@ -17,9 +17,32 @@ get_header(); ?>
     $image = wp_get_attachment_image_src($curauth->profile_cover_photo);
   ?>
 
+  <section class="elementor-section uk-margin-small-bottom uk-margin-small-top uk-text-truncate">
+    <ul class="uk-breadcrumb uk-container">
+      <li class="item-home">
+        <a class="bread-link bread-home velocity-out" href="/" title="Home">
+          Home
+        </a>
+      </li>
+      <li class="item-parent">
+        <a class="bread-parent velocity-out" href="/about-miller-ad-agency" title="Who We Are">
+          Who We Are
+        </a>
+      </li>
+      <li class="item-parent">
+        <a class="bread-parent velocity-out" href="/about-miller-ad-agency/team" title="Team Miller">
+          Team Miller
+        </a>
+      </li>
+      <li class="item-current uk-text-truncate">
+        <span title="<?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?>"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></span>
+      </li>
+    </ul>
+  </section>
+
   <section class="uk-margin-bottom">
     <?php // echo wp_get_attachment_image($curauth->profile_cover_photo, array( "class" => "maa-profile-cover-image" ) );  ?>
-    <div class="uk-cover-container uk-height-large maa-profile-cover-photo">
+    <div class="uk-cover-container maa-profile-cover-photo">
       <img src="<?php echo $image[0] ?>" alt="<?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?>'s Profile Cover Photo" uk-cover>
     </div>
     <div class="uk-text-center maa-profile-image">
@@ -46,29 +69,6 @@ get_header(); ?>
 
     <?php if ( !empty( $curauth->facebook ) ) { echo "</ul>"; } ?>
   <?php if ( !empty( $curauth->facebook ) ) { echo "</section>"; } ?>
-
-  <section class="uk-margin-bottom uk-container">
-    <ul class="uk-breadcrumb uk-padding-remove-left">
-      <li class="item-home">
-        <a class="bread-link bread-home velocity-out" href="/" title="Home">
-          Home
-        </a>
-      </li>
-      <li class="item-parent">
-        <a class="bread-parent velocity-out" href="/about-miller-ad-agency" title="Who We Are">
-          Who We Are
-        </a>
-      </li>
-      <li class="item-parent">
-        <a class="bread-parent velocity-out" href="/about-miller-ad-agency/team" title="Team Miller">
-          Team Miller
-        </a>
-      </li>
-      <li class="item-current uk-text-truncate">
-        <span title="<?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?>"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></span>
-      </li>
-    </ul>
-  </section>
 
   <?php if ( !empty( $curauth->description ) ) { echo "<section class='uk-container uk-margin-large-bottom'>"; } ?>
     <?php if ( !empty( $curauth->description ) ) { echo "<p class='maa-author-bio'>". $curauth->description ."</p>"; } ?>

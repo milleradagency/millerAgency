@@ -52,6 +52,7 @@ $color-accent-dark:           mix(black, $color-accent, 15%);
 $color-accent-darkest:        mix(black, $color-accent, 35%);
 
 $color-black:                 #000;    // black-100%
+$color-black-alt:             #222;    // alt-black
 $color-black-light:           #303030; // off-black
 $color-black-lightest:        #4c4c4c; // light-black
 
@@ -281,20 +282,22 @@ $button-danger-background-hover:  mix(black, $button-danger-background, 30%) !de
 $button-background-focus:         mix(black, $button-default-background, 15%) !default;
 
 // -----------------------------------------
-// Services buttons - maa-button-services-transparent-dark
-$maa-btn-trn-dark-color:          $color-white !default; // "trn" stands for "transparent"
-$maa-btn-trn-dark-color-hover:    #222 !default;
-$maa-btn-trn-dark-background:     transparent !default;
-$maa-btn-trn-dark-border:         $color-white !default;
-$maa-btn-trn-dark-border-hover:   #222 !default;
+// Services buttons - maa-button-services-transparent-light
+$maa-services-btn-light-color:         $color-white !default; // "trn" stands for "transparent"
+$maa-services-btn-light-bg:            transparent !default;
+$maa-services-btn-light-border:        $color-white !default;
+$maa-services-btn-light-color-hover:   $color-black-alt !default;
+$maa-services-btn-light-bg-hover:      $color-white !default;
+$maa-services-btn-light-border-hover:  $color-white !default;
 
 // -----------------------------------------
-// Services buttons - maa-button-services-transparent-light
-$maa-btn-trn-light-color:         $color-gray-lightest !default; // "trn" stands for "transparent"
-$maa-btn-trn-light-color-hover:   $color-white !default;
-$maa-btn-trn-light-background:    transparent !default;
-$maa-btn-trn-light-border:        $color-gray-lightest !default;
-$maa-btn-trn-light-border-hover:  $color-white !default;
+// Services buttons - maa-button-services-transparent-dark
+$maa-services-btn-dark-color:          $color-black-alt !default; // "trn" stands for "transparent"
+$maa-services-btn-dark-bg:             transparent !default;
+$maa-services-btn-dark-border:         $color-black-alt !default;
+$maa-services-btn-dark-color-hover:    $color-white !default;
+$maa-services-btn-dark-bg-hover:       $color-black-alt !default;
+$maa-services-btn-dark-border-hover:   $color-black-alt !default;
 
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
