@@ -35,73 +35,149 @@ function millerAgency_assets() {
   // # DE-REGISTER SCRIPTS
   // This removes scripts that are unneccesary on a global scale
   // Please see below for the conditional (if) statements
-  wp_deregister_script( 'jquery' );                     // ## Original jQuery
-  wp_deregister_script( 'jquery-numerator' );           // ## Numerator
-  wp_deregister_script( 'waypoints' );                  // ## Waypoints
-  wp_deregister_script( 'elementor-frontend' );         // ## Elementor Frontend
+  wp_deregister_script( 'wp-embed' );                                                   // ## WP-Embed (codex.wordpress.org/Embeds)
+  wp_deregister_script( 'jquery' );                                                     // ## Original jQuery
+  wp_deregister_script( 'jquery-ui' );                                                  // ## jQuery UI
+  wp_deregister_script( 'jquery-numerator' );                                           // ## Numerator
+  wp_deregister_script( 'waypoints' );                                                  // ## Waypoints
+  wp_deregister_script( 'elementor-pro-frontend' );                                     // ## Elementor Pro Frontend
+  wp_deregister_script( 'elementor-frontend' );                                         // ## Elementor Frontend
+  wp_deregister_script( 'simple-job-board-validate-telephone-input' );                  // ## Phone Number Validation
+  wp_deregister_script( 'simple-job-board-validate-telephone-input-utiliy' );           // ## Phone Number Validation Utilities
+  wp_deregister_script( 'simple-job-board-front-end' );                                 // ## Simple Job Board
 
   // ------------------------------
-  // Velocity.js
+  // # jQuery, jQuery UI, and jQuery Migrate
+  wp_register_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', null, null, false );
+  wp_enqueue_script( 'jquery' );
+  wp_register_script( 'jquery-ui', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', null, null, false );
+  wp_enqueue_script( 'jquery-ui' );
+  wp_register_script( 'jquery-migrate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js', null, null, false );
+  wp_enqueue_script( 'jquery-migrate' );
+
+  // ------------------------------
+  // # Velocity.js
   wp_register_script( 'velocity', 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js', null, null, true );
   wp_enqueue_script( 'velocity' );
 
   // ------------------------------
-  // VelocityUI.js
+  // # VelocityUI.js
   wp_register_script( 'velocity_ui', 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.ui.min.js', null, null, true );
   wp_enqueue_script( 'velocity_ui' );
 
   // ------------------------------
-  // Adds UIkit dependancy DOM items before loading UIkit next
+  // # Adds UIkit dependancy DOM items before loading UIkit next
   wp_register_script( 'uikit_toggle', get_template_directory_uri() . '/assets/js/uikit-toggle.js', null, null, true );
   wp_enqueue_script( 'uikit_toggle' );
 
   // ------------------------------
-  // UIkit
+  // # UIkit
   wp_register_script( 'uikit', get_template_directory_uri() . '/assets/js/uikit.min.js', null, null, true );
   wp_enqueue_script( 'uikit' );
 
   // ------------------------------
-  // UIkit Icons
+  // # UIkit Icons
   wp_register_script( 'uikit_icons', get_template_directory_uri() . '/assets/js/uikit-icons.min.js', null, null, true );
   wp_enqueue_script( 'uikit_icons' );
 
   // ------------------------------
-  // Highlight.js
+  // # Highlight.js
   wp_register_script( 'highlightjs', get_template_directory_uri() . '/assets/js/highlight.pack.js#asyncload', null, null, true );
   wp_enqueue_script( 'highlightjs' );
 
   // ------------------------------
-  // Numerator — Used for the Elementor Widget => Counter
+  // # Numerator — Used for the Elementor Widget => Counter
   if ( is_page_template( 'elementor_page_counter.php' ) ) {
-    wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js', null, null, true );
+    wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
     wp_enqueue_script( 'jquery-numerator' );
   }
 
   // ------------------------------
-  // Blog - Numerator — Used for the Elementor Widget => Counter
+  // # Blog - Numerator — Used for the Elementor Widget => Counter
   // Checks if the "counter" tag exists
   if ( has_tag( 'counter' ) ) {
-    wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js', null, null, true );
+    wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
     wp_enqueue_script( 'jquery-numerator' );
   }
 
   // ------------------------------
-  // Waypoints
+  // # PAGE => Services
+  if ( is_page( 'Advertising' ) ) {
+    wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
+    wp_enqueue_script( 'jquery-numerator' );
+  }
+
+  // ------------------------------
+  // # Simple Job Board
+  // Checks if the "jobpost" post_type tern returns true
+  if ( is_singular( 'jobpost' ) ) {
+    // ------------------------------
+    // ## Simple Job Board — Phone Number Validation
+    wp_register_script( 'simple-job-board-validate-telephone-input', get_site_url() . '/wp-content/plugins/simple-job-board/public/js/intlTelInput.min.js#asyncload', null, null, true );
+    wp_enqueue_script( 'simple-job-board-validate-telephone-input' );
+
+    // ------------------------------
+    // ## Simple Job Board — Phone Number Validation Utilities
+    wp_register_script( 'simple-job-board-validate-telephone-input-utiliy', get_site_url() . '/wp-content/plugins/simple-job-board/public/js/intlTelInput-utils.js#asyncload', null, null, true );
+    wp_enqueue_script( 'simple-job-board-validate-telephone-input-utiliy' );
+
+    // ------------------------------
+    // ## Simple Job Board — jQuery UI Core
+    // wp_deregister_script( 'jquery-ui-core' );
+    // wp_register_script( 'jquery-ui-core', get_site_url() . '/wp-includes/js/jquery/ui/jquery.ui.core.min.js#asyncload', null, null, true );
+    // wp_enqueue_script( 'jquery-ui-core' );
+    wp_register_script( 'jquery-effects-core', get_site_url() . '/wp-includes/js/jquery/ui/effect.min.js', null, null, true );
+    wp_enqueue_script( 'jquery-effects-core' );
+    wp_register_script( 'jquery-ui-core', get_site_url() . '/wp-includes/js/jquery/ui/core.min.js', null, null, true );
+    wp_enqueue_script( 'jquery-ui-core' );
+    // wp_register_script( 'jquery-ui', get_site_url() . '/wp-includes/js/jquery/ui/core.min.js', null, null, true );
+    // wp_enqueue_script( 'jquery-ui' );
+
+    // ------------------------------
+    // ## Simple Job Board — Front-end Scripts
+    // wp_register_script( 'simple-job-board-front-end', get_site_url() . '/wp-content/plugins/simple-job-board/public/js/simple-job-board-public.js#asyncload', null, null, true );
+    wp_register_script( 'simple-job-board-front-end', get_site_url() . '/wp-content/plugins/simple-job-board/public/js/simple-job-board-public.js#asyncload', array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker' ), '1.4.0', TRUE );
+    wp_enqueue_script( 'simple-job-board-front-end' );
+
+    wp_localize_script(
+        'simple-job-board-front-end',
+        'application_form',
+        array(
+            'ajaxurl'              => esc_js( admin_url('admin-ajax.php') ),
+            'setting_extensions'   => is_array( get_option('job_board_upload_file_ext') ) ? array_map( 'esc_js', get_option('job_board_upload_file_ext') ) : esc_js( get_option('job_board_upload_file_ext') ),
+            'all_extensions_check' => esc_js( get_option('job_board_all_extensions_check') ),
+            'allowed_extensions'   => is_array( get_option('job_board_allowed_extensions') ) ? array_map( 'esc_js', get_option('job_board_allowed_extensions') ) : esc_js( get_option('job_board_allowed_extensions') ),
+            'job_listing_content'  => esc_js( get_option('job_board_listing') ),
+            'jobpost_content'      => esc_js( get_option('job_board_jobpost_content') ),
+            'jquery_alerts'        => array(
+                'invalid_extension'         => apply_filters( 'sjb_invalid_file_ext_alert', esc_html__( 'This is not an allowed file extension.', 'simple-job-board' ) ),
+                'application_not_submitted' => apply_filters( 'sjb_job_not_submitted_alert', esc_html__('Your application could not be processed.', 'simple-job-board') ),
+            ),
+            'file' =>array(
+                'browse' => esc_html__('Browse', 'simple-job-board'),
+                'no_file_chosen' => esc_html__('No file chosen', 'simple-job-board'),
+            )
+        )
+    );
+  }
+
+  // ------------------------------
+  // # Waypoints
   wp_register_script( 'waypoints', get_site_url() . '/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js', null, null, true );
   wp_enqueue_script( 'waypoints' );
 
   // ------------------------------
-  // Elementor Pro Frontend
+  // # Elementor Pro Frontend
   wp_register_script( 'elementor-pro-frontend', get_site_url() . '/wp-content/plugins/elementor-pro/assets/js/frontend.min.js#asyncload', null, null, true );
   wp_enqueue_script( 'elementor-pro-frontend' );
 
   // ------------------------------
-  // Elementor Frontend
+  // # Elementor Frontend
   wp_register_script( 'elementor-frontend', get_site_url() . '/wp-content/plugins/elementor/assets/js/frontend.min.js#asyncload', null, null, true );
   wp_enqueue_script( 'elementor-frontend' );
 
   // ------------------------------
-  // millerAgency.js
+  // # millerAgency.js
   wp_register_script( 'millerjs', get_template_directory_uri() . '/assets/js/millerAgency.js#asyncload', null, null, true );
   wp_enqueue_script( 'millerjs' );
 
@@ -114,9 +190,35 @@ add_action( 'wp_enqueue_scripts', 'millerAgency_assets' );
 // load admin scripts
 // ==============================================================
 function admin_assets() {
-  wp_deregister_script( 'elementor-frontend' ); // De-register original inclusion to properly enqueue
-  wp_register_script( 'elementor-frontend', get_site_url() . '/wp-content/plugins/elementor/assets/js/frontend.min.js#asyncload' );
+  // ------------------------------
+  // # jQuery, jQuery UI, and jQuery Migrate
+  wp_register_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', null, null, false );
+  wp_enqueue_script( 'jquery' );
+  wp_register_script( 'jquery-ui', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', null, null, false );
+  wp_enqueue_script( 'jquery-ui' );
+  wp_register_script( 'jquery-migrate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js', null, null, false );
+  wp_enqueue_script( 'jquery-migrate' );
+
+  // ------------------------------
+  // # Elementor Pro Frontend
+  wp_register_script( 'elementor-pro-frontend', get_site_url() . '/wp-content/plugins/elementor-pro/assets/js/frontend.min.js#asyncload', array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker' ), null, null, true );
+  wp_enqueue_script( 'elementor-pro-frontend' );
+
+  // ------------------------------
+  // # Elementor Frontend
+  wp_register_script( 'elementor-frontend', get_site_url() . '/wp-content/plugins/elementor/assets/js/frontend.min.js#asyncload', array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker' ), null, null, true );
   wp_enqueue_script( 'elementor-frontend' );
+
+  // ------------------------------
+  // # Highlight.js
+  wp_register_script( 'highlightjs', get_template_directory_uri() . '/assets/js/highlight.pack.js#asyncload', array( 'jquery' ), null, null, true );
+  wp_enqueue_script( 'highlightjs' );
+
+  // ------------------------------
+  // # Highlight.js
+  wp_register_script( 'adminCustomScripts', get_template_directory_uri() . '/assets/js/adminCustomScripts.js#asyncload', array( 'jquery' ), null, null, true );
+  wp_enqueue_script( 'adminCustomScripts' );
+
 }
 add_action( 'admin_enqueue_scripts', 'admin_assets', 500 );
 

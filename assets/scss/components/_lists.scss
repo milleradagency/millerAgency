@@ -20,13 +20,30 @@
 }
 
 .uk-list-divider {
+  // default uk-list
   & li {
-    border-bottom: 1px solid #e5e5e5;
+    // border-bottom: 1px solid #e5e5e5;
     &:last-child {
       border-bottom: 0;
     }
   }
 }
+
+// list-border-bottom
+.uk-list-divider.list-border-bottom {
+  & li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
 
 .uk-list-striped {
   & ul {

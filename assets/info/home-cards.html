@@ -49,7 +49,7 @@
 </a>
 
 <!-- QUIZ -->
-<a class="uk-inline maa-cover-home-05" style="background-image:url('/wp-content/uploads/cover-home-quiz.jpg');" href="#modal-full-quiz" uk-toggle="">
+<a class="uk-inline maa-metro-tile" style="background-image:url('/wp-content/uploads/cover-home-quiz.jpg'); height: 200px;" href="#quizNotSure" uk-toggle="">
   <div class="maa-cover-tint"></div>
   <div class="maa-button-home">Get your results</div>
   <div class="uk-overlay uk-light uk-position-bottom">
@@ -57,12 +57,21 @@
     <p>Don't know what kind of marketing you need? Take out handy quiz!</p>
   </div>
 </a>
+<div id="quizNotSure" class="uk-modal-full" uk-modal>
+  <div class="uk-modal-dialog">
+    <button class="uk-modal-close-full uk-close-large uk-background-muted uk-border-circle" type="button" uk-close></button>
+    <div uk-height-viewport>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYyi6xdIZAJdIVmqu_Cij89zkk3X5F5712Khw3ADZK8MTXHA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    </div>
+  </div>
+</div>
+
 <div id="modal-full-quiz" class="uk-modal-full" uk-modal>
   <div class="uk-modal-dialog">
     <button class="uk-modal-close-full uk-close-large uk-background-default" type="button" uk-close></button>
     <div class="uk-grid-collapse uk-child-width-1-1 uk-flex-middle" uk-grid>
       <div class="" uk-height-viewport>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfFWcxDeeERDEL5s4Kmgs58kkSPOq-1jRmRSflzVm9AjqYwqg/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" uk-height-viewport>Loading...</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYyi6xdIZAJdIVmqu_Cij89zkk3X5F5712Khw3ADZK8MTXHA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
       </div>
     </div>
   </div>

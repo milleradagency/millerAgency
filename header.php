@@ -34,8 +34,9 @@
     <!-- FRONT-END DEVELOPER -->
     <meta name="designer" content="William Pansky, williampansky.com">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script> -->
 
     <?php // ---------------------- ?>
     <?php // HEADER ITEMS ?>

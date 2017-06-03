@@ -12,22 +12,22 @@
     <div class="uk-text-small">
       <ul class="uk-nav uk-list list-inline">
         <li class="uk-margin-right">
-          <a href="https://www.facebook.com/pages/Miller-Ad-Agency/115464605176063" target="_blank" title="Like Us" uk-tooltip>
+          <a href="https://www.facebook.com/pages/Miller-Ad-Agency/115464605176063" target="_blank" uk-scrollspy="cls: uk-animation-scale-up;" title="Like Us" uk-tooltip>
             <span uk-icon="icon: facebook" class="uk-icon"></span>
           </a>
         </li>
         <li class="uk-margin-right">
-          <a href="https://www.instagram.com/milleradagency/" target="_blank" title="Double tap our faces" uk-tooltip>
+          <a href="https://www.instagram.com/milleradagency/" target="_blank" uk-scrollspy="cls: uk-animation-scale-up;" title="Double tap our faces" uk-tooltip>
             <span uk-icon="icon: instagram" class="uk-icon"></span>
           </a>
         </li>
         <li class="uk-margin-right">
-          <a href="https://www.linkedin.com/company/miller-ad-agency" target="_blank" title="Link us? Follow us? Or...?" uk-tooltip>
+          <a href="https://www.linkedin.com/company/miller-ad-agency" target="_blank" uk-scrollspy="cls: uk-animation-scale-up;" title="Link us? Follow us? Or...?" uk-tooltip>
             <span uk-icon="icon: linkedin" class="uk-icon"></span>
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/milleragency" target="_blank" title="#millerAgency" uk-tooltip>
+          <a href="https://twitter.com/milleragency" target="_blank" uk-scrollspy="cls: uk-animation-scale-up;" title="#millerAgency" uk-tooltip>
             <span uk-icon="icon: twitter" class="uk-icon"></span>
           </a>
         </li>
@@ -43,6 +43,9 @@
 ?>
 
 <footer class="maa-footer" id="footer">
+  <div class="footer-image" uk-scrollspy="cls: uk-animation-kenburns; repeat: true">
+    <div class="footer-image-tint"></div>
+  </div>
   <div class="uk-container uk-margin-remove-top uk-margin-medium-bottom uk-text-smaller" uk-navbar>
     <ul class="maa-footer-links uk-width-1-1 uk-flex-center uk-text-center">
       <li><a href="/seo-evaluation" class="elementor-button elementor-size-sm">Check Your SEO</a></li>

@@ -3,8 +3,9 @@
 // -----------------------------------------
 // ## tweaks and fixes
 
-// hide listing dates
-.job-date {
+// hide items
+.sjb-filters, // hide search and filters
+.job-date { // hide listing dates
   display: none;
 }
 
@@ -120,9 +121,13 @@
 
 // adds hover effect to listing items
 .sjb-page .list-data .job-info h4 a {
+  color: $color-primary !important;
+  text-decoration: underline !important;
   transition: 300ms ease-in-out;
   &:hover, &:focus {
-    opacity: .65;
+    color: $color-primary-lightest !important;
+    text-decoration: none !important;
+    // opacity: .65;
   }
 }
 
@@ -136,6 +141,14 @@
 
 // -----------------------------------------
 // ## careers listing page
+// adjust borders
+.sjb-page .list-data {
+  border: 0;
+  border-bottom: 1px solid #e1e1e1 !important;
+  &:last-child {
+    border: 0 !important;
+  }
+}
 // fix layout on devices above mobile
 .sjb-listing .list-data .col-md-5 { // job listing name
   width: 40%;
