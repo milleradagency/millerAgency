@@ -6,6 +6,11 @@ html, body {
   line-height: 1.5;
 }
 
+// internet explorer scrollbar
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
 body {
   // display: none;
 }

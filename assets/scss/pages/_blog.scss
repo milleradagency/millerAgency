@@ -14,6 +14,14 @@ $blog-image-tint:										rgba(0, 0, 0, .75);
 	padding-bottom: 0 !important;
 }
 
+// restrict height of image containers on blog lists
+.elementor-posts .elementor-post__thumbnail {
+	height: 175px;
+	min-height: 175px;
+	max-height: 175px;
+	overflow: hidden;
+}
+
 // -----------------------------------------
 // ## blog globals
 // blog specific padding and fixes

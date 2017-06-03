@@ -1,8 +1,10 @@
 
 .uk-offcanvas-content {
+  position: relative;
+  z-index: 1;
   background: $color-white;
   padding-bottom: 40px;
-  margin-bottom: 634px;
+  margin-bottom: 320px;
   @media (min-width:375px)  { margin-bottom: 614px; }
   @media (min-width:640px)  { margin-bottom: 468px; }
   @media (min-width:768px)  { margin-bottom: 375px; }

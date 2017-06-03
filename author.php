@@ -26,7 +26,7 @@ get_header(); ?>
       </li>
       <li class="item-parent">
         <a class="bread-parent velocity-out" href="/about-miller-ad-agency" title="Who We Are">
-          Who We Are
+          About
         </a>
       </li>
       <li class="item-parent">

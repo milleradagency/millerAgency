@@ -86,23 +86,38 @@ function millerAgency_assets() {
   wp_enqueue_script( 'highlightjs' );
 
   // ------------------------------
-  // # Numerator — Used for the Elementor Widget => Counter
+  // # PAGE - Numerator — Used for the Elementor Widget => Counter
   if ( is_page_template( 'elementor_page_counter.php' ) ) {
     wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
     wp_enqueue_script( 'jquery-numerator' );
   }
 
   // ------------------------------
-  // # Blog - Numerator — Used for the Elementor Widget => Counter
-  // Checks if the "counter" tag exists
-  if ( has_tag( 'counter' ) ) {
-    wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
-    wp_enqueue_script( 'jquery-numerator' );
+  // # PAGE - Slider — Used for the Elementor Widget => Slides
+  if ( is_page_template( 'elementor_page_slider.php' ) ) {
+    wp_register_script( 'slick', get_site_url() . '/wp-content/plugins/elementor/assets/lib/slick/slick.min.js#asyncload', null, null, true );
+    wp_enqueue_script( 'slick' );
   }
 
   // ------------------------------
   // # PAGE => Services
   if ( is_page( 'Advertising' ) ) {
+    wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
+    wp_enqueue_script( 'jquery-numerator' );
+  }
+
+  // ------------------------------
+  // # PAGE => Radio
+  if ( is_page( 'Radio' ) ) {
+    // wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
+    wp_enqueue_style( 'wp-mediaelement' );
+    wp_enqueue_script( 'wp-mediaelement' );
+  }
+
+  // ------------------------------
+  // # Blog - Numerator — Used for the Elementor Widget => Counter
+  // Checks if the "counter" tag exists
+  if ( has_tag( 'counter' ) ) {
     wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
     wp_enqueue_script( 'jquery-numerator' );
   }

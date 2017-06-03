@@ -1,0 +1,40 @@
+
+// -----------------------------------------
+// ## elementor messages
+.elementor-message {
+	padding: 40px;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: normal;
+	letter-spacing: .5px;
+
+	// success
+	&.elementor-message-info {
+		color: $color-black-light;
+		background: $color-alert-error;
+	}
+
+	// success
+	&.elementor-message-success {
+		color: $color-white;
+		background: $color-alert-success;
+	}
+
+	// success
+	&.elementor-message-warning {
+		color: $color-black-light;
+		background: $color-alert-warning;
+	}
+
+	// success
+	&.elementor-message-danger {
+		color: $color-white;
+		background: $color-alert-danger;
+	}
+
+	// success
+	&.elementor-message-error {
+		color: $color-white;
+		background: $color-alert-error;
+	}
+}

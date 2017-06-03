@@ -41,7 +41,7 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   width: 100%;
-  height: 225px;
+  height: 150px;
   color: $color-white;
 
   & a {
@@ -91,9 +91,9 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    margin: 20px 0;
-    font-size: 22px;
-    font-weight: 300;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: normal;
     line-height: 1.15;
     text-transform: uppercase;
 
@@ -149,9 +149,14 @@
     font-size: 26px;
     & a {
       font-weight: bold;
-      color: $color-primary;
+      color: $color-white;
+      background: $color-primary;
       border: 2px solid $color-primary;
       padding: 8px 32px 4px;
+
+      &:hover, &:focus {
+        color: $color-white;
+      }
     }
   }
 

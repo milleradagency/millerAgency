@@ -46,13 +46,13 @@
   <div class="footer-image" uk-scrollspy="cls: uk-animation-kenburns; repeat: true">
     <div class="footer-image-tint"></div>
   </div>
-  <div class="uk-container uk-margin-remove-top uk-margin-medium-bottom uk-text-smaller" uk-navbar>
+  <div class="uk-container uk-margin-remove-top uk-margin-medium-bottom uk-text-smaller" id="footerBars" uk-navbar>
     <ul class="maa-footer-links uk-width-1-1 uk-flex-center uk-text-center">
       <li><a href="/seo-evaluation" class="elementor-button elementor-size-sm">Check Your SEO</a></li>
       <li><a href="/google-adwords" class="elementor-button elementor-size-sm">Google AdWords</a></li>
-      <li><a href="/better-business-bureau" class="elementor-button elementor-size-sm">BBB A+ Rated Business</a></li>
-      <li><a href="/baylor-business" class="elementor-button elementor-size-sm">Baylor Business</a></li>
       <li><a href="/pandora-radio-advertising" class="elementor-button elementor-size-sm">Advertise on Pandora Radio</a></li>
+      <li><a href="http://www.bbb.org/dallas/business-reviews/advertising-agencies-and-counselors/miller-ad-agency-in-dallas-tx-90377086" target="_blank" class="elementor-button elementor-size-sm" title="*This link opens a new tab" uk-tooltip>BBB A+ Rated Business*</a></li>
+      <li><a href="http://www.baylor.edu/business/txfamily/index.php?id=97637" target="_blank" class="elementor-button elementor-size-sm" title="*This link opens a new tab" uk-tooltip>Baylor Business*</a></li>
     </ul>
   </div>
 
