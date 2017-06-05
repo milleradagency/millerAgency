@@ -5,6 +5,9 @@
  */
 ?>
 
+  <!-- toTop -->
+  <a id="toTopBtn" class="uk-icon-button toTopBtn" href="#toTop" uk-scroll="" uk-icon="icon: chevron-up" title="To the top!" uk-tooltip="pos: left"></a>
+
   <!-- FOOTER -->
   <div class="uk-text-center" id="socialNetworks">
     <?php // ---------------------- ?>
@@ -12,7 +15,7 @@
     <div class="uk-text-small">
       <ul class="uk-nav uk-list list-inline">
         <li class="uk-margin-right">
-          <a href="https://www.facebook.com/pages/Miller-Ad-Agency/115464605176063" target="_blank" uk-scrollspy="cls: uk-animation-scale-up;" title="Like Us" uk-tooltip>
+          <a href="https://www.facebook.com/pages/Miller-Ad-Agency/115464605176063" target="_blank" uk-scrollspy="cls: uk-animation-scale-up;" title="pls like us kthxbye ;D" uk-tooltip>
             <span uk-icon="icon: facebook" class="uk-icon"></span>
           </a>
         </li>
@@ -27,7 +30,7 @@
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/milleragency" target="_blank" uk-scrollspy="cls: uk-animation-scale-up;" title="#millerAgency" uk-tooltip>
+          <a href="https://twitter.com/milleragency" target="_blank" uk-scrollspy="cls: uk-animation-scale-up;" title="#hashtag — right?" uk-tooltip>
             <span uk-icon="icon: twitter" class="uk-icon"></span>
           </a>
         </li>

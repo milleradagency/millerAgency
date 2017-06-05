@@ -101,7 +101,7 @@ $(".maa-mobile-toggle").on("click", function() {
   $("#mobileOffCanvas > i").toggleClass("fa-bars fa-times");
 });
 
-// slide in mini-navbar after scroll for 100vh
+// slide in mini-navbar after scrolling for 100vh
 // http://stackoverflow.com/a/26729887
 jQuery(function($) {
   var miniNav = $("#navbar-fixed-top");
@@ -113,6 +113,24 @@ jQuery(function($) {
         miniNav.addClass("mini-navbar-visible");
     } else {
         miniNav.removeClass("mini-navbar-visible");
+    }
+  }).on("resize", function(){ // If the user resizes the window
+    winH = $(this).height(); // you'll need the new height value
+  });
+});
+
+// slide in toTop button after scrolling for 100vh
+// http://stackoverflow.com/a/26729887
+jQuery(function($) {
+  var top = $("#toTopBtn");
+  var $win = $(window);
+  var winH = $win.height(); // Get the window height.
+
+  $win.on("scroll", function () {
+    if ($(this).scrollTop() > winH ) {
+        top.addClass("toTopBtn-visible");
+    } else {
+        top.removeClass("toTopBtn-visible");
     }
   }).on("resize", function(){ // If the user resizes the window
     winH = $(this).height(); // you'll need the new height value

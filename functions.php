@@ -102,8 +102,13 @@ function millerAgency_assets() {
   // ------------------------------
   // # PAGE => Services
   if ( is_page( 'Advertising' ) ) {
+    // Numerator
     wp_register_script( 'jquery-numerator', get_site_url() . '/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js#asyncload', null, null, true );
     wp_enqueue_script( 'jquery-numerator' );
+
+    // Custom Velocity.js Accordion Scripts
+    wp_register_script( 'page-services', get_template_directory_uri() . '/assets/js/page-services.js#asyncload', null, null, true );
+    wp_enqueue_script( 'page-services' );
   }
 
   // ------------------------------

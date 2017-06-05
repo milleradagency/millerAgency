@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<div id="main" role="main" class="maa-author">
+<div id="main" role="main" class="maa-author" itemscope itemtype="http://schema.org/ProfilePage">
 
   <?php // AUTHOR LOOP
     global $wp_query;
@@ -46,9 +46,9 @@ get_header(); ?>
       <img src="<?php echo $image[0] ?>" alt="<?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?>'s Profile Cover Photo" uk-cover>
     </div>
     <div class="uk-text-center maa-profile-image">
-      <img class="uk-border-circle uk-text-center" src="<?php echo get_wp_user_avatar_src($user_id, 'original'); ?>">
-      <h1 class="uk-article-title uk-margin-remove-bottom uk-margin-small-top"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h1>
-      <h2 class="uk-text-small uk-text-uppercase uk-margin-remove"><?php echo $curauth->employee_title; ?></h2>
+      <img class="uk-border-circle uk-text-center" src="<?php echo get_wp_user_avatar_src($user_id, 'original'); ?>" alt="<?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?>" property="image">
+      <h1 class="uk-article-title uk-margin-remove-bottom uk-margin-small-top" itemprop="name"><?php echo $curauth->first_name; ?> <?php echo $curauth->last_name; ?></h1>
+      <h2 class="uk-text-small uk-text-uppercase uk-margin-remove" itemprop="jobTitle"><?php echo $curauth->employee_title; ?></h2>
     </div>
   </section>
 
@@ -71,7 +71,7 @@ get_header(); ?>
   <?php if ( !empty( $curauth->facebook ) ) { echo "</section>"; } ?>
 
   <?php if ( !empty( $curauth->description ) ) { echo "<section class='uk-container uk-margin-large-bottom'>"; } ?>
-    <?php if ( !empty( $curauth->description ) ) { echo "<p class='maa-author-bio'>". $curauth->description ."</p>"; } ?>
+    <?php if ( !empty( $curauth->description ) ) { echo "<p class='maa-author-bio' itemprop='about'>". $curauth->description ."</p>"; } ?>
   <?php if ( !empty( $curauth->description ) ) { echo "</section>"; } ?>
 
   <?php if ( !empty( $curauth->accomplishment01 ) ) { echo "<section class='uk-container uk-margin-large-bottom'>"; } ?>

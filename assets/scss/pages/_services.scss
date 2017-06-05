@@ -34,13 +34,120 @@
 
 
 // -----------------------------------------
+// ## services => more info accordions
+.maa-services-accordion {
+  width: 100%;
+
+  &-item {
+  overflow: hidden;
+  }
+}
+
+.maa-services-accordion-header {
+  padding: 10px;
+  color: $color-black-alt;
+  text-align: center;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  cursor: pointer;
+
+  & h3 {
+  margin: 0;
+  }
+}
+
+.maa-services-accordion-content {
+  padding: 40px;
+  color: $color-uikit-gray-lighter;
+  background: $color-black-alt;
+  display: none;
+
+  &-inner {
+  margin: 0 auto;
+  max-width: 630px;
+  font-size: 16px;
+  line-height: 1.5;
+	opacity: 0;
+
+	& h1, & h2, & h3, & h4, & h5, & h6, & p, & ol, & li, & li, & code, & pre {
+		color: $color-uikit-gray-lighter;
+		// opacity: 0;
+	}
+
+    & p {
+      // opacity: 0;
+      margin: 0 auto 1rem;
+      &:last-child { margin: 0; }
+    }
+  }
+}
+
+
+// -----------------------------------------
+// ## services => tv
+#television {
+	z-index: 1;
+}
+
+#television-img {
+	z-index: -1;
+	margin-top: -60px;
+	width: 200%;
+	left: -100px;
+
+	// 412px
+	@media (min-width:412px) {
+		margin-top: -130px;
+		width: 300%;
+		left: -300px;
+	}
+
+	// 768px
+	@media (min-width:768px) {
+		margin-top: -170px;
+    width: 200%;
+    left: -380px;
+	}
+
+	// 1024px
+	@media (min-width:1024px) {
+		margin-top: -240px;
+		width: 200%;
+		left: -500px;
+	}
+
+	// 1366px
+	@media (min-width:1366px) {
+		margin-top: -150px;
+		width: 100%;
+		left: 0;
+	}
+
+	// 1600px
+	@media (min-width:2500px) {
+		margin-top: -300px;
+	}
+}
+
+
+// -----------------------------------------
+// ## services => radio
+#radio {
+	z-index: 1;
+	@media (max-width:1023px) { background-image: none; }
+}
+
+
+// -----------------------------------------
 // ## services => print
 #print {
+	& .elementor-widget-wrap { padding: 0 100px; }
 	@media (max-width:425px) {
     background-image: url('http://miller.agency/wp-content/uploads/maa-services-print-mobile.jpg') !important;
 		& .elementor-widget-wrap {
 			text-align: right;
-			padding-left: 60px;
+	    padding: 0 10px 0 50px;
 		}
 	}
 }

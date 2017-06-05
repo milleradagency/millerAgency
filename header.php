@@ -17,7 +17,8 @@
 
     <?php // ---------------------- ?>
     <?php // Document Title ?>
-    <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+    <!-- <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title> -->
+    <title><?php wp_title(''); ?></title>
 
     <?php // ---------------------- ?>
     <?php // Mobile Meta ?>
@@ -41,6 +42,16 @@
     <?php // ---------------------- ?>
     <?php // HEADER ITEMS ?>
     <?php // Place favicon.ico and apple-touch-icon.png in the root directory ?>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0e75dd">
+    <meta name="apple-mobile-web-app-title" content="Miller Ad Agency">
+    <meta name="application-name" content="Miller Ad Agency">
+    <meta name="msapplication-TileColor" content="#0e75dd">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#0e75dd">
 
     <?php // ---------------------- ?>
     <?php // versioned_stylesheet($GLOBALS["TEMPLATE_RELATIVE_URL"]."html5-boilerplate/css/normalize.css") ?>

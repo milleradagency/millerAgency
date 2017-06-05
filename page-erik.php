@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<div id="main" role="main" class="uk-margin-large-bottom">
+<div id="main" role="main" class="uk-margin-large-bottom" itemscope itemtype="http://schema.org/Person">
 
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

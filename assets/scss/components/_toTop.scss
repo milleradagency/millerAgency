@@ -1,0 +1,28 @@
+.toTopBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 8px;
+  color: $color-white !important;
+  background: $color-primary;
+  &:hover, &:focus {
+    color: $color-white;
+    background: $color-black-alt;
+  }
+
+  z-index: 10;
+  overflow: hidden;
+  transform: translateY(50px);
+  transition: 300ms ease-in-out;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+// slide in animations
+.toTopBtn-visible {
+  overflow: visible;
+  transform: translateY(0);
+  box-shadow: $z-depth-1;
+}
