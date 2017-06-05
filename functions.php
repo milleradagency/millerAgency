@@ -239,6 +239,14 @@ function admin_assets() {
   wp_register_script( 'adminCustomScripts', get_template_directory_uri() . '/assets/js/adminCustomScripts.js#asyncload', array( 'jquery' ), null, null, true );
   wp_enqueue_script( 'adminCustomScripts' );
 
+  // ------------------------------
+  // # PAGE => Services
+  if ( is_page( 'Advertising' ) ) {
+    // Custom Velocity.js Accordion Scripts
+    wp_register_script( 'page-services', get_template_directory_uri() . '/assets/js/page-services.js#asyncload', null, null, true );
+    wp_enqueue_script( 'page-services' );
+  }
+
 }
 add_action( 'admin_enqueue_scripts', 'admin_assets', 500 );
 

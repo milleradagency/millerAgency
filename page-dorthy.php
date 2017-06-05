@@ -1,4 +1,4 @@
-<?php /* Template Name: Page — Erik Radle */ ?>
+<?php /* Template Name: Page — Dorthy Miller Shore */ ?>
 
 <?php
 /**

@@ -1,6 +1,7 @@
 .toTopBtn {
   position: fixed;
-  bottom: 0;
+  bottom: 60px;
+  @media (min-width:960px) { bottom: 0; }
   right: 0;
   margin: 8px;
   color: $color-white !important;
@@ -12,12 +13,9 @@
 
   z-index: 10;
   overflow: hidden;
-  transform: translateY(50px);
+  transform: translateY(150px);
+  @media (min-width:960px) { transform: translateY(50px); }
   transition: 300ms ease-in-out;
-
-  @media (max-width: 1023px) {
-    display: none;
-  }
 }
 
 // slide in animations

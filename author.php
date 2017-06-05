@@ -30,8 +30,8 @@ get_header(); ?>
         </a>
       </li>
       <li class="item-parent">
-        <a class="bread-parent velocity-out" href="/about-miller-ad-agency/team" title="Team Miller">
-          Team Miller
+        <a class="bread-parent velocity-out" href="/about-miller-ad-agency/team" title="Miller Crew">
+          Miller Crew
         </a>
       </li>
       <li class="item-current uk-text-truncate">
