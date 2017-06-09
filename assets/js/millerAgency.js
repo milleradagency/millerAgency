@@ -82,6 +82,12 @@ $(document).ready(function() {
 
 }); // end document.ready();
 
+// maa-video-overlay
+// removeClass on click to get rid of :before and :after css props
+$("#millerVideo30").on("click", function() {
+  $(this).removeClass("maa-video-overlay");
+});
+
 // transition on out
 // thanks to http://stackoverflow.com/a/38233311 for the correct .not() answer
 // $("a[target!='_blank']").not("[href^='#']").on("click", function() {

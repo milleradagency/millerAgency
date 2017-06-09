@@ -1,0 +1,80 @@
+.maa-video-overlay {
+  cursor: pointer;
+  overflow: hidden;
+
+  &:before {
+    content: "Miller Ad Agency in 30 Seconds";
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    font-size: 16px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #d4d3d3;
+    padding: 20px 20px 21px;
+  } // end before
+
+  &:after {
+    content: "Play";
+    cursor: pointer;
+    position: absolute;
+    // top: -100px;
+    right: 0;
+    color: #fff;
+    font-size: 15px;
+    padding: 12px 24px;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 16px 16px 16px 0;
+    border-width: 1px;
+    border-radius: 0;
+    border-color: #fff;
+    border-style: solid;
+    display: inline-block;
+    opacity: 1;
+    visibility: hidden;
+    background: transparent;
+    transition: 300ms ease-in-out;
+    animation-duration: 500ms;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: once;
+    transform-origin: 0 0;
+  } // end after
+
+  &:hover, &:focus {
+
+    // swap video widget image overlay on hover
+    & .elementor-custom-embed-image-overlay {
+      background-image: url('/wp-content/uploads/miller-metro-tile-dark-hover.jpg') !important;
+    }
+
+    &:after {
+      cursor: pointer;
+      visibility: visible;
+      animation-name: videoStylie-keyframes;
+      // top: 0;
+      transform: translateY(0);
+    }
+  } // end hover
+}
+
+@keyframes videoStylie-keyframes {
+  0% {
+		top: -100px;
+	}
+	50% {
+		top: 18px;
+	}
+	75% {
+		top: -6px;
+	}
+	100% {
+		top: 0;
+	}
+}

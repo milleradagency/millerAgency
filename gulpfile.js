@@ -6,7 +6,7 @@ var gulp = require('gulp');
 
 // Gulp FTP
 // https://www.npmjs.com/package/gulp-ftp
-// npm install --save-dev gulp-ftp
+// npm install gulp-ftp --save-dev
 // var ftp = require('gulp-ftp');
 
 // Gulp Util
@@ -30,6 +30,7 @@ var postcss = require('gulp-postcss');
 var nano = require('gulp-cssnano');
 
 // Source Maps
+// npm install gulp-sourcemaps --save-dev
 // https://www.npmjs.com/package/gulp-sourcemaps
 var sourcemaps = require('gulp-sourcemaps');
 
