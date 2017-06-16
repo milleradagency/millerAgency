@@ -107,8 +107,8 @@ function millerAgency_assets() {
     wp_enqueue_script( 'jquery-numerator' );
 
     // Custom Velocity.js Accordion Scripts
-    wp_register_script( 'page-services', get_template_directory_uri() . '/assets/js/page-services.js#asyncload', null, null, true );
-    wp_enqueue_script( 'page-services' );
+    // wp_register_script( 'page-services', get_template_directory_uri() . '/assets/js/page-services.js#asyncload', null, null, true );
+    // wp_enqueue_script( 'page-services' );
   }
 
   // ------------------------------
@@ -241,11 +241,11 @@ function admin_assets() {
 
   // ------------------------------
   // # PAGE => Services
-  if ( is_page( 'Advertising' ) ) {
-    // Custom Velocity.js Accordion Scripts
-    wp_register_script( 'page-services', get_template_directory_uri() . '/assets/js/page-services.js#asyncload', null, null, true );
-    wp_enqueue_script( 'page-services' );
-  }
+  // if ( is_page( 'Advertising' ) ) {
+  //   // Custom Velocity.js Accordion Scripts
+  //   wp_register_script( 'page-services', get_template_directory_uri() . '/assets/js/page-services.js#asyncload', null, null, true );
+  //   wp_enqueue_script( 'page-services' );
+  // }
 
 }
 add_action( 'admin_enqueue_scripts', 'admin_assets', 500 );

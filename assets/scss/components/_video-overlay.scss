@@ -20,6 +20,7 @@
   &:after {
     content: "Play";
     cursor: pointer;
+    pointer-events: none;
     position: absolute;
     // top: -100px;
     right: 0;
